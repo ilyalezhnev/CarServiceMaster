@@ -4,12 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client-install": "yarn i --prefix client",
-    "client-build": "yarn build --prefix client",
-    "client": "yarn start --prefix client",
-    "dev": "concurrently \"yarn server\" \"yarn client\""
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client-install": "npm install --prefix client",
+    "client-build": "npm run build --prefix client",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "I&D",
   "license": "ISC",
