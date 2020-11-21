@@ -1,0 +1,24 @@
+{
+  "name": "Master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client-install": "yarn i --prefix client",
+    "client-build": "yarn build --prefix client",
+    "client": "yarn start --prefix client",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
+  },
+  "author": "I&D",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.3"
+  }
+}
