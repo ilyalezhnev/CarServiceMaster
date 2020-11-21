@@ -14,7 +14,8 @@
   "author": "I&D",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pug": "^3.0.0"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
