@@ -13,6 +13,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
+app.use('/static', express.static(path.join(__dirname, 'static')));
 app.use('/api/users', users);
 
 db.sequelize.sync();
@@ -28,7 +29,7 @@ app.set('views', './views');
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('main');
 });
 
 app.get('/test', (req, res) => {

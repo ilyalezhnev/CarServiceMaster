@@ -1,0 +1,15 @@
+@import 'static/styles/common.css';
+@import 'static/styles/header.css';
+@import 'static/styles/discount.css';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-image: url('static/img/bgimage.png');
+  background-repeat: repeat;
+  margin: 0;
+  padding: 0;
+}

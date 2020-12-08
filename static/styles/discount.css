@@ -1,0 +1,17 @@
+.discount_layout {
+  position: relative;
+}
+
+.discount__image {
+  width: 100%;
+}
+
+.main-slogan {
+  position: absolute;
+  top: 0;
+  height: 200px;
+  width: 200px;
+  background-color: rgba(35, 31, 32, 0.6);
+  color: #fff;
+  transform: skew(-20deg);
+}
