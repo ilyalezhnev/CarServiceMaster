@@ -1,17 +1,58 @@
 .discount_layout {
-  position: relative;
+  background-position: center;
+  background-size: cover;
 }
 
-.discount__image {
-  width: 100%;
+.discount__info-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 350px;
 }
 
-.main-slogan {
-  position: absolute;
-  top: 0;
-  height: 200px;
-  width: 200px;
+.discount__slogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 420px;
   background-color: rgba(35, 31, 32, 0.6);
   color: #fff;
   transform: skew(-20deg);
+}
+
+.discount__slogan * {
+  transform: skew(20deg);
+}
+
+.discount__slogan h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.discount__slogan p {
+  font-size: 30px;
+  margin: 0;
+}
+
+.discount__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 420px;
+  height: 130px;
+  background-color: #feca0a;
+  padding: 10px 35px;
+  margin-bottom: 40px;
+}
+
+.discount__info h3 {
+  margin: 0;
+  font-size: 40px;
+}
+
+.discount__info p {
+  margin: 0;
+  font-size: 24px;
 }

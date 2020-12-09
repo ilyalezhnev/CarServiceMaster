@@ -32,10 +32,6 @@ app.get('/', (req, res) => {
   res.render('main');
 });
 
-app.get('/test', (req, res) => {
-  res.render('index');
-});
-
 // app.get('/admin', (req, res) => {
 //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 // });
