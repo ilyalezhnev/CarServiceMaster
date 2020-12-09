@@ -1,0 +1,28 @@
+.infoRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  text-align: center;
+}
+
+.infoRow * {
+  flex: 1;
+}
+
+.infoRow p {
+  margin: 0;
+}
+
+.yellow-layout {
+  background-image: url('/static/img/yellowLayout.png');
+  background-position: right top;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.yellow-layout p {
+}

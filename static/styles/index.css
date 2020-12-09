@@ -1,6 +1,7 @@
 @import 'static/styles/common.css';
 @import 'static/styles/header.css';
-@import 'static/styles/discount.css';
+@import 'static/styles/discountSection.css';
+@import 'static/styles/commonInfoSection.css';
 
 * {
   box-sizing: border-box;
