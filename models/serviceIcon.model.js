@@ -1,14 +1,12 @@
 module.exports = (sequelize, Sequelize) => {
-  const User = sequelize.define('user', {
-    login: {
+  const ServiceIcon = sequelize.define('serviceIcon', {
+    url: {
       type: Sequelize.TEXT('tiny'),
-      allowNull: false,
     },
-    password: {
+    name: {
       type: Sequelize.TEXT('tiny'),
-      allowNull: false,
     },
   });
 
-  return User;
+  return ServiceIcon;
 };
