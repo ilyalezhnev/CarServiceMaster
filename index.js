@@ -4,17 +4,8 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require('./routes/api/users');
 const db = require('./models');
-
 const usersController = require('./controllers/user.controller');
 require('./config/passport')(passport);
-
-const app = express();
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(passport.initialize());
-app.use('/static', express.static(path.join(__dirname, 'static')));
-app.use('/api/users', users);
 
 db.sequelize.sync();
 db.sequelize
@@ -25,11 +16,39 @@ db.sequelize
   })
   .catch((err) => console.error('Connection error: ', err));
 
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(passport.initialize());
+app.use('/static', express.static(path.join(__dirname, 'static')));
+app.use('/api/users', users);
+
 app.set('views', './views');
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
   res.render('main');
+});
+
+app.get('/service', (req, res) => {
+  res.render('service');
+});
+
+app.get('/carParts', (req, res) => {
+  res.render('carParts');
+});
+
+app.get('/corporate', (req, res) => {
+  res.render('corporateClients');
+});
+
+app.get('/contacts', (req, res) => {
+  res.render('contacts');
+});
+
+app.get('/discount', (req, res) => {
+  res.render('discount');
 });
 
 // app.get('/admin', (req, res) => {

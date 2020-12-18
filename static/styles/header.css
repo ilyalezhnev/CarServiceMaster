@@ -57,6 +57,11 @@ nav {
   border-right: 1px solid #000000;
 }
 
+.navbar__item a {
+  color: #000000;
+  text-decoration: none;
+}
+
 .navbar__item:last-child {
   border-right: none;
 }
