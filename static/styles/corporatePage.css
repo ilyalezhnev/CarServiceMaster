@@ -1,0 +1,17 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.image__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 20px 10px;
+}
+
+.image__wrapper img {
+  width: 100%;
+}

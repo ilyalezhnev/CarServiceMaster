@@ -39,7 +39,7 @@ app.get('/car-parts', (req, res) => {
   res.render('carParts');
 });
 
-app.get('/corporate-clients', (req, res) => {
+app.get('/corporate', (req, res) => {
   res.render('corporateClients');
 });
 
