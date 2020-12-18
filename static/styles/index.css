@@ -3,6 +3,7 @@
 @import 'static/styles/discountSection.css';
 @import 'static/styles/commonInfoSection.css';
 @import 'static/styles/servicesSection.css';
+@import 'static/styles/infoDivider.css';
 
 * {
   box-sizing: border-box;

@@ -52,7 +52,7 @@ nav {
 
 .navbar__item {
   flex: 1;
-  max-width: 160px;
+  max-width: 180px;
   text-align: center;
   border-right: 1px solid #000000;
 }

@@ -1,9 +1,15 @@
+.common-info__layout {
+  padding: 30px 0;
+}
+
 .infoRow {
   display: flex;
   flex-direction: row;
 }
 
 .title {
+  margin: 0;
+  font-size: 34px;
   text-align: center;
 }
 
