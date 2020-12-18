@@ -12,14 +12,17 @@ nav {
 .header__main-info {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .header__contact-block {
   display: flex;
   flex: 1;
   flex-direction: column;
-  text-align: center;
+}
+
+.header__contact-block:last-child {
+  text-align: right;
 }
 
 .header__contact-block__phone {
