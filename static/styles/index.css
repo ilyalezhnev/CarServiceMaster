@@ -1,11 +1,8 @@
 @import 'static/styles/common.css';
 @import 'static/styles/header.css';
-@import 'static/styles/discountSection.css';
-@import 'static/styles/commonInfoSection.css';
-@import 'static/styles/servicesSection.css';
-@import 'static/styles/infoDivider.css';
-@import 'static/styles/textDescription.css';
 @import 'static/styles/footer.css';
+@import 'static/styles/mainPage.css';
+@import 'static/styles/carPartsPage.css';
 
 * {
   box-sizing: border-box;

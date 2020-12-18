@@ -1,0 +1,43 @@
+.branch-office_layout {
+  padding: 20px 0;
+}
+
+.contact-and-location {
+  display: flex;
+  align-items: center;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.contact-and-location > div {
+  flex: 1;
+}
+
+.phones {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.federal-number {
+  display: flex;
+  align-items: center;
+}
+
+.messengers-section {
+  display: flex;
+  align-items: center;
+}
+
+.messengers-section .messengers {
+  margin-right: 12px;
+}
+
+.description {
+  padding: 20px 0;
+}
+
+.image img {
+  width: 100%;
+  max-width: 954px;
+}

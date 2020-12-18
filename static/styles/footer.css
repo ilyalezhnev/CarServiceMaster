@@ -1,5 +1,4 @@
 footer {
-  /* The image used */
   background-image: url('/static/img/footerLayout.png');
   width: 100%;
   height: 100%;
@@ -27,10 +26,6 @@ footer {
 
 .footer_contacts .messengers {
   padding-bottom: 12px;
-}
-
-.footer_contacts .messengers img {
-  margin-left: 10px;
 }
 
 .branch-office .address {

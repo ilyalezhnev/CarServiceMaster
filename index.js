@@ -35,11 +35,11 @@ app.get('/service', (req, res) => {
   res.render('service');
 });
 
-app.get('/carParts', (req, res) => {
+app.get('/car-parts', (req, res) => {
   res.render('carParts');
 });
 
-app.get('/corporate', (req, res) => {
+app.get('/corporate-clients', (req, res) => {
   res.render('corporateClients');
 });
 
