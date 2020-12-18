@@ -4,6 +4,8 @@
 @import 'static/styles/commonInfoSection.css';
 @import 'static/styles/servicesSection.css';
 @import 'static/styles/infoDivider.css';
+@import 'static/styles/textDescription.css';
+@import 'static/styles/footer.css';
 
 * {
   box-sizing: border-box;
@@ -13,6 +15,7 @@
 body {
   background-image: url('static/img/bgimage.png');
   background-repeat: repeat;
+  height: 100%;
   margin: 0;
   padding: 0;
   font-size: 18px;
