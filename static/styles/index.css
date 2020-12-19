@@ -5,6 +5,7 @@
 @import 'static/styles/carPartsPage.css';
 @import 'static/styles/corporatePage.css';
 @import 'static/styles/contactsPage.css';
+@import 'static/styles/discountPage.css';
 
 * {
   box-sizing: border-box;
