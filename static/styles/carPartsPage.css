@@ -19,6 +19,14 @@
   align-items: flex-end;
 }
 
+.phones > div {
+  margin-bottom: 14px;
+}
+
+.phones > div:last-child {
+  margin-bottom: 0;
+}
+
 .federal-number {
   display: flex;
   align-items: center;

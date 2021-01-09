@@ -1,0 +1,56 @@
+.service .width-container {
+  margin-bottom: 40px;
+}
+
+.service__description {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.service img {
+  width: 100%;
+}
+
+.service__description__icon {
+  min-width: 230px;
+  width: 230px;
+  min-height: 230px;
+  height: 230px;
+  background-image: url('/static/img/serviceIconLayout.png');
+  background-size: contain;
+  margin-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service__description__text {
+  margin: 0;
+}
+
+.service__availability {
+  display: flex;
+  align-items: center;
+}
+
+.service__availability__title {
+  font-weight: 500;
+  font-size: 50px;
+  min-width: 230px;
+  width: 230px;
+  margin: 0 40px 0 0;
+}
+
+.service__availability__offices {
+  display: flex;
+}
+
+.service__availability__offices_item {
+  background-color: #feca0a;
+  padding: 6px;
+  margin-left: 30px;
+}
+
+.service__availability__offices_item:first-child {
+  margin-left: 0px;
+}

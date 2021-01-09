@@ -6,6 +6,7 @@
 @import 'static/styles/corporatePage.css';
 @import 'static/styles/contactsPage.css';
 @import 'static/styles/discountPage.css';
+@import 'static/styles/servicePage.css';
 
 * {
   box-sizing: border-box;
