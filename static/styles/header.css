@@ -1,7 +1,7 @@
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 10000;
 }
 
 nav {
@@ -55,6 +55,51 @@ nav {
   max-width: 180px;
   text-align: center;
   border-right: 1px solid #000000;
+  cursor: pointer;
+}
+
+.navbar__item-dropdown {
+  position: relative;
+}
+
+.navbar__item-dropdown > span::after {
+  content: '';
+  position: absolute;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 7px solid #000;
+  margin-left: 6px;
+  top: 43%;
+}
+
+.navbar__item-dropdown .services {
+  display: none;
+  position: absolute;
+  text-align: left;
+  width: max-content;
+  padding-top: 15px;
+}
+
+.navbar__item-dropdown .services ul {
+  list-style-type: none;
+  background-color: #feca0a;
+  padding-left: 0;
+}
+
+.navbar__item-dropdown .services li {
+  padding: 10 20;
+}
+
+.navbar__item-dropdown .services li:hover {
+  background-color: #4f4f4f;
+}
+
+.navbar__item-dropdown .services li:hover a {
+  color: #ffffff;
+}
+
+.navbar__item-dropdown:hover .services {
+  display: block;
 }
 
 .navbar__item a {
