@@ -4,21 +4,21 @@ header
       .header__contact-block
         .header__contact-block__phone 67-08-67
         .header__contact-block__address Ветеринарный, 13а
-
-      img.header__contact-block(
-        src='static/img/mainLogo.svg' 
-        alt="Логотип Мастер-сервис"
-      )
+      a(href='/')
+        img.header__contact-block(
+          src='static/img/mainLogo.svg' 
+          alt="Логотип Мастер-сервис"
+        )
 
       .header__contact-block
         .header__contact-block__phone 67-07-99
         .header__contact-block__address Правды, 28
   nav
-    .width-container
-      ul.navbar__layout
-        li.navbar__item
+    .width-container.desktop-menu
+      ul.desktop-navbar__layout
+        li.desktop-navbar__item
           a(href='/') Главная
-        li.navbar__item.navbar__item-dropdown
+        li.desktop-navbar__item.desktop-navbar__item-dropdown
           span Услуги
           .services
             ul
@@ -52,9 +52,24 @@ header
                 a(href='service') Замена ремня ГРМ
               li 
                 a(href='service') Ремонт тормозной системы
-        li.navbar__item
+        li.desktop-navbar__item
           a(href='/car-parts') Запчасти
-        li.navbar__item
+        li.desktop-navbar__item
           a(href='/corporate') Юр.лицам
-        li.navbar__item
+        li.desktop-navbar__item
+          a(href='/contacts') Контакты
+    .width-container.mobile-menu
+      .mobile-menu__layout
+        span Меню
+        img(src="static/img/hamburger.svg", alt="Кнопка вызова меню")#menu-toggler
+      ul.mobile-navbar
+        li
+          a(href='/') Главная
+        li
+          span Услуги
+        li
+          a(href='/car-parts') Запчасти
+        li
+          a(href='/corporate') Юр.лицам
+        li
           a(href='/contacts') Контакты

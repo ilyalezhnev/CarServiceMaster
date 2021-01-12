@@ -39,7 +39,11 @@ nav {
   font-size: 16px;
 }
 
-.navbar__layout {
+.desktop-menu {
+  display: none;
+}
+
+.desktop-navbar__layout {
   height: 40px;
   list-style-type: none;
   margin: 0;
@@ -50,7 +54,7 @@ nav {
   justify-content: center;
 }
 
-.navbar__item {
+.desktop-navbar__item {
   flex: 1;
   max-width: 180px;
   text-align: center;
@@ -58,11 +62,11 @@ nav {
   cursor: pointer;
 }
 
-.navbar__item-dropdown {
+.desktop-navbar__item-dropdown {
   position: relative;
 }
 
-.navbar__item-dropdown > span::after {
+.desktop-navbar__item-dropdown > span::after {
   content: '';
   position: absolute;
   border-left: 3px solid transparent;
@@ -72,7 +76,7 @@ nav {
   top: 43%;
 }
 
-.navbar__item-dropdown .services {
+.desktop-navbar__item-dropdown .services {
   display: none;
   position: absolute;
   text-align: left;
@@ -80,33 +84,85 @@ nav {
   padding-top: 15px;
 }
 
-.navbar__item-dropdown .services ul {
+.desktop-navbar__item-dropdown .services ul {
   list-style-type: none;
   background-color: #feca0a;
   padding-left: 0;
 }
 
-.navbar__item-dropdown .services li {
+.desktop-navbar__item-dropdown .services li {
   padding: 10 20;
 }
 
-.navbar__item-dropdown .services li:hover {
+.desktop-navbar__item-dropdown .services li:hover {
   background-color: #4f4f4f;
 }
 
-.navbar__item-dropdown .services li:hover a {
+.desktop-navbar__item-dropdown .services li:hover a {
   color: #ffffff;
 }
 
-.navbar__item-dropdown:hover .services {
+.desktop-navbar__item-dropdown:hover .services {
   display: block;
 }
 
-.navbar__item a {
+.desktop-navbar__item a {
   color: #000000;
   text-decoration: none;
 }
 
-.navbar__item:last-child {
+.desktop-navbar__item:last-child {
   border-right: none;
+}
+
+.mobile-menu__layout {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-menu__layout #menu-toggler {
+  cursor: pointer;
+}
+
+.mobile-navbar {
+  display: none;
+  width: 100%;
+  position: absolute;
+  background-color: #feca0a;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-navbar.active {
+  display: block;
+}
+
+.mobile-navbar li:hover {
+  background-color: #4f4f4f;
+  cursor: pointer;
+}
+
+.mobile-navbar li > * {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000000;
+}
+.mobile-navbar li:hover a {
+  color: #ffffff;
+}
+
+/* Media queries */
+@media screen and (min-width: 1024px) {
+  .desktop-menu {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
 }
