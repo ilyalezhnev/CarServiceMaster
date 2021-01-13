@@ -10,3 +10,17 @@
 .messengers img {
   margin-left: 10px;
 }
+
+.main-title {
+  font-weight: bold;
+  font-size: 42px;
+}
+
+.sub-title {
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.text {
+  font-size: 18px;
+}
