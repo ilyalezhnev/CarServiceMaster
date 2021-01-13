@@ -175,3 +175,11 @@
 .text-description__layout {
   padding: 30px;
 }
+
+/* Media queries */
+
+@media screen and (max-width: 1023px) {
+  .discount__slogan {
+    display: none;
+  }
+}
