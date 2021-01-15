@@ -6,9 +6,6 @@ module.exports = (sequelize, Sequelize) => {
     description: {
       type: Sequelize.TEXT,
     },
-    images: {
-      type: Sequelize.TEXT,
-    },
   });
 
   return CorporateClient;

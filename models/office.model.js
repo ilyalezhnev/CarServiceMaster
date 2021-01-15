@@ -21,16 +21,13 @@ module.exports = (sequelize, Sequelize) => {
     whatsapp: {
       type: Sequelize.TEXT('tiny'),
     },
-    whatsapp: {
-      type: Sequelize.TEXT('tiny'),
-    },
     description: {
       type: Sequelize.TEXT,
     },
-    location: {
+    locationLat: {
       type: Sequelize.TEXT('tiny'),
     },
-    image: {
+    locationLon: {
       type: Sequelize.TEXT('tiny'),
     },
   });

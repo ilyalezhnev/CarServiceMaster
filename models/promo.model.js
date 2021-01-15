@@ -3,17 +3,11 @@ module.exports = (sequelize, Sequelize) => {
     title: {
       type: Sequelize.TEXT('tiny'),
     },
-    imageCarousel: {
-      type: Sequelize.TEXT('tiny'),
-    },
     description: {
       type: Sequelize.TEXT,
     },
     shortDescription: {
       type: Sequelize.TEXT,
-    },
-    image: {
-      type: Sequelize.TEXT('tiny'),
     },
   });
 
