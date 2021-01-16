@@ -24,3 +24,10 @@
 .text {
   font-size: 18px;
 }
+
+/* Media queries */
+@media screen and (max-width: 575px) {
+  .width-container {
+    padding: 0 10px;
+  }
+}

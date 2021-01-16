@@ -63,12 +63,18 @@
 
 .common-info__layout {
   margin-top: 10px;
-  padding: 30px 0;
+  padding-top: 30px;
 }
 
-.title {
+.common-info__layout .sub-title {
   margin: 0;
   text-align: center;
+}
+
+.common-info__layout .mobile-title {
+  display: none;
+  margin-bottom: 0;
+  font-size: 24px;
 }
 
 .infoRow {
@@ -116,7 +122,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 30px 0;
+  padding-top: 30px;
 }
 
 .service-item__layout {
@@ -173,7 +179,7 @@
 /* Text description */
 
 .text-description__layout {
-  padding: 30px;
+  padding-top: 30px;
 }
 
 /* Media queries */
@@ -194,6 +200,8 @@
 
   .discount__info {
     height: auto;
+    width: fit-content;
+    max-width: 250px;
     padding: 8px 16px;
     margin-bottom: 10px;
   }
@@ -203,6 +211,46 @@
   }
 
   .discount__info p {
+    font-size: 14px;
+  }
+
+  .common-info__layout .sub-title {
+    display: none;
+  }
+
+  .common-info__layout .mobile-title {
+    display: block;
+  }
+
+  .common-info__layout p {
+    font-size: 14px;
+  }
+
+  .infoRow .yellow-layout {
+    display: none;
+  }
+
+  .services-section__layout {
+    padding-top: 10px;
+  }
+
+  .service-item__layout {
+    width: 33%;
+  }
+
+  .service-item__text {
+    font-size: 14px;
+  }
+
+  .service-item__wrapper img {
+    max-width: 70px;
+  }
+
+  .info-divider__layout {
+    display: none;
+  }
+
+  .text-description__layout p {
     font-size: 14px;
   }
 }
