@@ -19,12 +19,14 @@ header
         src='static/img/mainLogo.svg' 
         alt="Логотип Мастер-сервис"
       )
-    div
+    div.contacts
       div
-        .header__contact-block__phone 67-08-67
+        .header__contact-block__phone 
+          a(href='tel:88142670867') 67-08-67
         .header__contact-block__address Ветеринарный, 13а
       div
-        .header__contact-block__phone 67-07-99
+        .header__contact-block__phone 
+          a(href='tel:88142670799') 67-07-99
         .header__contact-block__address Правды, 28
   nav
     .width-container.desktop-menu

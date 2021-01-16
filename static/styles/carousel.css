@@ -1,8 +1,8 @@
-@media screen and (min-width: 911px) {
+/* @media screen and (min-width: 911px) {
   .ant-carousel {
     max-width: 100%;
   }
-}
+} */
 
 /* @media screen and (min-width: 641px) and (max-width: 910px) {
   .ant-carousel {
@@ -54,32 +54,30 @@
 /* Navigation item styles */
 div.ant-carousel-arrow-left,
 div.ant-carousel-arrow-right {
+  display: block;
   width: 22px;
   height: 40px;
   position: absolute;
+  top: 45%;
   cursor: pointer;
   opacity: 0.6;
   z-index: 32;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 div.ant-carousel-arrow-left {
   left: 20px;
-  top: 45%;
-  display: block;
-  background: url('http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png') no-repeat;
+  background-image: url('http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-left.png');
 }
 
 div.ant-carousel-arrow-right {
   right: 20px;
-  top: 45%;
-  display: block;
-  background: url('http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png') no-repeat;
+  background-image: url('http://pvbk.spb.ru/inc/carousel/ant-files/ant-arrow-right.png');
 }
 
-div.ant-carousel-arrow-left:hover {
-  opacity: 1;
-}
-
+div.ant-carousel-arrow-left:hover,
 div.ant-carousel-arrow-right:hover {
   opacity: 1;
 }
@@ -103,4 +101,14 @@ span.ant-dot {
   background-color: #bbb;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 575px) {
+  div.ant-carousel-arrow-left,
+  div.ant-carousel-arrow-right {
+    width: 12px;
+    height: 24px;
+  }
 }

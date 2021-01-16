@@ -44,7 +44,7 @@
   justify-content: center;
   width: 400px;
   height: 130px;
-  background-color: #feca0a;
+  background-color: rgba(254, 202, 10, 0.85);
   padding: 10px 35px;
   margin-bottom: 40px;
 }
@@ -181,5 +181,28 @@
 @media screen and (max-width: 1023px) {
   .discount__slogan {
     display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 575px) {
+  .discount__info-wrapper {
+    height: 160px;
+  }
+
+  .discount__info {
+    height: auto;
+    padding: 8px 16px;
+    margin-bottom: 10px;
+  }
+
+  .discount__info h3 {
+    font-size: 24px;
+  }
+
+  .discount__info p {
+    font-size: 14px;
   }
 }
