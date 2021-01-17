@@ -8,3 +8,21 @@ document.addEventListener('click', (e) => {
     document.querySelector('ul.mobile-navbar').classList.remove('active');
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const url = window.location.pathname;
+  console.log('url', url);
+
+  //array of menu items
+  const menuPoints = document.querySelectorAll('.desktop-navbar__item');
+  console.log('menuPoints', menuPoints);
+});
+
+getActiveMenuItem = () => {
+  switch (menuTitle) {
+    case '/':
+      const activeNode = menuPoints.forEach((el) => {
+        el.innerText = 'Главная';
+      });
+  }
+};
