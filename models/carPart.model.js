@@ -1,15 +1,12 @@
 module.exports = (sequelize, Sequelize) => {
-  const Service = sequelize.define('service', {
+  const CarPart = sequelize.define('carPart', {
     title: {
       type: Sequelize.TEXT('tiny'),
     },
-    description: {
-      type: Sequelize.TEXT,
-    },
-    text: {
+    subtitle: {
       type: Sequelize.TEXT,
     },
   });
 
-  return Service;
+  return CarPart;
 };
