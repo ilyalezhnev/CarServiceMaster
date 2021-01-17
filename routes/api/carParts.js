@@ -23,7 +23,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
   CarParts.findOne()
     .then((carParts) => {
       if (!carParts) {
-        CarParts.create({
+        return CarParts.create({
           title: req.body.title,
           subtitle: req.body.subtitle,
         }).then((carPart) => carPart);

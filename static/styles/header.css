@@ -168,9 +168,10 @@ nav {
 }
 
 .mobile-header-info .contacts {
+  height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: flex-start;
 }
 
@@ -181,18 +182,8 @@ nav {
 
 /* Media queries */
 @media screen and (max-width: 1023px) {
-  .desktop-header-info {
-    display: none;
-  }
-
   .desktop-menu {
     display: none;
-  }
-
-  .mobile-header-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
   }
 
   .header__contact-block__phone {
@@ -208,13 +199,17 @@ nav {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .header__contact-block__phone {
-    font-size: 22px;
-  }
-}
-
 @media screen and (max-width: 575px) {
+  .desktop-header-info {
+    display: none;
+  }
+
+  .mobile-header-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
   .mobile-header-info img {
     width: 100%;
     max-width: 190px;
