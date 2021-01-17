@@ -28,7 +28,7 @@ db.sequelize
     console.log('DB connected.');
     usersController.adminSeeder();
   })
-  .catch((err) => console.error('Connection error: ', err));
+  .catch((err) => console.error('DB connection error: ', err));
 
 const app = express();
 

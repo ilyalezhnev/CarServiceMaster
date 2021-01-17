@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  margin-bottom: 20px;
 }
 
 .image__wrapper {
@@ -9,9 +10,16 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-  padding: 20px 10px;
+  padding: 20px;
 }
 
 .image__wrapper img {
   width: 100%;
+}
+
+@media screen and (max-width: 575px) {
+  .image__wrapper {
+    width: 100%;
+    padding: 0 0 20px;
+  }
 }

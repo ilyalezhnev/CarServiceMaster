@@ -2,12 +2,14 @@ html(lang="ru")
 head
   title Master
   meta(charset="utf-8")
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
   style
     include ../static/styles/index.css
 body
   include ./modules/header
   main.width-container
-    h1 Как нас найти
+    h1.main-title Как нас найти
     include ./modules/branchOfficeLocation
     include ./modules/branchOfficeLocation
   include ./modules/footer
+  script(src='static/scripts/common.js')

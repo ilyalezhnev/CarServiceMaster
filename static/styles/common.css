@@ -10,3 +10,37 @@
 .messengers img {
   margin-left: 10px;
 }
+
+.main-title {
+  font-weight: bold;
+  font-size: 42px;
+}
+
+.sub-title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.text {
+  font-size: 18px;
+}
+
+/* Media queries */
+@media screen and (max-width: 575px) {
+  .width-container {
+    padding: 0 10px;
+  }
+
+  .main-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .sub-title {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}

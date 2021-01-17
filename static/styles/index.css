@@ -4,8 +4,9 @@
 @import 'static/styles/mainPage.css';
 @import 'static/styles/carPartsPage.css';
 @import 'static/styles/corporatePage.css';
-@import 'static/styles/contactsPage.css';
 @import 'static/styles/discountPage.css';
+@import 'static/styles/servicePage.css';
+@import 'static/styles/carousel.css';
 
 * {
   box-sizing: border-box;

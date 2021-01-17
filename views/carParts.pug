@@ -2,13 +2,15 @@ html(lang="ru")
 head
   title Master
   meta(charset="utf-8")
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
   style
     include ../static/styles/index.css
 body
   include ./modules/header
-  main.width-container
-    h1 Запчасти
-    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor in vitae amet ultrices. Pretium quam sapien, senectus lorem. Amet aliquet tortor nisl vitae. Eget a at nec nunc suspendisse fermentum. Nunc, a sed sed est eget urna. 
+  main.width-container.car-parts
+    h1.main-title Запчасти
+    p.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor in vitae amet ultrices. Pretium quam sapien, senectus lorem. Amet aliquet tortor nisl vitae. Eget a at nec nunc suspendisse fermentum. Nunc, a sed sed est eget urna. 
       include ./modules/branchOfficeContacts
       include ./modules/branchOfficeContacts
   include ./modules/footer
+  script(src='static/scripts/common.js')
