@@ -17,7 +17,7 @@
 }
 
 .sub-title {
-  font-weight: 500;
+  font-weight: bold;
   font-size: 30px;
 }
 
@@ -29,5 +29,18 @@
 @media screen and (max-width: 575px) {
   .width-container {
     padding: 0 10px;
+  }
+
+  .main-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .sub-title {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 14px;
   }
 }

@@ -1,55 +1,74 @@
 .branch-office_layout {
-  padding: 20px 0;
+  margin: 20px 0;
 }
 
-.contact-and-location {
+.branch-office_layout .contact-and-location {
   display: flex;
   align-items: center;
   font-size: 30px;
-  font-weight: 700;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.contact-and-location > div {
+.branch-office_layout .contact-and-location > div {
   flex: 1;
 }
 
-.phones {
+.branch-office_layout .full-address {
+  display: none;
+}
+
+.branch-office_layout .phones {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.phones > div {
+.branch-office_layout .phones > div {
   margin-bottom: 10px;
 }
 
-.phones > div:last-child {
+.branch-office_layout .phones > div:last-child {
   margin-bottom: 0;
 }
 
-.federal-number {
+.branch-office_layout .federal-number {
   display: flex;
   align-items: center;
 }
 
-.messengers-section {
+.branch-office_layout .messengers-section {
   display: flex;
   align-items: center;
 }
 
-.messengers-section .messengers {
+.branch-office_layout .messengers-section .messengers {
   margin-right: 12px;
 }
 
-.description {
-  padding: 20px 0;
+.branch-office_layout .text {
+  margin-bottom: 20px;
 }
 
-.image img {
+.branch-office_layout .image img {
   width: 100%;
   max-width: 954px;
 }
 
-.map {
+.branch-office_layout .map {
   margin-top: 20px;
+}
+
+@media screen and (max-width: 575px) {
+  .branch-office_layout .full-address {
+    display: block;
+  }
+
+  .branch-office_layout .address {
+    display: none;
+  }
+
+  .branch-office_layout .phones {
+    display: none;
+  }
 }
