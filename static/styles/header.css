@@ -4,6 +4,11 @@ header {
   z-index: 10000;
 }
 
+/* header.sticky {
+  position: sticky;
+  top: 0;
+} */
+
 nav {
   min-height: 38px;
   background-color: #feca0a;
@@ -54,7 +59,13 @@ nav {
   position: relative;
 }
 
-.desktop-navbar__item-dropdown > span::after {
+.desktop-navbar__item-dropdown > span,
+.mobile-navbar li > span {
+  position: relative;
+}
+
+.desktop-navbar__item-dropdown > span::after,
+.mobile-navbar li > span::after {
   content: '';
   position: absolute;
   border-left: 3px solid transparent;
@@ -62,6 +73,10 @@ nav {
   border-top: 7px solid #000;
   margin-left: 6px;
   top: 43%;
+}
+
+.mobile-navbar li > span::after {
+  right: 12px;
 }
 
 .desktop-navbar__item-dropdown .services {
@@ -139,13 +154,21 @@ nav {
   margin: 0;
 }
 
-.mobile-navbar.active {
+.mobile-navbar .services {
+  display: none;
+}
+
+.mobile-navbar .services ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.mobile-navbar .services.active {
   display: block;
 }
 
-.mobile-navbar li:hover {
-  background-color: #4f4f4f;
-  cursor: pointer;
+.mobile-navbar.active {
+  display: block;
 }
 
 .mobile-navbar li > * {
@@ -153,10 +176,6 @@ nav {
   padding: 10px;
   text-decoration: none;
   color: #000000;
-}
-
-.mobile-navbar li:hover a {
-  color: #ffffff;
 }
 
 .mobile-header-info .contacts {
