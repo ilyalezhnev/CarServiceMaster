@@ -31,14 +31,6 @@ nav {
   text-align: right;
 }
 
-.header__contact-block__phone {
-  font-size: 34px;
-}
-
-.header__contact-block__address {
-  font-size: 16px;
-}
-
 .desktop-navbar__layout {
   height: 38px;
   list-style-type: none;
@@ -186,14 +178,6 @@ nav {
     display: none;
   }
 
-  .header__contact-block__phone {
-    font-size: 24px;
-  }
-
-  .header__contact-block__address {
-    font-size: 14px;
-  }
-
   .mobile-menu {
     display: block;
   }
@@ -213,14 +197,6 @@ nav {
   .mobile-header-info img {
     width: 100%;
     max-width: 190px;
-  }
-
-  .header__contact-block__phone {
-    font-size: 20px;
-  }
-
-  .header__contact-block__address {
-    font-size: 12px;
   }
 
   .mobile-navbar li > * {

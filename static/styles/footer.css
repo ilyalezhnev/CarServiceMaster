@@ -4,7 +4,7 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 20px 0 30px;
+  padding: 20px 0;
 }
 
 .footer__layout {
@@ -28,14 +28,15 @@ footer {
 }
 
 .branch-office .address {
-  font-size: 16px;
   margin-right: 12px;
-  font-weight: bold;
 }
 
-.branch-office .phone {
-  font-size: 34px;
-  font-weight: bold;
+/* Media queries */
+@media screen and (max-width: 1023px) {
+  .footer__layout .logo {
+    width: 100%;
+    max-width: 220px;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -57,7 +58,6 @@ footer {
   }
 
   .footer_contacts .messengers img {
-    max-width: 28px;
     margin-left: 0;
     margin-right: 6px;
   }
@@ -68,11 +68,6 @@ footer {
   }
 
   .branch-office .address {
-    font-size: 12px;
     margin-right: 0;
-  }
-
-  .branch-office .phone {
-    font-size: 20px;
   }
 }
