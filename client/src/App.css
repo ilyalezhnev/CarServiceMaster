@@ -1,5 +1,6 @@
 html,
-body {
+body,
+#root {
   width: 100%;
   height: 100%;
 }
@@ -14,4 +15,22 @@ body {
 
 .form-control::placeholder {
   color: #bbb !important;
+}
+
+.main-wrapper {
+  height: 100%;
+}
+.login-wrapper {
+  height: 100%;
+}
+
+.spiner {
+  position: absolute;
+  top: 20vh;
+  width: 100%;
+}
+.spiner_center {
+  margin: 0px auto;
+  position: unset;
+  display: block;
 }

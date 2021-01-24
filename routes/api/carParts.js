@@ -40,11 +40,12 @@ router.put('/:id', passport.authenticate('jwt', { session: false }), (req, res) 
       title: req.body.title,
       subtitle: req.body.subtitle,
     },
-    { where: { id: req.params.id } }
+    { where: { id: req.params.id }, returning: true, plain: true }
   )
-    .then((carPart) => {
-      return res.status(200).json(carPart);
+    .then(() => {
+      return CarParts.findOne().then((carPart) => carPart);
     })
+    .then((carPart) => res.status(201).json(carPart))
     .catch((err) => res.status(400).json(err));
 });
 
