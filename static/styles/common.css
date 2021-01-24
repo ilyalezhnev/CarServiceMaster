@@ -25,7 +25,47 @@
   font-size: 18px;
 }
 
+.phone {
+  font-size: 34px;
+}
+
+.address {
+  font-size: 16px;
+}
+
+.social-icon {
+  width: 40px;
+  max-width: 40px;
+}
+
 /* Media queries */
+@media screen and (max-width: 1023px) {
+  .main-title {
+    font-size: 30px;
+  }
+
+  .sub-title {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .phone {
+    font-size: 24px;
+  }
+
+  .address {
+    font-size: 14px;
+  }
+
+  .social-icon {
+    width: 28px;
+    max-width: 28px;
+  }
+}
+
 @media screen and (max-width: 575px) {
   .width-container {
     padding: 0 10px;
@@ -42,5 +82,18 @@
 
   .text {
     font-size: 14px;
+  }
+
+  .phone {
+    font-size: 20px;
+  }
+
+  .address {
+    font-size: 12px;
+  }
+
+  .social-icon {
+    width: 28px;
+    max-width: 28px;
   }
 }

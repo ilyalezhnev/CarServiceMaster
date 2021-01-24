@@ -77,6 +77,10 @@ app.get('/discount', (req, res) => {
   res.render('discount');
 });
 
+app.get('/*', (req, res) => {
+  res.render('main');
+});
+
 // app.get('/admin', (req, res) => {
 //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 // });
