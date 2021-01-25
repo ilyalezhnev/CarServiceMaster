@@ -77,13 +77,13 @@ app.get('/discount', (req, res) => {
   res.render('discount');
 });
 
+app.get('/admin', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'static', 'build', 'index.html'));
+});
+
 app.get('/*', (req, res) => {
   res.render('main');
 });
-
-// app.get('/admin', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-// });
 
 const port = process.env.PORT || 5000;
 

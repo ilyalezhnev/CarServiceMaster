@@ -7,17 +7,17 @@ import App from './App';
 import { message } from 'antd';
 
 if (process && process.env.NODE_ENV === 'production') {
-  axios.defaults.baseURL = 'http://ptzmaster.ru';
+  axios.defaults.baseURL = 'https://ptzmaster.ru';
 }
-axios.interceptors.request.use(config => {
+axios.interceptors.request.use((config) => {
   config.headers.Authorization = localStorage.getItem('jwtToken');
   return config;
 });
 axios.interceptors.response.use(
-  response => {
+  (response) => {
     return response;
   },
-  error => {
+  (error) => {
     const response: AxiosResponse<{ error: string }> = error.response;
     if (response && response.data && response.status) {
       switch (response.status) {
