@@ -23,18 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setActiveMenuItem(menuPoints, url);
 });
 
-// window.onscroll = function () {
-//   const header = document.querySelector('header');
-//   const headerOffset = header.offsetTop;
-
-//   console.log('scroll');
-//   if (window.pageYOffset >= headerOffset) {
-//     header.classList.add('sticky');
-//   } else {
-//     header.classList.remove('sticky');
-//   }
-// };
-
 setActiveMenuItem = (menuPoints, url) => {
   switch (url) {
     case '/':
