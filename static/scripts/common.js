@@ -18,9 +18,9 @@ document.addEventListener('click', (e) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const url = window.location.pathname;
-
   //array of menu items
   const menuPoints = document.querySelectorAll('.desktop-navbar__item');
+  setActiveMenuItem(menuPoints, url);
 });
 
 // window.onscroll = function () {
@@ -35,11 +35,43 @@ document.addEventListener('DOMContentLoaded', () => {
 //   }
 // };
 
-getActiveMenuItem = () => {
-  switch (menuTitle) {
+setActiveMenuItem = (menuPoints, url) => {
+  switch (url) {
     case '/':
-      const activeNode = menuPoints.forEach((el) => {
-        el.innerText = 'Главная';
+      menuPoints.forEach((el) => {
+        console.log('el', el);
+        if (el.innerText === 'Главная') {
+          el.classList.add('active');
+        }
       });
+      break;
+    case '/service':
+      menuPoints.forEach((el) => {
+        if (el.innerText === 'Услуги') {
+          el.classList.add('active');
+        }
+      });
+      break;
+    case '/car-parts':
+      menuPoints.forEach((el) => {
+        if (el.innerText === 'Запчасти') {
+          el.classList.add('active');
+        }
+      });
+      break;
+    case '/corporate':
+      menuPoints.forEach((el) => {
+        if (el.innerText === 'Юр.лицам') {
+          el.classList.add('active');
+        }
+      });
+      break;
+    case '/contacts':
+      menuPoints.forEach((el) => {
+        if (el.innerText === 'Контакты') {
+          el.classList.add('active');
+        }
+      });
+      break;
   }
 };
