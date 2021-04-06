@@ -4,20 +4,15 @@ header {
   z-index: 10000;
 }
 
-/* header.sticky {
-  position: sticky;
-  top: 0;
-} */
+.desktop-header {
+  min-height: 192px;
+  background-color: #1a1a18;
+  color: #ffffff;
+}
 
 nav {
   min-height: 38px;
   background-color: #feca0a;
-}
-
-.desktop-header-info {
-  min-height: 85px;
-  background-color: #231f20;
-  color: #ffffff;
 }
 
 .header__main-info {
@@ -30,6 +25,18 @@ nav {
   display: flex;
   flex: 1;
   flex-direction: column;
+}
+
+.header__contact-block .phone {
+  font-size: 40px;
+  font-family: 'Myriad-Semibold';
+  color: #ffcc00;
+}
+
+.header__contact-block .address {
+  font-size: 26px;
+  font-family: 'Myriad-Semibold';
+  color: #ffffff;
 }
 
 .header__contact-block:last-child {
@@ -133,7 +140,7 @@ li.desktop-navbar__item.active::before {
 
 /* Mobile */
 
-.mobile-header-info {
+.mobile-header {
   display: none;
   min-height: 100px;
   background-color: #231f20;
@@ -191,7 +198,7 @@ li.desktop-navbar__item.active::before {
   color: #000000;
 }
 
-.mobile-header-info .contacts {
+.mobile-header .contacts {
   height: 100px;
   display: flex;
   flex-direction: column;
@@ -199,7 +206,7 @@ li.desktop-navbar__item.active::before {
   align-items: flex-start;
 }
 
-.mobile-header-info .contacts a {
+.mobile-header .contacts a {
   text-decoration: none;
   color: #ffffff;
 }
@@ -216,17 +223,17 @@ li.desktop-navbar__item.active::before {
 }
 
 @media screen and (max-width: 575px) {
-  .desktop-header-info {
+  .desktop-header {
     display: none;
   }
 
-  .mobile-header-info {
+  .mobile-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
 
-  .mobile-header-info img {
+  .mobile-header img {
     width: 100%;
     max-width: 190px;
   }

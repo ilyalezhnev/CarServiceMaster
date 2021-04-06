@@ -9,14 +9,27 @@
 @import 'static/styles/carousel.css';
 @import 'static/styles/contact-block.css';
 
+@font-face {
+  font-family: 'Myriad-Regular';
+  src: url('static/fonts/MyriadPro-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Myriad-Semibold';
+  src: url('static/fonts/MyriadPro-Semibold.otf');
+}
+
+@font-face {
+  font-family: 'Myriad-Bold';
+  src: url('static/fonts/MyriadPro-Bold.otf');
+}
+
 * {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Myriad-Regular', 'Roboto', sans-serif;
 }
 
 body {
-  background-image: url('static/img/bgimage.png');
-  background-repeat: repeat;
   height: 100%;
   margin: 0;
   padding: 0;
