@@ -1,73 +1,25 @@
 footer {
-  background-image: url('/static/img/footerLayout.png');
-  max-height: 230px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 20px 0;
+  background-color: #1a1a18;
 }
 
 .footer__layout {
+  height: 240px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
-.footer__layout > div {
-  flex: 1;
-}
-
-.footer_contacts {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.footer_contacts .messengers {
-  padding-bottom: 12px;
-}
-
-.branch-office .address {
+.footer__logo {
+  max-width: 78px;
   margin-right: 12px;
+}
+
+.footer__text {
+  color: #ffffff;
+  font-size: 24px;
+  margin-right: 38px;
 }
 
 /* Media queries */
 @media screen and (max-width: 1023px) {
-  .footer__layout .logo {
-    width: 100%;
-    max-width: 220px;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  .footer_contacts {
-    align-items: flex-start;
-  }
-
-  .footer__layout {
-    justify-content: space-between;
-  }
-
-  .footer__layout > div {
-    flex: unset;
-  }
-
-  .footer__layout .logo {
-    width: 100%;
-    max-width: 160px;
-  }
-
-  .footer_contacts .messengers img {
-    margin-left: 0;
-    margin-right: 6px;
-  }
-
-  .footer_contacts .branch-office {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .branch-office .address {
-    margin-right: 0;
-  }
 }
