@@ -7,7 +7,7 @@ Ant.defaults = {
   speed: 700, // Скорость анимации (мс)
   touch: true, // Прокрутка  прикосновением
   arrows: true, // Прокрутка стрелками
-  dots: true, // Индикаторные точки
+  dots: false, // Индикаторные точки
 };
 
 Ant.prototype.elemPrev = function (num) {
