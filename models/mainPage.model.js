@@ -9,9 +9,6 @@ module.exports = (sequelize, Sequelize) => {
     serviceDescription: {
       type: Sequelize.TEXT,
     },
-    generalDescription: {
-      type: Sequelize.TEXT,
-    },
   });
 
   return MainPage;

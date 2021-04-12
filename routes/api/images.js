@@ -6,12 +6,10 @@ const db = require('../../models/index');
 const Images = db.images;
 
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  const errors = {};
   Images.findAll()
     .then((images) => {
       if (images && !images.length) {
-        errors.noimages = 'Нет изображений';
-        return res.status(404).json(errors);
+        return res.status(200).json([]);
       }
       res.json(images);
     })

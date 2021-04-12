@@ -7,12 +7,10 @@ const Promos = db.promos;
 const Images = db.images;
 
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  const errors = {};
   Promos.findAll({ include: Images })
     .then((promos) => {
       if (promos && !promos.length) {
-        errors.nopromos = 'Нет акций';
-        return res.status(404).json(errors);
+        return res.status(200).json([]);
       }
       res.json(promos);
     })
@@ -21,6 +19,7 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
 
 router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {
   Promos.create({
+    titleForMain: req.body.titleForMain,
     title: req.body.title,
     description: req.body.description,
     shortDescription: req.body.shortDescription,
@@ -32,6 +31,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
 router.put('/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
   Promos.update(
     {
+      titleForMain: req.body.titleForMain,
       title: req.body.title,
       description: req.body.description,
       shortDescription: req.body.shortDescription,

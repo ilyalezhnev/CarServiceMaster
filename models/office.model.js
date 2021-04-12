@@ -21,6 +21,9 @@ module.exports = (sequelize, Sequelize) => {
     whatsapp: {
       type: Sequelize.TEXT('tiny'),
     },
+    email: {
+      type: Sequelize.TEXT('tiny'),
+    },
     description: {
       type: Sequelize.TEXT,
     },
@@ -28,6 +31,9 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.TEXT('tiny'),
     },
     locationLon: {
+      type: Sequelize.TEXT('tiny'),
+    },
+    workingHours: {
       type: Sequelize.TEXT('tiny'),
     },
   });

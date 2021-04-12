@@ -17,13 +17,17 @@ body,
   color: #bbb !important;
 }
 
-.main-wrapper {
+.main-wrapper,
+.login-wrapper,
+.page-wrapper {
   height: 100%;
 }
-.login-wrapper {
+.main__layout {
   height: 100%;
 }
-
+.main__content {
+  margin-top: 30px;
+}
 .spiner {
   position: absolute;
   top: 20vh;
@@ -33,4 +37,30 @@ body,
   margin: 0px auto;
   position: unset;
   display: block;
+}
+.noContent {
+  text-align: center;
+}
+.markdownTooltip {
+  width: 600px;
+  display: flex;
+  padding: 10px;
+}
+.markdownTooltip pre {
+  width: 300px;
+}
+.markdownTooltip > div {
+  width: 300px;
+}
+
+/* ANTD styles */
+
+.ant-upload-picture-card-wrapper > .ant-upload {
+  width: 200px;
+  height: 200px;
+}
+.ant-tooltip-inner {
+  width: 600px;
+  background-color: white;
+  color: black;
 }

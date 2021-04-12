@@ -24,9 +24,20 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
       throw new Error('Whoops!');
     })
     .then((carPart) => {
-      console.log(carPart);
       return res.status(201).json(carPart);
     })
+    .catch((err) => res.status(400).json(err));
+});
+
+router.put('/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+  CarPartsOffices.update(
+    {
+      description: req.body.description,
+      image: req.body.image,
+    },
+    { where: { id: req.params.id } }
+  )
+    .then((carPart) => res.status(200).json(carPart))
     .catch((err) => res.status(400).json(err));
 });
 

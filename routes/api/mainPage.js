@@ -6,12 +6,10 @@ const db = require('../../models/index');
 const MainPage = db.mainPage;
 
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  const errors = {};
   MainPage.findOne()
     .then((mainPage) => {
       if (!mainPage) {
-        errors.nomainPage = 'Нет главной страницы';
-        return res.status(404).json(errors);
+        return res.status(200).json(null);
       }
       res.json(mainPage);
     })
@@ -26,7 +24,6 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
           title: req.body.title,
           subtitle: req.body.subtitle,
           serviceDescription: req.body.serviceDescription,
-          generalDescription: req.body.generalDescription,
         }).then((mainPage) => mainPage);
       }
       throw new Error('Whoops!');
@@ -41,7 +38,6 @@ router.put('/:id', passport.authenticate('jwt', { session: false }), (req, res) 
       title: req.body.title,
       subtitle: req.body.subtitle,
       serviceDescription: req.body.serviceDescription,
-      generalDescription: req.body.generalDescription,
     },
     { where: { id: req.params.id } }
   )

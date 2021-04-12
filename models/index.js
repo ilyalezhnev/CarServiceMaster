@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('masterdb', 'root', null, {
+const sequelize = new Sequelize('masterdb', 'root', 'sql060982', {
   dialect: 'mysql',
   host: 'localhost',
 });
@@ -16,8 +16,6 @@ db.mainPage = require('./mainPage.model.js')(sequelize, Sequelize);
 db.offices = require('./office.model.js')(sequelize, Sequelize);
 db.images = require('./images.model.js')(sequelize, Sequelize);
 db.services = require('./service.model.js')(sequelize, Sequelize);
-db.serviceImage = require('./serviceImage.model.js')(sequelize, Sequelize);
-db.services.belongsToMany(db.images, { through: db.serviceImage });
 db.serviceOffice = require('./serviceOffice.model')(sequelize, Sequelize);
 db.services.belongsToMany(db.offices, { through: db.serviceOffice });
 db.carParts = require('./carPart.model.js')(sequelize, Sequelize);
@@ -30,5 +28,6 @@ db.corporateClients.belongsToMany(db.images, { through: db.corporateClientImage 
 db.mainPage = require('./mainPage.model.js')(sequelize, Sequelize);
 db.carPartOffice = require('./carPartOffice.model')(sequelize, Sequelize);
 db.carParts.belongsToMany(db.offices, { through: db.carPartOffice });
+db.reviews = require('./review.model')(sequelize, Sequelize);
 
 module.exports = db;

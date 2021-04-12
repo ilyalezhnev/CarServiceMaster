@@ -6,12 +6,10 @@ const db = require('../../models/index');
 const Offices = db.offices;
 
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  const errors = {};
   Offices.findAll()
     .then((offices) => {
       if (offices && !offices.length) {
-        errors.noOffices = 'Нет офисов';
-        return res.status(404).json(errors);
+        return res.status(200).json([]);
       }
       res.json(offices);
     })
@@ -27,10 +25,11 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     telegram: req.body.telegram,
     viber: req.body.viber,
     whatsapp: req.body.whatsapp,
+    email: req.body.email,
     description: req.body.description,
     locationLat: req.body.locationLat,
     locationLon: req.body.locationLon,
-    image: req.body.image,
+    workingHours: req.body.workingHours,
   })
     .then((office) => res.status(201).json(office))
     .catch((err) => res.status(400).json(err));
@@ -46,10 +45,11 @@ router.put('/:id', passport.authenticate('jwt', { session: false }), (req, res) 
       telegram: req.body.telegram,
       viber: req.body.viber,
       whatsapp: req.body.whatsapp,
+      email: req.body.email,
       description: req.body.description,
       locationLat: req.body.locationLat,
       locationLon: req.body.locationLon,
-      image: req.body.image,
+      workingHours: req.body.workingHours,
     },
     { where: { id: req.params.id } }
   )

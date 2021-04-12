@@ -28,12 +28,11 @@ const upload = multer({
     }
     return cb('Images only!');
   },
-}).single('image');
+}).single('avatar');
 
 router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {
   upload(req, res, (err) => {
     if (err) {
-      console.log(err);
       res.status(400).json(err);
     } else {
       Images.create({

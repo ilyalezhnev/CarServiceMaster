@@ -7,12 +7,10 @@ const CarParts = db.carParts;
 const Offices = db.offices;
 
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  const errors = {};
   CarParts.findOne({ include: Offices })
     .then((carParts) => {
       if (!carParts) {
-        errors.noCarParts = 'Нет запчастей';
-        return res.status(404).json(errors);
+        return res.status(200).json(null);
       }
       res.json(carParts);
     })

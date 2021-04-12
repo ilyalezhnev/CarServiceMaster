@@ -6,7 +6,6 @@ const auth = require('./routes/api/auth');
 const uploads = require('./routes/api/uploads');
 const mainPage = require('./routes/api/mainPage');
 const services = require('./routes/api/services');
-const servicesImages = require('./routes/api/servicesImages');
 const servicesOffices = require('./routes/api/servicesOffices');
 const carParts = require('./routes/api/carParts');
 const offices = require('./routes/api/offices');
@@ -16,6 +15,7 @@ const corporateClientsImages = require('./routes/api/corporateClientsImages');
 const promos = require('./routes/api/promos');
 const promosImages = require('./routes/api/promosImages');
 const images = require('./routes/api/images');
+const reviews = require('./routes/api/reviews');
 const db = require('./models');
 const usersController = require('./controllers/user.controller');
 require('./config/passport')(passport);
@@ -39,7 +39,6 @@ app.use('/api/auth', auth);
 app.use('/api/admin/uploads', uploads);
 app.use('/api/admin/mainpage', mainPage);
 app.use('/api/admin/services', services);
-app.use('/api/admin/servicesimages', servicesImages);
 app.use('/api/admin/servicesoffices', servicesOffices);
 app.use('/api/admin/carparts', carParts);
 app.use('/api/admin/offices', offices);
@@ -49,6 +48,7 @@ app.use('/api/admin/corporateclientsimages', corporateClientsImages);
 app.use('/api/admin/promos', promos);
 app.use('/api/admin/promosimages', promosImages);
 app.use('/api/admin/images', images);
+app.use('/api/admin/reviews', reviews);
 
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -77,14 +77,13 @@ app.get('/discount', (req, res) => {
   res.render('discount');
 });
 
+app.get('/admin', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'static', 'build', 'index.html'));
+});
+
 app.get('/*', (req, res) => {
   res.render('main');
 });
-
-// app.get('/admin', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-// });
-
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`server running on port ${port}`));

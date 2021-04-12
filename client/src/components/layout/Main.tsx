@@ -2,6 +2,12 @@ import React, { FC, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Row, Col, Button } from 'antd';
 import CarParts from './CarParts';
+import Offices from './Offices';
+import Reviews from './Reviews';
+import MainPage from './MainPage';
+import Services from './Services';
+import CorporateClients from './CorporateClients';
+import Promos from './Promos';
 
 const { Header, Content } = Layout;
 
@@ -18,18 +24,20 @@ const Main: FC<IProps> = ({ onLogout }) => {
   const renderTab = () => {
     switch (selectedTab) {
       case '1':
-        return <div>1</div>;
+        return <MainPage />;
       case '2':
-        return <div>2</div>;
+        return <Services />;
       case '3':
         return <CarParts />;
       case '4':
-        return <div>4</div>;
+        return <CorporateClients />;
       case '5':
-        return <div>5</div>;
+        return <Offices />;
       case '6':
-        return <div>6</div>;
+        return <Promos />;
       case '7':
+        return <Reviews />;
+      case '8':
         onLogout();
         return null;
 
@@ -38,7 +46,7 @@ const Main: FC<IProps> = ({ onLogout }) => {
     }
   };
   return (
-    <Layout className="layout">
+    <Layout className="main__layout">
       <Header>
         <div className="logo" />
         <Menu theme="dark" mode="horizontal" selectedKeys={[selectedTab]} onClick={onMenuClick}>
@@ -48,10 +56,11 @@ const Main: FC<IProps> = ({ onLogout }) => {
           <Menu.Item key="4">Юр.лицам</Menu.Item>
           <Menu.Item key="5">Контакты</Menu.Item>
           <Menu.Item key="6">Акции</Menu.Item>
-          <Menu.Item key="7">Выход</Menu.Item>
+          <Menu.Item key="7">Отзывы</Menu.Item>
+          <Menu.Item key="8">Выход</Menu.Item>
         </Menu>
       </Header>
-      <Content>
+      <Content className="main__content">
         <Row justify="space-around" align="middle">
           <Col span={22}>
             <div className="site-layout-content">{renderTab()}</div>
