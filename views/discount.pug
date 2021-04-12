@@ -10,9 +10,9 @@ head
 body
   include ./modules/header
   main.width-container
-    h1.main-title Акция
-    .discount__image
-      img(src="static/img/discount.png", alt="Discount image")
+    h1.main-title.discount__title Акция
+    img(src="static/img/discount.png", alt="Discount image").discount__image
     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus, quam interdum elit quis ligula auctor at est. Facilisis facilisis venenatis in cursus platea enim eu. Aliquet integer nibh arcu ullamcorper senectus. Faucibus morbi nullam adipiscing potenti varius. Posuere maecenas congue turpis nisi, gravida id quam arcu.
+  include ./modules/infoDivider
   include ./modules/footer
   script(src='static/scripts/common.js')

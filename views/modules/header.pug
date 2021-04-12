@@ -1,33 +1,33 @@
 header
-  .desktop-header-info
+  .desktop-header
     .width-container.header__main-info
       .header__contact-block
         .phone 67-08-67
         .address Ветеринарный, 13а
       a(href='/')
         img.header__contact-block(
-          src='static/img/mainLogo.svg' 
+          src='static/img/main_logo.svg' 
           alt="Логотип Мастер-сервис"
         )
       .header__contact-block
         .phone 67-07-99
         .address Правды, 28
         
-  .mobile-header-info
-    a(href='/')
-      img(
-        src='static/img/mainLogo.svg' 
-        alt="Логотип Мастер-сервис"
-      )
-    div.contacts
-      div
-        .phone 
-          a(href='tel:88142670867') 67-08-67
-        .address Ветеринарный, 13а
-      div
-        .phone 
-          a(href='tel:88142670799') 67-07-99
-        .address Правды, 28
+  //- .mobile-header
+  //-   a(href='/')
+  //-     img(
+  //-       src='static/img/mainLogo.svg' 
+  //-       alt="Логотип Мастер-сервис"
+  //-     )
+  //-   div.contacts
+  //-     div
+  //-       .phone 
+  //-         a(href='tel:88142670867') 67-08-67
+  //-       .address Ветеринарный, 13а
+  //-     div
+  //-       .phone 
+  //-         a(href='tel:88142670799') 67-07-99
+  //-       .address Правды, 28
   nav
     .width-container.desktop-menu
       ul.desktop-navbar__layout
@@ -73,6 +73,7 @@ header
           a(href='/corporate') Юр.лицам
         li.desktop-navbar__item
           a(href='/contacts') Контакты
+      include ./messengers
     .width-container.mobile-menu
       .mobile-menu__layout
         span Меню

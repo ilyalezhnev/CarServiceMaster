@@ -1,6 +1,5 @@
 import { createModel } from '@rematch/core';
 import { push } from 'connected-react-router';
-import jwt_decode from 'jwt-decode';
 import { IRootModel } from '.';
 import AuthSevice from '../services/AuthSevice';
 
@@ -11,7 +10,7 @@ interface IState {
 
 const initialState: IState = {
   isAuth: false,
-  errors: null
+  errors: null,
 };
 
 export interface IAuth {
@@ -32,9 +31,9 @@ export const auth = createModel<IRootModel>()({
     },
     logout(state): IState {
       return { ...state, isAuth: false };
-    }
+    },
   },
-  effects: d => {
+  effects: (d) => {
     return {
       async onLogin(params: IUserLogin) {
         const { data } = await AuthSevice.login(params);
@@ -47,7 +46,7 @@ export const auth = createModel<IRootModel>()({
         localStorage.removeItem('jwtToken');
         d(push('/'));
         d.auth.logout();
-      }
+      },
     };
-  }
+  },
 });
