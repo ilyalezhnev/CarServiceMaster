@@ -1,0 +1,28 @@
+.contacts-block {
+  display: none;
+  margin: 10px 0 20px;
+}
+
+.contacts-block .main-title {
+  margin-bottom: 20px;
+}
+
+.messenger-apps {
+  display: flex;
+  justify-content: center;
+}
+
+.messenger-apps img {
+  margin-right: 8px;
+  width: 50px;
+}
+
+.messenger-apps img:last-child {
+  margin-right: 0px;
+}
+
+@media screen and (max-width: 575px) {
+  .contacts-block {
+    display: block;
+  }
+}
