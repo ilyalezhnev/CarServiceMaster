@@ -1,15 +1,17 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch, IRootState } from '../../redux/store';
 import { Button, Form, Input } from 'antd';
-import { IOffices } from '../../models/offices';
+import { IOffices, IOfficesForm } from '../../models/offices';
+import { MapContainer, Marker, TileLayer } from 'react-leaflet';
+import { LatLngExpression } from 'leaflet';
 
 const mapState = (state: IRootState) => ({});
 
 const mapDispatch = (dispatch: Dispatch) => ({
   addOffices: dispatch.offices.addOffices,
   updateOffices: dispatch.offices.updateOffices,
-  deleteOffices: dispatch.offices.deleteOffices
+  deleteOffices: dispatch.offices.deleteOffices,
 });
 
 type connectedProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
@@ -19,7 +21,9 @@ type IProps = connectedProps & {
 };
 
 const Office: FC<IProps> = ({ office, addOffices, updateOffices, deleteOffices }) => {
+  const [defaultCoordinates, setDefaultCoordinates] = useState<LatLngExpression>([61.789281, 34.368563]);
   const [form] = Form.useForm();
+  const markerRef = useRef<any>();
 
   useEffect(() => {
     if (office) {
@@ -33,18 +37,24 @@ const Office: FC<IProps> = ({ office, addOffices, updateOffices, deleteOffices }
         whatsapp: office.whatsapp,
         email: office.email,
         description: office.description,
-        locationLat: office.locationLat,
-        locationLon: office.locationLon,
-        workingHours: office.workingHours
+        location: {
+          lat: office.locationLat,
+          lng: office.locationLon,
+        },
+        workingHours: office.workingHours,
       });
+      setDefaultCoordinates([Number(office.locationLat), Number(office.locationLon)]);
     }
   }, [office]);
 
-  const onFinish = (values: IOffices) => {
+  const onFinish = (values: IOfficesForm) => {
+    const { location, ...rest } = values;
+    const locationLat = location.lat.toString();
+    const locationLon = location.lng.toString();
     if (office) {
-      updateOffices({ ...values, id: office.id });
+      updateOffices({ ...rest, locationLat, locationLon, id: office.id });
     } else {
-      addOffices(values);
+      addOffices({ ...rest, locationLat, locationLon });
     }
     form.resetFields();
   };
@@ -58,6 +68,17 @@ const Office: FC<IProps> = ({ office, addOffices, updateOffices, deleteOffices }
       deleteOffices(office.id);
     }
   };
+  const eventHandlers = useMemo(
+    () => ({
+      dragend() {
+        const marker = markerRef.current;
+        if (marker !== null) {
+          form.setFieldsValue({ location: { lat: marker.getLatLng().lat, lng: marker.getLatLng().lng } });
+        }
+      },
+    }),
+    []
+  );
 
   return (
     <Form form={form} layout="vertical" name="office" onFinish={onFinish} onFinishFailed={onFinishFailed}>
@@ -76,7 +97,7 @@ const Office: FC<IProps> = ({ office, addOffices, updateOffices, deleteOffices }
       <Form.Item label="Email" name="email" rules={[{ required: true, message: 'Укажите email' }]}>
         <Input />
       </Form.Item>
-      <Form.Item label="Telegram" name="Telegram" rules={[{ required: true, message: 'Укажите Telegram' }]}>
+      <Form.Item label="Telegram" name="telegram" rules={[{ required: true, message: 'Укажите Telegram' }]}>
         <Input />
       </Form.Item>
       <Form.Item label="Viber" name="viber" rules={[{ required: true, message: 'Укажите viber' }]}>
@@ -90,6 +111,15 @@ const Office: FC<IProps> = ({ office, addOffices, updateOffices, deleteOffices }
       </Form.Item>
       <Form.Item label="Часы работы" name="workingHours">
         <Input />
+      </Form.Item>
+      <Form.Item name="location">
+        <MapContainer center={defaultCoordinates} zoom={13}>
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker ref={markerRef} position={defaultCoordinates} draggable eventHandlers={eventHandlers}></Marker>
+        </MapContainer>
       </Form.Item>
 
       <Form.Item>

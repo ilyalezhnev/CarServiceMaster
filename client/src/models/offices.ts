@@ -8,7 +8,7 @@ interface IState {
 }
 
 const initialState: IState = {
-  data: null
+  data: null,
 };
 
 export interface IOffices {
@@ -26,6 +26,9 @@ export interface IOffices {
   locationLon: string;
   workingHours: string;
 }
+export interface IOfficesForm extends IOffices {
+  location: { lat: number; lng: number };
+}
 
 export interface IOficesCarparts extends IOffices {
   carPartOffice: ICarPartsOffices;
@@ -36,9 +39,9 @@ export const offices = createModel<IRootModel>()({
   reducers: {
     setOffices(state, data: IOffices[]): IState {
       return { ...state, data };
-    }
+    },
   },
-  effects: d => {
+  effects: (d) => {
     return {
       async getOffices() {
         const { data } = await OfficesService.getOffices();
@@ -63,7 +66,7 @@ export const offices = createModel<IRootModel>()({
         if (data) {
           d.offices.getOffices();
         }
-      }
+      },
     };
-  }
+  },
 });
