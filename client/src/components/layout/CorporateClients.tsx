@@ -95,7 +95,7 @@ const CorporateClients: FC<IProps> = ({
       <Row justify="center" align="middle" className="page-wrapper">
         <Col span={22}>
           <ImageGalaryUpload
-            images={corporateClients ? corporateClients.imagesMaped : []}
+            images={corporateClients ? corporateClients.images : []}
             saveImage={saveImageHandler}
             deleteImage={deleteImageHandler}
           />

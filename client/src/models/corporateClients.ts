@@ -1,13 +1,10 @@
 import { createModel } from '@rematch/core';
-import { UploadFile } from 'antd/lib/upload/interface';
 import { IRootModel } from '.';
-import { imageGalaryMapper } from '../mappers/imageGalaryMapper';
 import CorporateClientsService from '../services/CorporateClientsService';
-import { ICorporatesClientImages, IImageGalaryUpload } from './corporateClientsImages';
-import { IUploads } from './uploads';
+import { ICorporatesClientImages } from './corporateClientsImages';
 
 interface IState {
-  data: ICorporateClientsFromServerForImageGalaryUpload | null;
+  data: ICorporateClientsFromServer | null;
 }
 
 const initialState: IState = {
@@ -24,14 +21,11 @@ export interface ICorporateClients {
 export interface ICorporateClientsFromServer extends ICorporateClients {
   images: ICorporatesClientImages[];
 }
-export interface ICorporateClientsFromServerForImageGalaryUpload extends ICorporateClientsFromServer {
-  imagesMaped: UploadFile<IUploads>[];
-}
 
 export const corporateClients = createModel<IRootModel>()({
   state: initialState,
   reducers: {
-    setCorporateClients(state, data: ICorporateClientsFromServerForImageGalaryUpload): IState {
+    setCorporateClients(state, data: ICorporateClientsFromServer): IState {
       return { ...state, data };
     }
   },
@@ -40,7 +34,7 @@ export const corporateClients = createModel<IRootModel>()({
       async getCorporateClients() {
         const { data } = await CorporateClientsService.getCorporateClients();
         if (data) {
-          d.corporateClients.setCorporateClients(imageGalaryMapper(data));
+          d.corporateClients.setCorporateClients(data);
         }
       },
       async addCorporateClients(model: ICorporateClients) {

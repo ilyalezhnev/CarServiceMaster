@@ -1,10 +1,10 @@
 import React, { FC, useState } from 'react';
 import { Upload, message } from 'antd';
-import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
+import { DeleteOutlined, LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import { RcFile, UploadChangeParam, UploadFile } from 'antd/lib/upload/interface';
 import { IUploads } from '../../models/uploads';
 import { imageUploadUrl } from '../../constants/urls';
-import { ICorporatesClientImages, IImageGalaryUpload } from '../../models/corporateClientsImages';
+import { ICorporatesClientImages } from '../../models/corporateClientsImages';
 
 function beforeUpload(file: RcFile) {
   const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/svg+xml';
@@ -19,7 +19,7 @@ function beforeUpload(file: RcFile) {
 }
 
 interface IProps {
-  images?: UploadFile<IUploads>[];
+  images?: ICorporatesClientImages[];
   saveImage: (image: IUploads) => void;
   deleteImage: (imageId: number) => void;
 }
@@ -39,9 +39,9 @@ const ImageGalaryUpload: FC<IProps> = ({ images, saveImage, deleteImage }) => {
       }
     }
   };
-  const handleRemove = (file: UploadFile<IUploads>) => {
-    if (file.response) {
-      deleteImage(file.response.id);
+  const handleRemove = (id: number) => () => {
+    if (id) {
+      deleteImage(id);
     }
   };
 
@@ -52,27 +52,36 @@ const ImageGalaryUpload: FC<IProps> = ({ images, saveImage, deleteImage }) => {
     </div>
   );
   return (
-    <>
-      {/* {images &&
+    <div className="imageGalaryUpload">
+      {images &&
         images.map(image => (
-          <Upload style={{ width: '200px', height: '200px' }} name="avatar" listType="picture-card" showUploadList={false}>
-            {<img src={image.url} alt="avatar" style={{ width: '100%' }} />}
-          </Upload>
-        ))} */}
-      <Upload
-        style={{ width: '200px', height: '200px' }}
-        name="avatar"
-        listType="picture-card"
-        fileList={images}
-        action={imageUploadUrl}
-        headers={{ Authorization: localStorage.jwtToken }}
-        beforeUpload={beforeUpload}
-        onChange={handleChange}
-        onRemove={handleRemove}
-      >
-        {uploadButton}
-      </Upload>
-    </>
+          <div key={image.corporateClientImage.id} className="imageGalaryUpload__imageContainer">
+            <div className="imageGalaryUpload__imageCover">
+              <div className="imageGalaryUpload__deleteButton" onClick={handleRemove(image.corporateClientImage.imageId)}>
+                <DeleteOutlined style={{ fontSize: '20px' }} />
+                <div>Удалить</div>
+              </div>
+            </div>
+            <div className="imageGalaryUpload__image">
+              <img src={image.url} alt="avatar" style={{ width: '100%' }} />
+            </div>
+          </div>
+        ))}
+      <div>
+        <Upload
+          style={{ width: '200px', height: '200px' }}
+          name="avatar"
+          listType="picture-card"
+          showUploadList={false}
+          action={imageUploadUrl}
+          headers={{ Authorization: localStorage.jwtToken }}
+          beforeUpload={beforeUpload}
+          onChange={handleChange}
+        >
+          {uploadButton}
+        </Upload>
+      </div>
+    </div>
   );
 };
 

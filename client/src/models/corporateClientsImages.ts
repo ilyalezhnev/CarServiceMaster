@@ -22,14 +22,6 @@ export interface ICorporateClientImage {
   corporateClientId: number;
   imageId: number;
 }
-export interface IImageGalaryUpload {
-  uid: string;
-  size: number;
-  name: string;
-  type: string;
-  url: string;
-  id: number;
-}
 
 export const corporateClientsImages = createModel<IRootModel>()({
   state: initialState,

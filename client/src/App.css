@@ -52,6 +52,40 @@ body,
 .markdownTooltip > div {
   width: 300px;
 }
+.imageGalaryUpload {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.imageGalaryUpload__imageCover {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  background-color: white;
+}
+.imageGalaryUpload__imageCover:hover {
+  opacity: 0.8;
+}
+.imageGalaryUpload__image {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  line-height: 200px;
+}
+.imageGalaryUpload__imageContainer {
+  margin: 0 10px 10px 0;
+  position: relative;
+}
+.imageGalaryUpload__deleteButton {
+  position: absolute;
+  top: 78px;
+  left: 75px;
+  text-align: center;
+}
+.imageGalaryUpload__deleteButton:hover {
+  cursor: pointer;
+}
 
 /* ANTD styles */
 
