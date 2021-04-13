@@ -13,7 +13,6 @@ const carPartsOffices = require('./routes/api/carPartsOffices');
 const corporateClients = require('./routes/api/corporateClients');
 const corporateClientsImages = require('./routes/api/corporateClientsImages');
 const promos = require('./routes/api/promos');
-const promosImages = require('./routes/api/promosImages');
 const images = require('./routes/api/images');
 const reviews = require('./routes/api/reviews');
 const db = require('./models');
@@ -46,7 +45,6 @@ app.use('/api/admin/carpartsoffices', carPartsOffices);
 app.use('/api/admin/corporateclients', corporateClients);
 app.use('/api/admin/corporateclientsimages', corporateClientsImages);
 app.use('/api/admin/promos', promos);
-app.use('/api/admin/promosimages', promosImages);
 app.use('/api/admin/images', images);
 app.use('/api/admin/reviews', reviews);
 

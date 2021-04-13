@@ -4,10 +4,12 @@ const passport = require('passport');
 
 const db = require('../../models/index');
 const CorporateClients = db.corporateClients;
-const Images = db.images;
+
+const corporateClientsController = require('../../controllers/corporateClients.controller');
 
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  CorporateClients.findOne({ include: Images })
+  corporateClientsController
+    .getCorporateClients()
     .then((corporateClients) => {
       if (!corporateClients) {
         return res.status(200).json(null);

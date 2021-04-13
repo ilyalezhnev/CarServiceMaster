@@ -5,8 +5,11 @@ const passport = require('passport');
 const db = require('../../models/index');
 const MainPage = db.mainPage;
 
+const mainPageController = require('../../controllers/mainPage.controller');
+
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  MainPage.findOne()
+  mainPageController
+    .getMainPage()
     .then((mainPage) => {
       if (!mainPage) {
         return res.status(200).json(null);

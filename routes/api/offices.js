@@ -5,8 +5,11 @@ const passport = require('passport');
 const db = require('../../models/index');
 const Offices = db.offices;
 
+const officesController = require('../../controllers/offices.controller');
+
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Offices.findAll()
+  officesController
+    .getOffices()
     .then((offices) => {
       if (offices && !offices.length) {
         return res.status(200).json([]);

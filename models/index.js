@@ -20,8 +20,6 @@ db.serviceOffice = require('./serviceOffice.model')(sequelize, Sequelize);
 db.services.belongsToMany(db.offices, { through: db.serviceOffice });
 db.carParts = require('./carPart.model.js')(sequelize, Sequelize);
 db.promos = require('./promo.model.js')(sequelize, Sequelize);
-db.promoImage = require('./promoImage.model.js')(sequelize, Sequelize);
-db.promos.belongsToMany(db.images, { through: db.promoImage });
 db.corporateClients = require('./corporateClients.model.js')(sequelize, Sequelize);
 db.corporateClientImage = require('./corporateClientImage.model.js')(sequelize, Sequelize);
 db.corporateClients.belongsToMany(db.images, { through: db.corporateClientImage });

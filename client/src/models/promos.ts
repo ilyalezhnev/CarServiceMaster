@@ -7,7 +7,7 @@ interface IState {
 }
 
 const initialState: IState = {
-  data: null
+  data: null,
 };
 
 export interface IPromos {
@@ -16,6 +16,7 @@ export interface IPromos {
   title: string;
   description: string;
   shortDescription: string;
+  image: string;
 }
 
 export const promos = createModel<IRootModel>()({
@@ -23,9 +24,9 @@ export const promos = createModel<IRootModel>()({
   reducers: {
     setPromos(state, data: IPromos[]): IState {
       return { ...state, data };
-    }
+    },
   },
-  effects: d => {
+  effects: (d) => {
     return {
       async getPromos() {
         const { data } = await PromosService.getPromos();
@@ -50,7 +51,7 @@ export const promos = createModel<IRootModel>()({
         if (data) {
           d.promos.getPromos();
         }
-      }
+      },
     };
-  }
+  },
 });

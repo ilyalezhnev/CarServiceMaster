@@ -6,8 +6,11 @@ const db = require('../../models/index');
 const CarParts = db.carParts;
 const Offices = db.offices;
 
+const carPartsController = require('../../controllers/carParts.controller');
+
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  CarParts.findOne({ include: Offices })
+  carPartsController
+    .getCarParts()
     .then((carParts) => {
       if (!carParts) {
         return res.status(200).json(null);

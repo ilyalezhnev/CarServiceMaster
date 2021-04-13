@@ -12,6 +12,9 @@ module.exports = (sequelize, Sequelize) => {
     shortDescription: {
       type: Sequelize.TEXT,
     },
+    image: {
+      type: Sequelize.TEXT('tiny'),
+    },
   });
 
   return Promo;

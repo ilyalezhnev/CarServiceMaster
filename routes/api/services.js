@@ -4,10 +4,12 @@ const passport = require('passport');
 
 const db = require('../../models/index');
 const Services = db.services;
-const Offices = db.offices;
+
+const servicesController = require('../../controllers/services.controller');
 
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Services.findAll({ include: Offices })
+  servicesController
+    .getServices()
     .then((services) => {
       if (services && !services.length) {
         return res.status(200).json([]);
@@ -17,7 +19,8 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
     .catch((err) => res.status(404).json(err));
 });
 router.get('/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Services.findOne({ where: { id: req.params.id }, include: [Offices] })
+  servicesController
+    .getService(req.params.id)
     .then((service) => {
       if (!service) {
         return res.status(200).json(null);

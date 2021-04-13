@@ -5,8 +5,11 @@ const passport = require('passport');
 const db = require('../../models/index');
 const Reviews = db.reviews;
 
+const reviewsController = require('../../controllers/reviews.controller');
+
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Reviews.findAll()
+  reviewsController
+    .getReviews()
     .then((reviews) => {
       if (reviews && !reviews.length) {
         return res.status(200).json([]);

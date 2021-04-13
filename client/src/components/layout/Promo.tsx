@@ -14,7 +14,7 @@ const mapState = (state: IRootState) => ({});
 const mapDispatch = (dispatch: Dispatch) => ({
   addPromos: dispatch.promos.addPromos,
   updatePromos: dispatch.promos.updatePromos,
-  deletePromos: dispatch.promos.deletePromos
+  deletePromos: dispatch.promos.deletePromos,
 });
 
 type connectedProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
@@ -33,8 +33,9 @@ const Promo: FC<IProps> = ({ promo, addPromos, updatePromos, deletePromos }) => 
       form.setFieldsValue({
         titleForMain: promo.titleForMain,
         title: promo.title,
-        description: '',
-        shortDescription: ''
+        description: promo.description,
+        shortDescription: promo.shortDescription,
+        image: '',
       });
       setTitleForMainHTML(promo.titleForMain || '');
     }
@@ -96,6 +97,16 @@ const Promo: FC<IProps> = ({ promo, addPromos, updatePromos, deletePromos }) => 
       >
         <Input.TextArea rows={4} />
       </Form.Item>
+      {promo && (
+        <Form.Item label="Картинка" name="image">
+          <SingleUpload form={form} url={promo.image} />
+        </Form.Item>
+      )}
+      {!promo && (
+        <Form.Item label="Картинка" name="image">
+          <SingleUpload form={form} />
+        </Form.Item>
+      )}
 
       <Form.Item>
         <Button type="primary" htmlType="submit">
