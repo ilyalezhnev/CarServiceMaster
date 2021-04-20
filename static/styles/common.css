@@ -30,14 +30,6 @@ a.link {
   font-size: 18px;
 }
 
-.phone {
-  font-size: 34px;
-}
-
-.address {
-  font-size: 16px;
-}
-
 .social-icon {
   width: 40px;
   max-width: 40px;
@@ -55,14 +47,6 @@ a.link {
 
   .text {
     font-size: 16px;
-  }
-
-  .phone {
-    font-size: 24px;
-  }
-
-  .address {
-    font-size: 14px;
   }
 
   .social-icon {
@@ -87,14 +71,6 @@ a.link {
 
   .text {
     font-size: 14px;
-  }
-
-  .phone {
-    font-size: 20px;
-  }
-
-  .address {
-    font-size: 12px;
   }
 
   .social-icon {

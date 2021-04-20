@@ -1,14 +1,13 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch, IRootState } from '../../redux/store';
-import { Button, Col, Form, Input, Row, Tabs } from 'antd';
-import { ICarParts } from '../../models/carParts';
+import { Button, Col, Form, Input, Row } from 'antd';
 import { ICorporateClients } from '../../models/corporateClients';
 import ImageGalaryUpload from '../common/ImageGalaryUpload';
 import { IUploads } from '../../models/uploads';
 
 const mapState = (state: IRootState) => ({
-  corporateClients: state.corporateClients.data
+  corporateClients: state.corporateClients.data,
 });
 
 const mapDispatch = (dispatch: Dispatch) => ({
@@ -16,7 +15,7 @@ const mapDispatch = (dispatch: Dispatch) => ({
   addCorporateClients: dispatch.corporateClients.addCorporateClients,
   updateCorporateClients: dispatch.corporateClients.updateCorporateClients,
   addCorporateClientsImages: dispatch.corporateClientsImages.addCorporateClientsImages,
-  deleteCorporateClientsImages: dispatch.corporateClientsImages.deleteCorporateClientsImages
+  deleteCorporateClientsImages: dispatch.corporateClientsImages.deleteCorporateClientsImages,
 });
 
 type connectedProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
@@ -29,11 +28,11 @@ const CorporateClients: FC<IProps> = ({
   addCorporateClients,
   updateCorporateClients,
   addCorporateClientsImages,
-  deleteCorporateClientsImages
+  deleteCorporateClientsImages,
 }) => {
   useEffect(() => {
     getCorporateClients();
-  }, []);
+  }, [getCorporateClients]);
 
   const [form] = Form.useForm();
 
@@ -41,9 +40,9 @@ const CorporateClients: FC<IProps> = ({
     form.setFieldsValue({
       title: corporateClients && corporateClients.title,
       description: corporateClients && corporateClients.description,
-      info: corporateClients && corporateClients.info
+      info: corporateClients && corporateClients.info,
     });
-  }, [corporateClients]);
+  }, [corporateClients, form]);
 
   const onFinish = (values: ICorporateClients) => {
     if (corporateClients) {
@@ -61,7 +60,7 @@ const CorporateClients: FC<IProps> = ({
     if (corporateClients && corporateClients.id) {
       addCorporateClientsImages({
         corporateClientId: corporateClients.id,
-        imageId: image.id
+        imageId: image.id,
       });
     }
   };

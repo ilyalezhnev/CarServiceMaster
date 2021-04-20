@@ -2,7 +2,6 @@ import React, { FC, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch, IRootState } from '../../redux/store';
 import { Button, Form, Input } from 'antd';
-import { IReviews } from '../../models/reviews';
 import SingleUpload from '../common/SingleUpload';
 import { IPromos } from '../../models/promos';
 import marked from 'marked';
@@ -39,7 +38,7 @@ const Promo: FC<IProps> = ({ promo, addPromos, updatePromos, deletePromos }) => 
       });
       setTitleForMainHTML(promo.titleForMain || '');
     }
-  }, [promo]);
+  }, [promo, form]);
 
   const onFinish = (values: IPromos) => {
     if (promo) {

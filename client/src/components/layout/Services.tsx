@@ -6,12 +6,12 @@ import Service from './Service';
 
 const mapState = (state: IRootState) => ({
   services: state.services.data,
-  offices: state.offices.data
+  offices: state.offices.data,
 });
 
 const mapDispatch = (dispatch: Dispatch) => ({
   getServices: dispatch.services.getServices,
-  getOffices: dispatch.offices.getOffices
+  getOffices: dispatch.offices.getOffices,
 });
 
 type connectedProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
@@ -22,7 +22,7 @@ const Services: FC<IProps> = ({ services, getServices, offices, getOffices }) =>
   useEffect(() => {
     getServices();
     getOffices();
-  }, []);
+  }, [getServices, getOffices]);
 
   const onTabChange = (activeKey: string) => {};
 
@@ -35,7 +35,7 @@ const Services: FC<IProps> = ({ services, getServices, offices, getOffices }) =>
           type="card"
         >
           {services &&
-            services.map(service => (
+            services.map((service) => (
               <Tabs.TabPane tab={service.title} key={service.id}>
                 <Service service={service} offices={offices} />
               </Tabs.TabPane>

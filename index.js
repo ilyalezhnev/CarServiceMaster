@@ -19,6 +19,8 @@ const db = require('./models');
 const usersController = require('./controllers/user.controller');
 require('./config/passport')(passport);
 
+const mainPageController = require('./controllers/mainPage.controller');
+
 db.sequelize.sync();
 db.sequelize
   .authenticate()
@@ -51,8 +53,9 @@ app.use('/api/admin/reviews', reviews);
 app.set('views', './views');
 app.set('view engine', 'pug');
 
-app.get('/', (req, res) => {
-  res.render('main');
+app.get('/', async (req, res) => {
+  const { dataValues } = await mainPageController.getMainPage();
+  res.render('main', { content: dataValues });
 });
 
 app.get('/service', (req, res) => {
@@ -82,6 +85,7 @@ app.get('/admin', (req, res) => {
 app.get('/*', (req, res) => {
   res.render('main');
 });
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`server running on port ${port}`));
