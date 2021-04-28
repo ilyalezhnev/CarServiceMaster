@@ -25,6 +25,29 @@
 
 .ant-carousel-element {
   width: 100vw;
+  display: block;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.ant-carousel-element__image {
+  width: 100%;
+}
+
+.ant-carousel-element__text {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+.ant-carousel-element__text p {
+  background-color: #ffcc00;
+  text-transform: uppercase;
+  font-family: 'Myriad-Bold';
+  font-size: 48px;
+  margin: 20px 0;
+  padding: 0 20px;
+  width: fit-content;
 }
 
 /* General styles */
@@ -44,11 +67,6 @@
   list-style-type: none;
   display: flex;
   justify-content: flex-start;
-}
-
-.ant-carousel-element {
-  display: block;
-  flex: 0 0 auto;
 }
 
 /* Navigation item styles */

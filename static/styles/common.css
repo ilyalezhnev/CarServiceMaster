@@ -1,3 +1,7 @@
+main {
+  overflow-y: hidden;
+}
+
 .width-container {
   position: relative;
   width: 100%;
