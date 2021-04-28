@@ -1,51 +1,34 @@
 /* Common Info section */
 
 .common-info__layout {
-  margin-top: 10px;
-  padding-top: 30px;
-}
-
-.common-info__layout .sub-title {
-  margin: 0;
-  text-align: center;
-}
-
-.common-info__layout .mobile-title {
-  display: none;
-  font-size: 24px;
-  text-align: center;
-}
-
-.infoRow {
   display: flex;
-  flex-direction: row;
+  position: relative;
+  z-index: 0;
+  margin-top: -30px;
+  padding-bottom: 40px;
 }
 
-.infoRow > * {
-  flex: 1;
-  margin: 0 10px;
-}
-
-.infoRow {
-  margin: 0 -10px;
-}
-
-.infoRow .yellow-layout {
-  background-image: url('/static/img/yellowLayout.png');
-  background-position: right top;
+.common-info__block {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
+  padding-right: 32px;
 }
 
-.infoRow .yellow-layout__text {
-  margin: 0;
-  font-size: 24px;
+.common-info__block img {
+  width: 59px;
+  height: 59px;
+  margin-right: 12px;
 }
 
-.infoRow .yellow-layout__title {
-  margin: 0;
+.common-info__bg {
+  position: absolute;
+  top: -43px;
+  right: 30%;
+  width: 100%;
+  height: 150px;
+  background-color: #ffcc00;
+  transform: skew(-30deg);
+  z-index: -1;
+  box-shadow: 2px 2px 14px 0px #9c9d9e;
 }
 
 /* Services section */
