@@ -39,6 +39,16 @@ a.link {
   max-width: 40px;
 }
 
+.block-title {
+  font-family: 'Myriad-Bold';
+  font-size: 46px;
+  color: #3b3b3a;
+}
+
+.first-letter_yellow::first-letter {
+  color: #ffcc00;
+}
+
 /* Media queries */
 @media screen and (max-width: 1023px) {
   .main-title {

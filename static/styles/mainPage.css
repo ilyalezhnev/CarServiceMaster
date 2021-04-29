@@ -34,31 +34,45 @@
 /* Services section */
 
 .services-section__layout {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 30px;
+  padding: 90px 0;
 }
 
-.service-item__layout {
-  width: 20%;
+.services-section__title {
+  margin: 0;
+  padding-bottom: 70px;
+  text-align: center;
+}
+
+.services-section__items-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .service-item__wrapper {
-  color: unset;
-  text-decoration: none;
+  width: 194px;
+  height: 194px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 130px;
-  cursor: pointer;
-  padding: 6px 10px;
+  justify-content: center;
+  color: unset;
+  text-decoration: none;
+  margin-bottom: 24px;
+  padding: 12px;
+  box-shadow: 0px 0px 12px #9c9d9e;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.service-item__wrapper:hover {
+  background-color: #ffcc00;
+  transition: background-color 0.3s ease;
 }
 
 .service-item__text {
+  font-family: 'Myriad-Semibold';
+  font-size: 16px;
   text-align: center;
   margin: 6px 0;
 }
