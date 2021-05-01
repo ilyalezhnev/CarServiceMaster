@@ -4,7 +4,7 @@
   min-height: inherit;
   max-width: 1110px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 a.link {
@@ -46,6 +46,12 @@ a.link {
 }
 
 /* Media queries */
+@media screen and (max-width: 1199px) {
+  .block-title {
+    font-size: 36px;
+  }
+}
+
 @media screen and (max-width: 1023px) {
   .main-title {
     font-size: 30px;
@@ -62,6 +68,10 @@ a.link {
   .social-icon {
     width: 28px;
     max-width: 28px;
+  }
+
+  .block-title {
+    font-size: 24px;
   }
 }
 

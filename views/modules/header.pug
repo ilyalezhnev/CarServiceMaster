@@ -2,7 +2,8 @@ header
   .desktop-header
     .width-container.header__main-info
       .header__contact-block
-        .phone 67-08-67
+        .phone 
+          a(href='tel:88142670867') 67-08-67
         .address Ветеринарный, 13а
       a(href='/')
         img.header__contact-block(
@@ -10,7 +11,8 @@ header
           alt="Логотип Мастер-сервис"
         )
       .header__contact-block
-        .phone 67-07-99
+        .phone 
+          a(href='tel:88142670799') 67-07-99
         .address Правды, 28
         
   //- .mobile-header
@@ -76,8 +78,8 @@ header
       include ./messengers
     .width-container.mobile-menu
       .mobile-menu__layout
-        span Меню
         img(src="static/img/hamburger.svg", alt="Кнопка вызова меню")#menu-toggler
+        span Меню
       ul.mobile-navbar
         li
           a(href='/') Главная

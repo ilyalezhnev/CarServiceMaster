@@ -23,7 +23,7 @@
   position: absolute;
   top: -42px;
   right: 30%;
-  width: 100%;
+  width: 100vw;
   height: 150px;
   background-color: #ffcc00;
   transform: skew(-30deg);
@@ -34,7 +34,8 @@
 /* Services section */
 
 .services-section__layout {
-  padding: 90px 0;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 
 .services-section__title {
@@ -93,6 +94,7 @@
   width: 50%;
   display: flex;
   padding: 30px;
+  margin: 12px;
   border-radius: 4px;
   box-shadow: 0px 0px 12px #9c9d9e;
 }
@@ -179,31 +181,105 @@
   font-family: 'Myriad-Bold';
   font-size: 32px;
   color: #ffffff;
-  margin-left: 7%;
+  margin-left: 5%;
   z-index: 1;
 }
 
 /* Media queries */
 
+@media screen and (max-width: 1199px) {
+  .common-info__block img {
+    width: 49px;
+    height: 49px;
+  }
+
+  .common-info__block span {
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  .common-info__bg {
+    top: -30px;
+    height: 105px;
+  }
+
+  .services-section__layout {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .about-service__img {
+    top: 25%;
+  }
+}
+
 @media screen and (max-width: 1023px) {
-  .discount__slogan {
+  .common-info__layout {
     display: none;
   }
 
-  .infoRow .yellow-layout {
-    display: none;
+  .services-section__layout {
+    padding-bottom: 8px;
+  }
+  .services-section__title {
+    padding-bottom: 32px;
+  }
+
+  .service-item__wrapper {
+    width: 136px;
+    height: 136px;
+  }
+
+  .service-item__text {
+    font-family: 'Myriad-Regular';
+    font-size: 14px;
+    line-height: 100%;
   }
 
   .info-divider__layout {
     display: none;
   }
 
-  .common-info__layout .sub-title {
+  .feedback-section__layout {
+    padding: 8px 0;
+  }
+
+  .feedback-section__title {
+    padding-bottom: 30px;
+  }
+
+  .block-flag-header {
+    top: -20px;
+    left: 15%;
+    width: 85%;
+    height: 46px;
+  }
+
+  .block-flag-header::after {
+    border-top: 48px solid #3b3b3a;
+    border-left: 24px solid transparent;
+  }
+
+  .block-flag-header__title {
+    font-size: 14px;
+    margin: 0;
+    padding-left: 3%;
+  }
+
+  .aboutService__layout {
+    padding: 50px 0 40px;
+  }
+
+  .about-service__img {
     display: none;
   }
 
-  .common-info__layout .mobile-title {
-    display: block;
+  .about-service__title {
+    padding-bottom: 30px;
+  }
+
+  .about-service__description > * {
+    width: 100%;
   }
 }
 
@@ -233,6 +309,6 @@
   }
 
   .service-item__wrapper img {
-    max-width: 60px;
+    max-width: 52px;
   }
 }
