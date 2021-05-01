@@ -44,18 +44,22 @@
     display: block;
   }
 
+  .contacts img {
+    width: 131px;
+  }
+
   .contacts-and-map__wrapper .map {
     display: none;
   }
 
   .contacts-and-map__wrapper {
     min-height: unset;
-    padding: 20px 0;
+    padding: 0 0 20px;
   }
 
   .contact__item {
     font-size: 16px;
-    padding-top: 32px;
+    padding-top: 16px;
   }
 
   .contact__item .phone a {

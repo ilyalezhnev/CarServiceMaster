@@ -90,11 +90,16 @@ img.header__contact-block {
 
 .desktop-navbar__item-dropdown .services li {
   padding: 14px 14px;
-  border-bottom: 1px solid #9c9d9e;
+  border-bottom: 1px solid #e6e6e6;
+  color: #3b3b3a;
+}
+
+.desktop-navbar__item-dropdown .services li img {
+  margin-right: 8px;
 }
 
 .desktop-navbar__item-dropdown .services li:hover {
-  background-color: #4f4f4f;
+  background-color: #9c9d9e;
 }
 
 .desktop-navbar__item-dropdown .services li:hover a {
@@ -132,6 +137,7 @@ img.header__contact-block {
   height: 49px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   font-size: 23px;
 }
@@ -139,6 +145,12 @@ img.header__contact-block {
 .mobile-menu__layout #menu-toggler {
   cursor: pointer;
   margin-right: 12px;
+}
+
+.mobile-menu__socials img {
+  margin-left: 8px;
+  width: 33px;
+  height: 33px;
 }
 
 .mobile-navbar {

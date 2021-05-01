@@ -91,7 +91,7 @@
 }
 
 .feedback-section__item {
-  width: 50%;
+  width: 100%;
   display: flex;
   padding: 30px;
   margin: 12px;
@@ -213,7 +213,7 @@
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
   .common-info__layout {
     display: none;
   }
@@ -234,6 +234,10 @@
     font-family: 'Myriad-Regular';
     font-size: 14px;
     line-height: 100%;
+  }
+
+  .service-item__wrapper img {
+    max-width: 52px;
   }
 
   .info-divider__layout {
@@ -280,35 +284,5 @@
 
   .about-service__description > * {
     width: 100%;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  .discount__info-wrapper {
-    height: 160px;
-  }
-
-  .discount__info {
-    height: auto;
-    width: fit-content;
-    max-width: 250px;
-    padding: 8px 16px;
-    margin-bottom: 10px;
-  }
-
-  .discount__info p {
-    font-size: 12px;
-  }
-
-  .services-section__layout {
-    padding-top: 20px;
-  }
-
-  .service-item__layout {
-    width: 33%;
-  }
-
-  .service-item__wrapper img {
-    max-width: 52px;
   }
 }

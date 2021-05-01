@@ -52,7 +52,7 @@ a.link {
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
   .main-title {
     font-size: 30px;
   }
