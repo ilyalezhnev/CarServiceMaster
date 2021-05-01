@@ -13,9 +13,13 @@ body
     include ./modules/discountSection
     include ./modules/commonInfo
     include ./modules/servicesSection
-    include ./modules/infoDivider
-    include ./modules/textDescription
+    include ./modules/infoDividerSection
+    include ./modules/feedbackSection
+    include ./modules/aboutServiceSection
     include ./modules/contactsAndMapSection
   include ./modules/footer
   script(src='static/scripts/carousel.js')
   script(src='static/scripts/common.js')
+  script.
+    new Ant('discount');
+    new Ant('feedback', 2);

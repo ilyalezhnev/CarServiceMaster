@@ -31,9 +31,9 @@
 }
 
 .info-divider__wheels {
-  width: 526px;
-  height: 414px;
+  width: 459px;
+  height: 415px;
   position: absolute;
   bottom: -100px;
-  right: -68px;
+  right: 0px;
 }
