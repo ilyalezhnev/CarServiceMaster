@@ -1,5 +1,4 @@
 .content-card__layout {
-  position: relative;
   border-radius: 4px;
   width: 100%;
   box-shadow: 0px 0px 60px #9c9d9e;
@@ -9,19 +8,32 @@
 }
 
 .content-card__title {
+  position: relative;
   display: flex;
   align-items: center;
-  width: 60%;
+  width: 100%;
   height: 140px;
 }
 
+.content-card__title_right {
+  justify-content: flex-end;
+}
+
 .content-card__title img {
+  width: 79px;
+  height: 79px;
   margin-right: 24px;
   z-index: 1;
 }
 
 .content-card__title .block-title {
+  width: 50%;
   z-index: 1;
+}
+
+.content-card__title_right .block-title {
+  color: #ffcc00;
+  width: unset;
 }
 
 .content-card__content {

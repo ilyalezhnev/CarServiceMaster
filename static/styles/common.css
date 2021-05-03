@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   min-height: inherit;
-  max-width: 1110px;
+  max-width: 1190px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -55,6 +55,12 @@ a.link {
 
 .first-letter_yellow::first-letter {
   color: #ffcc00;
+}
+
+.divider {
+  width: 100%;
+  margin: 32px 0;
+  border: 1px solid #3b3b3a;
 }
 
 /* Media queries */

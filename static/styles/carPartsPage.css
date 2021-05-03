@@ -1,61 +1,26 @@
-.branch-office_layout {
-  margin: 20px 0;
+.branch-office__layout {
+  display: flex;
+  justify-content: space-between;
 }
 
-.branch-office_layout .contact-and-location {
+.branch-office__img,
+.branch-office__info {
+  width: 48%;
+}
+
+.branch-office__info__messengers {
   display: flex;
   align-items: center;
-  font-weight: bold;
-  margin-bottom: 20px;
+  justify-content: space-between;
 }
 
-.branch-office_layout .contact-and-location > div {
-  flex: 1;
-}
-
-.branch-office_layout .full-address {
-  display: none;
-}
-
-.branch-office_layout .phones {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.branch-office_layout .phones > div {
-  margin-bottom: 10px;
-}
-
-.branch-office_layout .phones > div:last-child {
-  margin-bottom: 0;
-}
-
-.branch-office_layout .federal-number {
-  display: flex;
-  align-items: center;
-}
-
-.branch-office_layout .messengers-section {
-  display: flex;
-  align-items: center;
-}
-
-.branch-office_layout .messengers-section .messengers {
+.branch-office__info__messengers .title {
+  font-family: 'Myriad-Bold';
   margin-right: 12px;
 }
 
-.branch-office_layout .text {
-  margin-bottom: 20px;
-}
-
-.branch-office_layout .image img {
-  width: 100%;
-  max-width: 954px;
-}
-
-.branch-office_layout .map {
-  margin-top: 20px;
+.branch-office__info__messengers__wrapper img {
+  margin-left: 12px;
 }
 
 @media screen and (max-width: 1023px) {

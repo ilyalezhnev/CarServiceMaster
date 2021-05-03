@@ -11,10 +11,47 @@ body
   include ./modules/header
   main
     .width-container
-      h1.main-title Запчасти
-      p.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor in vitae amet ultrices. Pretium quam sapien, senectus lorem. Amet aliquet tortor nisl vitae. Eget a at nec nunc suspendisse fermentum. Nunc, a sed sed est eget urna. 
-        include ./modules/branchOfficeContacts
-        include ./modules/branchOfficeContacts
+      .content-card__layout
+        .content-card__title
+          .skew-flag_left
+          img(src="static/img/half_car_gray.svg", alt="Иконка филиала запчастей")
+          span.block-title Запчасти
+            |
+            br
+            | на ул.Правды, 28
+        .content-card__content    
+          div.branch-office__layout
+            img(src="static/img/service_image.png", alt="").branch-office__img
+            .branch-office__info
+              .sub-title 67-07-99 / Правды, 28
+              .divider 
+              p.branch-office__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!
+              div.branch-office__info__messengers
+                span.title Заказать автозапчасть
+                .branch-office__info__messengers__wrapper
+                  img(src="static/img/whatsapp_icon.svg", alt="Вацап").social-icon
+                  img(src="static/img/viber_icon.svg", alt="Вайбер").social-icon
+                  img(src="static/img/telegram_icon.svg", alt="Телеграм").social-icon
+        .content-card__title.content-card__title_right
+          .skew-flag_right
+          img(src="static/img/half_car_yellow.svg", alt="Иконка филиала запчастей")
+          span.block-title Запчасти
+            |
+            br
+            | на ул.Правды, 28
+        .content-card__content    
+          div.branch-office__layout
+            img(src="static/img/service_image.png", alt="").branch-office__img
+            .branch-office__info
+              .sub-title 67-07-99 / Правды, 28
+              .divider 
+              p.branch-office__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!
+              div.branch-office__info__messengers
+                span.title Заказать автозапчасть
+                .branch-office__info__messengers__wrapper
+                  img(src="static/img/whatsapp_icon.svg", alt="Вацап").social-icon
+                  img(src="static/img/viber_icon.svg", alt="Вайбер").social-icon
+                  img(src="static/img/telegram_icon.svg", alt="Телеграм").social-icon
     include ./modules/infoDividerSection
   include ./modules/footer
   script(src='static/scripts/common.js')

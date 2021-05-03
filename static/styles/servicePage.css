@@ -8,20 +8,8 @@
   width: 48%;
 }
 
-.service-description__info .cost {
-  font-family: 'Myriad-Bold';
-  font-size: 32px;
-  line-height: 100%;
-}
-
-.service-description__info .cost .cost-currency {
+.service-description__info .currency {
   color: #ffcc00;
-}
-
-.divider {
-  width: 100%;
-  margin: 32px 0;
-  border: 1px solid #3b3b3a;
 }
 
 .service-description__info__availability {
