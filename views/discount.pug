@@ -11,9 +11,51 @@ body
   include ./modules/header
   main
     .width-container
-      h1.main-title.discount__title Акция
-      img(src="static/img/discount.png", alt="Discount image").discount__image
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus, quam interdum elit quis ligula auctor at est. Facilisis facilisis venenatis in cursus platea enim eu. Aliquet integer nibh arcu ullamcorper senectus. Faucibus morbi nullam adipiscing potenti varius. Posuere maecenas congue turpis nisi, gravida id quam arcu.
+      .content-card__layout
+        .content-card__title
+          .skew-flag_left
+          img(src="static/img/percent.svg", alt="Иконка акций")
+          h1.block-title  Акции
+        .content-card__content    
+          .disount__layout
+            img(src="static/img/service_image.png", alt="").disount__img
+            .disount__info
+              .sub-title Скидка на мойку в день ремонта 10%
+              .divider 
+              p.disount__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!
+              .disount__info__messengers
+                span.title Задать вопрос через мессенджер
+                .branch-office__info__messengers__wrapper
+                  img(src="static/img/whatsapp_icon.svg", alt="Вацап").social-icon
+                  img(src="static/img/viber_icon.svg", alt="Вайбер").social-icon
+                  img(src="static/img/telegram_icon.svg", alt="Телеграм").social-icon
+        .content-card__content    
+          .disount__layout
+            img(src="static/img/service_image.png", alt="").disount__img
+            .disount__info
+              .sub-title Скидка на мойку в день ремонта 10%
+              .divider 
+              p.disount__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!
+              .disount__info__messengers
+                span.title Задать вопрос через мессенджер
+                .branch-office__info__messengers__wrapper
+                  img(src="static/img/whatsapp_icon.svg", alt="Вацап").social-icon
+                  img(src="static/img/viber_icon.svg", alt="Вайбер").social-icon
+                  img(src="static/img/telegram_icon.svg", alt="Телеграм").social-icon
+        .content-card__content    
+          .disount__layout
+            img(src="static/img/service_image.png", alt="").disount__img
+            .disount__info
+              .sub-title Скидка на мойку в день ремонта 10%
+              .divider 
+              p.disount__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!
+              .disount__info__messengers
+                span.title Задать вопрос через мессенджер
+                .branch-office__info__messengers__wrapper
+                  img(src="static/img/whatsapp_icon.svg", alt="Вацап").social-icon
+                  img(src="static/img/viber_icon.svg", alt="Вайбер").social-icon
+                  img(src="static/img/telegram_icon.svg", alt="Телеграм").social-icon
     include ./modules/infoDividerSection
+    include ./modules/contactsAndMapSection
   include ./modules/footer
   script(src='static/scripts/common.js')

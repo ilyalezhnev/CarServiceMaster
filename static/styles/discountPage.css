@@ -1,10 +1,24 @@
-.discount__title {
-  text-align: center;
+.disount__layout {
+  display: flex;
+  justify-content: space-between;
 }
 
-.discount__image {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 710px;
+.disount__img,
+.disount__info {
+  width: 48%;
+}
+
+.disount__info__messengers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.disount__info__messengers .title {
+  font-family: 'Myriad-Bold';
+  margin-right: 12px;
+}
+
+.disount__info__messengers__wrapper img {
+  margin-left: 12px;
 }
