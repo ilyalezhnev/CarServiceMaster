@@ -31,6 +31,38 @@
   box-shadow: 2px 2px 14px 0px #9c9d9e;
 }
 
+.CTA__layout {
+  display: none;
+  position: relative;
+  background-image: url('/static/img/info_divider.png');
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 12px 0;
+}
+
+.CTA__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CTA__info-wrapper {
+  padding-right: 12px;
+}
+
+.CTA__info-wrapper .sub-title {
+  color: #ffffff;
+  padding-bottom: 12px;
+}
+
+.CTA__img {
+  width: 100%;
+  max-width: 131px;
+  max-height: 131px;
+}
+
 /* Services section */
 
 .services-section__layout {
@@ -216,6 +248,10 @@
 @media screen and (max-width: 1024px) {
   .common-info__layout {
     display: none;
+  }
+
+  .CTA__layout {
+    display: block;
   }
 
   .services-section__layout {

@@ -39,3 +39,11 @@
 .content-card__content {
   padding: 60px;
 }
+
+/* Media queries */
+
+@media screen and (max-width: 1024px) {
+  .content-card__layout {
+    box-shadow: none;
+  }
+}
