@@ -1,3 +1,18 @@
+.contacts-page .map {
+  padding: 60px 0 0;
+}
+
+.contacts-page .contacts {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.contacts-page .contacts .contact__item {
+  padding-top: 0;
+}
+
 .contacts-and-map__layout .block-title {
   text-align: center;
   display: none;
@@ -30,7 +45,8 @@
   padding-top: 32px;
 }
 
-.contact__item .phone a {
+.contact__item .phone a,
+.contact__item .email a {
   text-decoration: none;
   color: #3b3b3a;
   font-family: 'Myriad-Semibold';
