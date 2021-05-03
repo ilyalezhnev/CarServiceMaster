@@ -1,0 +1,29 @@
+.content-card__layout {
+  position: relative;
+  border-radius: 4px;
+  width: 100%;
+  box-shadow: 0px 0px 60px #9c9d9e;
+  margin-bottom: 120px;
+  font-size: 16px;
+  color: #3b3b3a;
+}
+
+.content-card__title {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 140px;
+}
+
+.content-card__title img {
+  margin-right: 24px;
+  z-index: 1;
+}
+
+.content-card__title .block-title {
+  z-index: 1;
+}
+
+.content-card__content {
+  padding: 60px;
+}

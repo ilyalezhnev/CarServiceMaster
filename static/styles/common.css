@@ -38,7 +38,19 @@ a.link {
 .block-title {
   font-family: 'Myriad-Bold';
   font-size: 46px;
+  line-height: 100%;
   color: #3b3b3a;
+}
+
+.sub-title {
+  font-family: 'Myriad-Bold';
+  font-size: 32px;
+  line-height: 100%;
+  color: #3b3b3a;
+}
+
+.text-aligt_center {
+  text-align: center;
 }
 
 .first-letter_yellow::first-letter {

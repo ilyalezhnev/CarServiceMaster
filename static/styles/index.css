@@ -10,6 +10,8 @@
 @import 'static/styles/contact-block.css';
 @import 'static/styles/infoDivider.css';
 @import 'static/styles/contactsAndMap.css';
+@import 'static/styles/contentCard.css';
+@import 'static/styles/skewFlag.css';
 
 @font-face {
   font-family: 'Myriad-Regular';

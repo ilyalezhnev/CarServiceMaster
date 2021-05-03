@@ -36,4 +36,5 @@
   position: absolute;
   bottom: -100px;
   right: 0px;
+  z-index: 1;
 }

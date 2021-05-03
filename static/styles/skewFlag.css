@@ -1,0 +1,8 @@
+.skew-flag__layout {
+  position: absolute;
+  width: 100%;
+  height: 140px;
+  top: 0;
+  left: -20%;
+  background: linear-gradient(110deg, #ffcc00 90%, transparent 50%), no-repeat right top / cover;
+}
