@@ -15,3 +15,16 @@
   left: 20%;
   background: linear-gradient(250deg, #3a3a3b 90%, transparent 50%), no-repeat right top / cover;
 }
+
+@media screen and (max-width: 1024px) {
+  .skew-flag_left,
+  .skew-flag_right {
+    height: 48px;
+  }
+
+  .skew-flag_left {
+    width: 100vw;
+    right: 0;
+    left: unset;
+  }
+}

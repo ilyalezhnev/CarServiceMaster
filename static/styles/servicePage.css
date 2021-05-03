@@ -29,7 +29,23 @@
 }
 
 /* Media queries */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
+  .service-description__layout {
+    flex-direction: column;
+  }
+
+  .service-description__img,
+  .service-description__info {
+    width: 100%;
+  }
+
+  .service-description__img {
+    order: 2;
+  }
+
+  .service-description__info__availability {
+    padding: 10px 0px 20px;
+  }
 }
 
 @media screen and (max-width: 575px) {

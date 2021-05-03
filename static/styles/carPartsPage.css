@@ -32,13 +32,22 @@
   margin-left: 12px;
 }
 
-@media screen and (max-width: 1023px) {
-  .branch-office_layout .contact-and-location .short-address {
-    flex: 2;
+@media screen and (max-width: 1024px) {
+  .car-parts__slogan {
+    font-size: 16px;
   }
 
-  .branch-office_layout .contact-and-location .phones {
-    flex: 3;
+  .branch-office__layout {
+    flex-direction: column;
+  }
+
+  .branch-office__img,
+  .branch-office__info {
+    width: 100%;
+  }
+
+  .branch-office__img {
+    order: 2;
   }
 }
 

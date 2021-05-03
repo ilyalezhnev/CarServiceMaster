@@ -56,6 +56,15 @@
 /* Media queries */
 
 @media screen and (max-width: 1024px) {
+  .contacts-page .map {
+    padding: 12px 0 0;
+  }
+
+  .contacts-page .contacts {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .contacts-and-map__layout .block-title {
     display: block;
   }

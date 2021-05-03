@@ -45,5 +45,30 @@
 @media screen and (max-width: 1024px) {
   .content-card__layout {
     box-shadow: none;
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .content-card__title img {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+  }
+
+  .content-card__title .block-title {
+    font-size: 20px;
+  }
+
+  .content-card__title {
+    height: 48px;
+    margin-top: -16px;
+  }
+
+  .content-card__content {
+    padding: 12px;
+  }
+
+  .content-card__title .block-title {
+    width: 70%;
   }
 }
