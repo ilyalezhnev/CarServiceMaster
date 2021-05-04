@@ -14,22 +14,6 @@ header
         .phone 
           a(href='tel:88142670799') 67-07-99
         .address Правды, 28
-        
-  //- .mobile-header
-  //-   a(href='/')
-  //-     img(
-  //-       src='static/img/mainLogo.svg' 
-  //-       alt="Логотип Мастер-сервис"
-  //-     )
-  //-   div.contacts
-  //-     div
-  //-       .phone 
-  //-         a(href='tel:88142670867') 67-08-67
-  //-       .address Ветеринарный, 13а
-  //-     div
-  //-       .phone 
-  //-         a(href='tel:88142670799') 67-07-99
-  //-       .address Правды, 28
   nav
     .width-container.desktop-menu
       ul.desktop-navbar__layout
@@ -144,20 +128,15 @@ header
           a(href='/corporate') Юр.лицам
         li
           a(href='/contacts') Контакты
+include ./officePopup
 script.
-  function fixHeader() {
-    const header = document.getElementsByTagName('header')[0];
-    const body = document.getElementsByTagName('main')[0];
+  const modal = document.getElementById('office-popup');
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.classList.remove('show');
+    }
+  };
 
-    window.addEventListener('scroll', function(e) {
-      if(window.scrollY > 0) {
-        header.classList.add("header_fixed");
-        body.style.cssText = `padding-top: ${header.offsetHeight}px`;
-      } else {
-        header.classList.remove("header_fixed");
-        body.style.cssText = `padding-top: unset`;
-      }
-    })
+  function showPopup() {
+    modal.classList.add('show');
   }
-
-  fixHeader();
