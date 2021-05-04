@@ -1,3 +1,10 @@
+.header_fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
 .desktop-header {
   min-height: 190px;
   background-color: #1a1a18;
