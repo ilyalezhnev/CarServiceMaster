@@ -15,8 +15,36 @@
   height: 140px;
 }
 
+.content-card__title_left {
+  width: 70%;
+  background: linear-gradient(110deg, #ffcc00 90%, transparent 50%), no-repeat right top / cover;
+}
+
 .content-card__title_right {
-  justify-content: flex-end;
+  width: 70%;
+  background: linear-gradient(250deg, #3a3a3b 90%, transparent 50%), no-repeat right top / cover;
+}
+
+.content-card__title_left::before {
+  content: '';
+  background-color: #ffcc00;
+  height: 100%;
+  width: calc((100vw - 100%) / 2);
+  position: absolute;
+  left: calc((100vw - 100%) / -2);
+}
+
+.content-card__title_right::before {
+  content: '';
+  background-color: #3a3a3b;
+  height: 100%;
+  width: -100%;
+  position: absolute;
+  right: -100%;
+}
+
+.content-card__title_right {
+  align-self: flex-end;
 }
 
 .content-card__title img {
