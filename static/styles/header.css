@@ -183,6 +183,7 @@ img.header__contact-block {
 
 .mobile-navbar .services.active {
   display: block;
+  padding: 0;
 }
 
 .mobile-navbar.active {

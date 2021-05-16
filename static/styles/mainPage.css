@@ -114,7 +114,7 @@
 /* Feedback section */
 
 .feedback-section__layout {
-  padding: 90px 0;
+  padding: 90px 0 180px;
 }
 
 .feedback-section__title {
@@ -194,7 +194,7 @@
   display: flex;
   align-items: center;
   top: -30px;
-  left: 40%;
+  right: 0%;
   width: 60%;
   height: 150px;
   background-color: #3b3b3a;
@@ -282,7 +282,7 @@
   }
 
   .feedback-section__layout {
-    padding: 8px 0;
+    padding: 8px 0 40px;
   }
 
   .feedback-section__title {
@@ -291,7 +291,6 @@
 
   .block-flag-header {
     top: -20px;
-    left: 15%;
     width: 85%;
     height: 46px;
   }

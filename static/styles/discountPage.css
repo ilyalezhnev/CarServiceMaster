@@ -16,9 +16,31 @@
 
 .disount__info__messengers .title {
   font-family: 'Myriad-Bold';
-  margin-right: 12px;
+}
+
+.branch-office__info__messengers__wrapper {
+  display: flex;
 }
 
 .disount__info__messengers__wrapper img {
   margin-left: 12px;
+}
+
+@media screen and (max-width: 1024px) {
+  .disount__layout {
+    flex-direction: column;
+  }
+
+  .disount__img,
+  .disount__info {
+    width: 100%;
+  }
+
+  .disount__img {
+    order: 2;
+  }
+
+  .disount__info__messengers {
+    padding: 12px 0px;
+  }
 }
