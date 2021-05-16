@@ -63,20 +63,3 @@ setActiveMenuItem = (menuPoints, url) => {
       break;
   }
 };
-
-function fixHeader() {
-  const header = document.getElementsByTagName('header')[0];
-  const body = document.getElementsByTagName('main')[0];
-
-  window.addEventListener('scroll', function (e) {
-    if (window.scrollY > 0) {
-      header.classList.add('header_fixed');
-      body.style.cssText = `padding-top: ${header.offsetHeight}px`;
-    } else {
-      header.classList.remove('header_fixed');
-      body.style.cssText = `padding-top: unset`;
-    }
-  });
-}
-
-fixHeader();

@@ -1,4 +1,6 @@
 .content-card__layout {
+  display: flex;
+  flex-direction: column;
   border-radius: 4px;
   width: 100%;
   box-shadow: 0px 0px 60px #9c9d9e;
@@ -21,7 +23,9 @@
 }
 
 .content-card__title_right {
+  justify-content: flex-end;
   width: 70%;
+  align-self: flex-end;
   background: linear-gradient(250deg, #3a3a3b 90%, transparent 50%), no-repeat right top / cover;
 }
 
@@ -38,7 +42,7 @@
   content: '';
   background-color: #3a3a3b;
   height: 100%;
-  width: -100%;
+  width: 100%;
   position: absolute;
   right: -100%;
 }
@@ -51,11 +55,6 @@
   width: 79px;
   height: 79px;
   margin-right: 24px;
-  z-index: 1;
-}
-
-.content-card__title .block-title {
-  width: 50%;
   z-index: 1;
 }
 
