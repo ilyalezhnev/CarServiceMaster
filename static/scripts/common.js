@@ -27,7 +27,6 @@ setActiveMenuItem = (menuPoints, url) => {
   switch (url) {
     case '/':
       menuPoints.forEach((el) => {
-        console.log('el', el);
         if (el.innerText === 'Главная') {
           el.classList.add('active');
         }

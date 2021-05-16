@@ -20,6 +20,8 @@ const usersController = require('./controllers/user.controller');
 require('./config/passport')(passport);
 
 const mainPageController = require('./controllers/mainPage.controller');
+const servicesController = require('./controllers/services.controller');
+const marked = require('marked');
 
 db.sequelize.sync();
 db.sequelize
@@ -36,6 +38,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use('/static', express.static(path.join(__dirname, 'static')));
+app.use('/service/static', express.static(path.join(__dirname, 'static')));
 app.use('/api/auth', auth);
 app.use('/api/admin/uploads', uploads);
 app.use('/api/admin/mainpage', mainPage);
@@ -53,37 +56,73 @@ app.use('/api/admin/reviews', reviews);
 app.set('views', './views');
 app.set('view engine', 'pug');
 
-app.get('/', async (req, res) => {
-  const { dataValues } = await mainPageController.getMainPage();
-  res.render('main', { content: dataValues });
+app.get('/service/:id', async (req, res, next) => {
+  const serviceItem = await servicesController.getService(req.params.id);
+  const services = await servicesController.getServices();
+  const mappedServices = services.map((it) => ({
+    id: it.id,
+    title: it.title,
+  }));
+
+  res.render('service', { serviceItem, mappedServices });
 });
 
-app.get('/service', (req, res) => {
-  res.render('service');
+app.get('/car-parts', async (req, res) => {
+  const services = await servicesController.getServices();
+  const mappedServices = services.map((it) => ({
+    id: it.id,
+    title: it.title,
+  }));
+
+  res.render('carParts', { mappedServices });
 });
 
-app.get('/car-parts', (req, res) => {
-  res.render('carParts');
+app.get('/corporate', async (req, res) => {
+  const services = await servicesController.getServices();
+  const mappedServices = services.map((it) => ({
+    id: it.id,
+    title: it.title,
+  }));
+
+  res.render('corporateClients', { mappedServices });
 });
 
-app.get('/corporate', (req, res) => {
-  res.render('corporateClients');
+app.get('/contacts', async (req, res) => {
+  const services = await servicesController.getServices();
+  const mappedServices = services.map((it) => ({
+    id: it.id,
+    title: it.title,
+  }));
+
+  res.render('contacts', { mappedServices });
 });
 
-app.get('/contacts', (req, res) => {
-  res.render('contacts');
-});
+app.get('/discount', async (req, res) => {
+  const services = await servicesController.getServices();
+  const mappedServices = services.map((it) => ({
+    id: it.id,
+    title: it.title,
+  }));
 
-app.get('/discount', (req, res) => {
-  res.render('discount');
+  res.render('discount', { mappedServices });
 });
 
 app.get('/admin', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'static', 'build', 'index.html'));
 });
 
-app.get('/*', (req, res) => {
-  res.render('main');
+app.get('/', async (req, res) => {
+  const { dataValues } = await mainPageController.getMainPage();
+  const services = await servicesController.getServices();
+  const mainPageContent = { ...dataValues, serviceDescription: marked(dataValues.serviceDescription) };
+
+  const mappedServices = services.map((it) => ({
+    id: it.id,
+    title: it.title,
+    icon: it.icon,
+  }));
+
+  res.render('main', { mainPageContent, mappedServices });
 });
 
 const port = process.env.PORT || 5000;

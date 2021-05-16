@@ -19,14 +19,14 @@
 
 .content-card__title_left {
   width: 70%;
-  background: linear-gradient(110deg, #ffcc00 90%, transparent 50%), no-repeat right top / cover;
+  background: linear-gradient(120deg, #ffcc00 90%, transparent 10%), no-repeat right top / cover;
 }
 
 .content-card__title_right {
   justify-content: flex-end;
   width: 70%;
   align-self: flex-end;
-  background: linear-gradient(250deg, #3a3a3b 90%, transparent 50%), no-repeat right top / cover;
+  background: linear-gradient(240deg, #3a3a3b 90%, transparent 10%), no-repeat right top / cover;
 }
 
 .content-card__title_left::before {

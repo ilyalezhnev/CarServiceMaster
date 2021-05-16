@@ -14,13 +14,13 @@ body
     .width-container
       .content-card__layout
         .content-card__title.content-card__title_left
-          img(src="static/img/serviceItem.svg", alt="Иконка услуги")
-          h1.block-title Диагностика электронных блоков
+          img(src=serviceItem.icon, alt="Иконка услуги")
+          h1.block-title= serviceItem.title
         .content-card__content    
           .service-description__layout
             img(src="static/img/service_image.png", alt="").service-description__img
             .service-description__info
-              .sub-title Стоимость: от 800
+              .sub-title Стоимость: #{serviceItem.cost}
                 span.currency ₽
               .divider 
               p.service-description__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!

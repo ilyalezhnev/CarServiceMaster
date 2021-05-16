@@ -273,6 +273,5 @@ function Ant(crslId, elemVisible = 1) {
 
   // Initialization
   this.options = { ...Ant.defaults, elemVisible };
-  console.log('elemvisible', this.options);
   Ant.initialize(this);
 }
