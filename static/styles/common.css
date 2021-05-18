@@ -12,8 +12,14 @@ a.link {
   text-decoration: none;
 }
 
+.messengers a {
+  text-decoration: none;
+  display: inline-block;
+}
+
 .messengers img {
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .main-title {

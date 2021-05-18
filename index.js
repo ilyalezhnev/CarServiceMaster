@@ -21,6 +21,7 @@ require('./config/passport')(passport);
 
 const mainPageController = require('./controllers/mainPage.controller');
 const servicesController = require('./controllers/services.controller');
+const officesController = require('./controllers/offices.controller');
 const marked = require('marked');
 
 db.sequelize.sync();
@@ -114,15 +115,30 @@ app.get('/admin', (req, res) => {
 app.get('/', async (req, res) => {
   const { dataValues } = await mainPageController.getMainPage();
   const services = await servicesController.getServices();
+  const offices = await officesController.getOffices();
   const mainPageContent = { ...dataValues, serviceDescription: marked(dataValues.serviceDescription) };
 
-  const mappedServices = services.map((it) => ({
-    id: it.id,
-    title: it.title,
-    icon: it.icon,
-  }));
+  const mappedServices = services.map((it) => {
+    const { id, title, icon } = it;
+    return {
+      id,
+      title,
+      icon,
+    };
+  });
 
-  res.render('main', { mainPageContent, mappedServices });
+  const mappedOffices = offices.map((it) => {
+    const { dataValues } = it;
+    const { tel, address, fullTel } = dataValues;
+
+    return {
+      address,
+      tel,
+      fullTel,
+    };
+  });
+
+  res.render('main', { mainPageContent, mappedServices, mappedOffices });
 });
 
 const port = process.env.PORT || 5000;

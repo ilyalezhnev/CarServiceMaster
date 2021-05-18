@@ -3,8 +3,8 @@ header
     .width-container.header__main-info
       .header__contact-block
         .phone 
-          a(href='tel:88142670867') 67-08-67
-        .address Ветеринарный, 13а
+          a(href=`tel:${mappedOffices[0].fullTel}`)= mappedOffices[0].tel
+        .address= mappedOffices[0].address
       a(href='/')
         img.header__contact-block(
           src='static/img/main_logo.svg' 
@@ -12,8 +12,8 @@ header
         )
       .header__contact-block
         .phone 
-          a(href='tel:88142670799') 67-07-99
-        .address Правды, 28
+          a(href=`tel:${mappedOffices[1].fullTel}`)= mappedOffices[1].tel
+        .address= mappedOffices[1].address
   nav
     .width-container.desktop-menu
       ul.desktop-navbar__layout
