@@ -18,20 +18,17 @@ body
           h1.block-title= serviceItem.title
         .content-card__content    
           .service-description__layout
-            img(src="static/img/service_image.png", alt="").service-description__img
+            img(src=serviceItem.image, alt="").service-description__img
             .service-description__info
               .sub-title Стоимость: #{serviceItem.cost}
                 span.currency ₽
               .divider 
-              p.service-description__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!
+              p.service-description__info__text= serviceItem.text
               div.service-description__info__availability
                 span.title Доступна:
                 span.address Ветеринарный, 13а
                 span.address Правды, 28
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis possimus ad sint velit labore ut explicabo dolores veritatis dicta inventore recusandae consectetur nostrum repellendus doloremque voluptatum ab, culpa iste esse?
-          h3.sub-title.text-aligt_center.first-letter_yellow Заголовок блока текста
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis possimus ad sint velit labore ut explicabo dolores veritatis dicta inventore recusandae consectetur nostrum repellendus doloremque voluptatum ab, culpa iste esse? 
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis possimus ad sint velit labore ut explicabo dolores veritatis dicta inventore recusandae consectetur nostrum repellendus doloremque voluptatum ab, culpa iste esse?
+          !=serviceItem.description
     include ./modules/infoDividerSection
     include ./modules/contactsAndMapSection
   include ./modules/footer

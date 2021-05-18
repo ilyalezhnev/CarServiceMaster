@@ -58,8 +58,6 @@
 }
 
 .office-popup__card .select-button {
-  margin-top: 8px;
-  width: fit-content;
   font-family: 'Myriad-Bold';
   border-bottom: 2px solid #ffcc00;
   cursor: pointer;

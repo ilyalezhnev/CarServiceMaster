@@ -21,7 +21,7 @@ require('./config/passport')(passport);
 
 const mainPageController = require('./controllers/mainPage.controller');
 const servicesController = require('./controllers/services.controller');
-const officesController = require('./controllers/offices.controller');
+const dataMapper = require('./mappers/data.mapper');
 const marked = require('marked');
 
 db.sequelize.sync();
@@ -59,53 +59,39 @@ app.set('view engine', 'pug');
 
 app.get('/service/:id', async (req, res, next) => {
   const serviceItem = await servicesController.getService(req.params.id);
-  const services = await servicesController.getServices();
-  const mappedServices = services.map((it) => ({
-    id: it.id,
-    title: it.title,
-  }));
+  serviceItem.description = marked(serviceItem.description);
+  const mappedOffices = await dataMapper.getMappedOffices();
+  const mappedServices = await dataMapper.getMappedServices();
 
-  res.render('service', { serviceItem, mappedServices });
+  res.render('service', { serviceItem, mappedServices, mappedOffices });
 });
 
 app.get('/car-parts', async (req, res) => {
-  const services = await servicesController.getServices();
-  const mappedServices = services.map((it) => ({
-    id: it.id,
-    title: it.title,
-  }));
+  const mappedOffices = await dataMapper.getMappedOffices();
+  const mappedServices = await dataMapper.getMappedServices();
 
-  res.render('carParts', { mappedServices });
+  res.render('carParts', { mappedServices, mappedOffices });
 });
 
 app.get('/corporate', async (req, res) => {
-  const services = await servicesController.getServices();
-  const mappedServices = services.map((it) => ({
-    id: it.id,
-    title: it.title,
-  }));
+  const mappedOffices = await dataMapper.getMappedOffices();
+  const mappedServices = await dataMapper.getMappedServices();
 
-  res.render('corporateClients', { mappedServices });
+  res.render('corporateClients', { mappedServices, mappedOffices });
 });
 
 app.get('/contacts', async (req, res) => {
-  const services = await servicesController.getServices();
-  const mappedServices = services.map((it) => ({
-    id: it.id,
-    title: it.title,
-  }));
+  const mappedOffices = await dataMapper.getMappedOffices();
+  const mappedServices = await dataMapper.getMappedServices();
 
-  res.render('contacts', { mappedServices });
+  res.render('contacts', { mappedServices, mappedOffices });
 });
 
 app.get('/discount', async (req, res) => {
-  const services = await servicesController.getServices();
-  const mappedServices = services.map((it) => ({
-    id: it.id,
-    title: it.title,
-  }));
+  const mappedOffices = await dataMapper.getMappedOffices();
+  const mappedServices = await dataMapper.getMappedServices();
 
-  res.render('discount', { mappedServices });
+  res.render('discount', { mappedServices, mappedOffices });
 });
 
 app.get('/admin', (req, res) => {
@@ -114,29 +100,9 @@ app.get('/admin', (req, res) => {
 
 app.get('/', async (req, res) => {
   const { dataValues } = await mainPageController.getMainPage();
-  const services = await servicesController.getServices();
-  const offices = await officesController.getOffices();
   const mainPageContent = { ...dataValues, serviceDescription: marked(dataValues.serviceDescription) };
-
-  const mappedServices = services.map((it) => {
-    const { id, title, icon } = it;
-    return {
-      id,
-      title,
-      icon,
-    };
-  });
-
-  const mappedOffices = offices.map((it) => {
-    const { dataValues } = it;
-    const { tel, address, fullTel } = dataValues;
-
-    return {
-      address,
-      tel,
-      fullTel,
-    };
-  });
+  const mappedOffices = await dataMapper.getMappedOffices();
+  const mappedServices = await dataMapper.getMappedServices();
 
   res.render('main', { mainPageContent, mappedServices, mappedOffices });
 });

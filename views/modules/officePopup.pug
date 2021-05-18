@@ -2,19 +2,12 @@ div#office-popup
   .office-popup__block
     .office-popup__header Выберите филиал
     .office-popup__content
-      .office-popup__card
-        img(src="static/img/medium_logo.svg", alt="Логотип Мастер-сервис")
-        .contact__item
-          .address г. Петрозаводск, ул. Правды, 28
-          .phone 
-            a(href='tel:88142670867') 8 (8142) 67-07-99
-          .schedule Ежедневно: с 9.00 до 20.00
-          .select-button Выбрать этот филиал
-      .office-popup__card
-        img(src="static/img/medium_logo.svg", alt="Логотип Мастер-сервис")
-        .contact__item
-          .address г. Петрозаводск, ул. Правды, 28
-          .phone 
-            a(href='tel:88142670867') 8 (8142) 67-07-99
-          .schedule Ежедневно: с 9.00 до 20.00
-          .select-button Выбрать этот филиал
+      each office in mappedOffices
+        .office-popup__card
+          img(src="static/img/medium_logo.svg", alt="Логотип Мастер-сервис")
+          .contact__item
+            .address= office.fullAddress
+            .phone 
+              a(href=`tel:${office.fullTel}`)= office.fullTel
+            .schedule= office.workingHours
+            a.select-button Выбрать этот филиал
