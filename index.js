@@ -90,8 +90,9 @@ app.get('/contacts', async (req, res) => {
 app.get('/discount', async (req, res) => {
   const mappedOffices = await dataMapper.getMappedOffices();
   const mappedServices = await dataMapper.getMappedServices();
+  const mappedPromos = await dataMapper.getMappedPromos();
 
-  res.render('discount', { mappedServices, mappedOffices });
+  res.render('discount', { mappedServices, mappedOffices, mappedPromos });
 });
 
 app.get('/admin', (req, res) => {
@@ -103,8 +104,9 @@ app.get('/', async (req, res) => {
   const mainPageContent = { ...dataValues, serviceDescription: marked(dataValues.serviceDescription) };
   const mappedOffices = await dataMapper.getMappedOffices();
   const mappedServices = await dataMapper.getMappedServices();
+  const mappedPromos = await dataMapper.getMappedPromos();
 
-  res.render('main', { mainPageContent, mappedServices, mappedOffices });
+  res.render('main', { mainPageContent, mappedServices, mappedOffices, mappedPromos });
 });
 
 const port = process.env.PORT || 5000;

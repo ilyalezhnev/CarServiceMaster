@@ -8,6 +8,12 @@
   width: 48%;
 }
 
+.disount__img {
+  max-width: 475px;
+  max-height: 316px;
+  object-fit: cover;
+}
+
 .disount__info__messengers {
   display: flex;
   align-items: center;

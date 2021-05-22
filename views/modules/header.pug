@@ -25,8 +25,9 @@ header
             ul
               each service in mappedServices
                 li
-                  img(src="static/img/shevron.svg", alt="Шеврон пункта меню")
-                  a(href=`/service/${service.id}`)= service.title
+                  a(href=`/service/${service.id}`)
+                    img(src="static/img/shevron.svg", alt="Шеврон пункта меню")
+                    span=service.title
         li.desktop-navbar__item
           a(href='/car-parts') Запчасти
         li.desktop-navbar__item
@@ -40,9 +41,9 @@ header
           img(src="static/img/hamburger.svg", alt="Кнопка вызова меню")#menu-toggler
           span Меню
         div.mobile-menu__socials
-         a(href='href="https://vk.com/ptz_auto"')
+         a(href='https://vk.com/ptz_auto' target="_blank")
           img(src="static/img/vk_gray.svg", alt="ВКонтакте")
-         a(href='href="https://vk.com/ptz_auto"')
+         a(href='https://vk.com/ptz_auto' target="_blank")
           img(src="static/img/instagram_gray.svg", alt="Инстаграм")
       ul.mobile-navbar
         li

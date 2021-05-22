@@ -2,8 +2,8 @@ html(lang="ru")
 head
   title Автосервис Мастер
   meta(charset="utf-8")
-  meta(name='description', content='Станция технического обслуживания легковых автомобилей "Мастер"')
-  meta(name='keywords', content='СТО, автосервис, Мастер, ремонт автомобилей, шиномонтаж')
+  meta(name='description', content='Станция технического обслуживания легковых автомобилей "Мастер". Акции в наших филиалах.')
+  meta(name='keywords', content='СТО Мастер, автосервис, ремонт автомобилей, шиномонтаж, скидки, акции')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   style
     include ../static/styles/index.css
@@ -16,45 +16,20 @@ body
         .content-card__title.content-card__title_left
           img(src="static/img/percent.svg", alt="Иконка акций")
           h1.block-title  Акции
-        .content-card__content    
-          .disount__layout
-            img(src="static/img/service_image.png", alt="").disount__img
-            .disount__info
-              .sub-title Скидка на мойку в день ремонта 10%
-              .divider 
-              p.disount__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!
-              .disount__info__messengers
-                span.title Задать вопрос через мессенджер
-                .branch-office__info__messengers__wrapper
-                  img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick='showPopup()').social-icon
-                  img(src="static/img/viber_icon.svg", alt="Вайбер" onclick='showPopup()').social-icon
-                  img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick='showPopup()').social-icon
-        .content-card__content    
-          .disount__layout
-            img(src="static/img/service_image.png", alt="").disount__img
-            .disount__info
-              .sub-title Скидка на мойку в день ремонта 10%
-              .divider 
-              p.disount__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!
-              .disount__info__messengers
-                span.title Задать вопрос через мессенджер
-                .branch-office__info__messengers__wrapper
-                  img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick='showPopup()').social-icon
-                  img(src="static/img/viber_icon.svg", alt="Вайбер" onclick='showPopup()').social-icon
-                  img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick='showPopup()').social-icon
-        .content-card__content    
-          .disount__layout
-            img(src="static/img/service_image.png", alt="").disount__img
-            .disount__info
-              .sub-title Скидка на мойку в день ремонта 10%
-              .divider 
-              p.disount__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!
-              .disount__info__messengers
-                span.title Задать вопрос через мессенджер
-                .branch-office__info__messengers__wrapper
-                  img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick='showPopup()').social-icon
-                  img(src="static/img/viber_icon.svg", alt="Вайбер" onclick='showPopup()').social-icon
-                  img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick='showPopup()').social-icon
+        each promo in mappedPromos
+          .content-card__content    
+            .disount__layout
+              img(src=promo.image, alt="").disount__img
+              .disount__info
+                .sub-title=promo.title
+                .divider 
+                p.disount__info__text=promo.description
+                .disount__info__messengers
+                  span.title Задать вопрос через мессенджер
+                  .branch-office__info__messengers__wrapper
+                    img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick='showPopup()').social-icon
+                    img(src="static/img/viber_icon.svg", alt="Вайбер" onclick='showPopup()').social-icon
+                    img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick='showPopup()').social-icon
     include ./modules/infoDividerSection
     include ./modules/contactsAndMapSection
   include ./modules/footer
