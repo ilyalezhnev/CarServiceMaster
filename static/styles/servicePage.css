@@ -25,7 +25,7 @@
   margin-right: 12px;
   padding: 8px 24px 8px 12px;
   width: fit-content;
-  background: linear-gradient(110deg, #ffcc00 90%, transparent 50%), no-repeat right top / cover;
+  background: linear-gradient(120deg, #ffcc00 89%, transparent 11%), no-repeat right top / cover;
 }
 
 /* Media queries */
@@ -49,4 +49,12 @@
 }
 
 @media screen and (max-width: 575px) {
+  .service-description__info__availability {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-description__info__availability > span {
+    margin-bottom: 12px;
+  }
 }

@@ -121,11 +121,7 @@ const Service: FC<IProps> = ({ addServices, updateServices, deleteServices, serv
               {offices && !offices.length && <NoContent text="Чтобы указать доступность услуг в офисах добавьте контакты" />}
               {offices.map((office) => (
                 <Col key={office.id}>
-                  {service ? (
-                    <Checkbox value={office.id}>{office.address}</Checkbox>
-                  ) : (
-                    <Checkbox value={office.id}>{office.address}</Checkbox>
-                  )}
+                  <Checkbox value={office.id}>{office.address}</Checkbox>
                 </Col>
               ))}
             </Row>

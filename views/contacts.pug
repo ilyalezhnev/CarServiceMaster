@@ -21,32 +21,20 @@ body
         .content-card__content
           .contacts
             img(src="static/img/medium_logo.svg", alt="Логотип Мастер-сервис")
-            .contact__item
-              .address г. Петрозаводск, ул. Правды, 28
-              .phone 
-                a(href='tel:88142670867') 8 (8142) 67-07-99
-              .email 
-                a(href='mailto:mail@ptzmaster.ru' target="_blank") mail@ptzmaster.ru
-              .schedule Ежедневно: с 9.00 до 20.00
-              .messengers
-                img(src="static/img/vk_icon.svg", alt="ВКонтакте").social-icon
-                img(src="static/img/instagram_icon.svg", alt="Инстаграм").social-icon
-                img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick='showPopup()').social-icon
-                img(src="static/img/viber_icon.svg", alt="Вайбер" onclick='showPopup()').social-icon
-                img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick='showPopup()').social-icon
-            .contact__item
-              .address г. Петрозаводск, ул. Правды, 28
-              .phone 
-                a(href='tel:88142670867') 8 (8142) 67-07-99
-              .email 
-                a(href='mailto:mail@ptzmaster.ru' target="_blank") mail@ptzmaster.ru
-              .schedule Ежедневно: с 9.00 до 20.00
+            each office in mappedOffices
+              .contact__item
+                .address=office.fullAddress
+                .phone 
+                  a(href=`tel:${office.fullTel}`)=office.fullTel
+                .email 
+                  a(href=`mailto:${office.email}` target="_blank")=office.email
+                .schedule= office.workingHours
                 .messengers
-                  img(src="static/img/vk_icon.svg", alt="ВКонтакте" ).social-icon
+                  img(src="static/img/vk_icon.svg", alt="ВКонтакте").social-icon
                   img(src="static/img/instagram_icon.svg", alt="Инстаграм").social-icon
                   img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick='showPopup()').social-icon
                   img(src="static/img/viber_icon.svg", alt="Вайбер" onclick='showPopup()').social-icon
                   img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick='showPopup()').social-icon
-    include ./modules/infoDividerSection 
+    include ./modules/infoDividerSection
   include ./modules/footer
   script(src='static/scripts/common.js')

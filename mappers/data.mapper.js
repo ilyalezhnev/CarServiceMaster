@@ -21,7 +21,7 @@ exports.getMappedOffices = async () => {
   const offices = await officesController.getOffices();
   return offices.map((it) => {
     const { dataValues } = it;
-    const { tel, address, fullTel, fullAddress, workingHours } = dataValues;
+    const { tel, address, fullTel, fullAddress, workingHours, email } = dataValues;
 
     return {
       address,
@@ -29,6 +29,7 @@ exports.getMappedOffices = async () => {
       tel,
       fullTel,
       workingHours,
+      email,
     };
   });
 };

@@ -2,7 +2,7 @@ html(lang="ru")
 head
   title Автосервис Мастер
   meta(charset="utf-8")
-  meta(name='description', content='Станция технического обслуживания легковых автомобилей "Мастер" Услуги нашего автосервиса.')
+  meta(name='description', content='Станция технического обслуживания легковых автомобилей "Мастер" #{serviceItem.title}')
   meta(name='keywords', content='СТО Мастер, автосервис, ремонт автомобилей, шиномонтаж, скидки, акции')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   style
@@ -26,8 +26,9 @@ body
               p.service-description__info__text= serviceItem.text
               div.service-description__info__availability
                 span.title Доступна:
-                span.address Ветеринарный, 13а
-                span.address Правды, 28
+                each office in serviceItem.offices
+                  if office.serviceOffice.isAvailable
+                    span.address=office.address
           !=serviceItem.description
     include ./modules/infoDividerSection
     include ./modules/contactsAndMapSection
