@@ -2,6 +2,7 @@ const servicesController = require('../controllers/services.controller');
 const officesController = require('../controllers/offices.controller');
 const promoController = require('../controllers/promos.controller');
 const carPartsController = require('../controllers/carParts.controller');
+const corporateClientsController = require('../controllers/corporateClients.controller');
 const marked = require('marked');
 
 exports.getMappedServices = async () => {
@@ -52,4 +53,12 @@ exports.getMappedCarParts = async () => {
   });
 
   return { title, subtitle, offices };
+};
+
+exports.getCorporateClients = async () => {
+  const corporateClients = await corporateClientsController.getCorporateClients();
+  corporateClients.description = marked(corporateClients.description);
+  corporateClients.info = marked(corporateClients.info);
+
+  return corporateClients;
 };

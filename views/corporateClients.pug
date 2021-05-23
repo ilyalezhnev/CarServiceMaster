@@ -15,19 +15,14 @@ body
       .content-card__layout
         .content-card__title.content-card__title_left
           img(src="static/img/legal_entity.svg", alt="Иконка услуги")
-          h1.block-title Юридическим лицам
-        .content-card__content    
-          p.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor in vitae amet ultrices. Pretium quam sapien, senectus lorem. Amet aliquet tortor nisl vitae. Eget a at nec nunc suspendisse fermentum. Nunc, a sed sed est eget urna. Ac et et massa commodo pretium, lobortis. Et tristique quam morbi eleifend gravida ut vestibulum. Ante dolor viverra laoreet justo, senectus sed morbi quisque. Amet, tortor at facilisi lobortis nulla. Nibh ullamcorper velit feugiat purus elit. Vitae, elementum interdum tempus, tempus, amet venenatis.
-          p.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor in vitae amet ultrices. Pretium quam sapien, senectus lorem. Amet aliquet tortor nisl vitae. Eget a at nec nunc suspendisse fermentum. Nunc, a sed sed est eget urna. Ac et et massa commodo pretium, lobortis. Et tristique quam morbi eleifend gravida ut vestibulum. Ante dolor viverra laoreet justo, senectus sed morbi quisque. Amet, tortor at facilisi lobortis nulla. Nibh ullamcorper velit feugiat purus elit. Vitae, elementum interdum tempus, tempus, amet venenatis.
+          h1.block-title=corporateClients.title
+        .content-card__content
+          !=corporateClients.description
           .gallery
-            .image__wrapper
-              img(src="static/img/corporate1.png", alt="corporate photo")
-            .image__wrapper
-              img(src="static/img/corporate2.png", alt="corporate photo")
-            .image__wrapper
-              img(src="static/img/corporate3.png", alt="corporate photo")
-            .image__wrapper
-              img(src="static/img/corporate4.png", alt="corporate photo")
+            each image in corporateClients.images
+              .image__wrapper
+                img(src=image.url, alt="Фото для галереи")
+          !=corporateClients.info
     include ./modules/infoDividerSection
     include ./modules/contactsAndMapSection
   include ./modules/footer

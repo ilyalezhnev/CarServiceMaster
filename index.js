@@ -77,8 +77,9 @@ app.get('/car-parts', async (req, res) => {
 app.get('/corporate', async (req, res) => {
   const mappedOffices = await dataMapper.getMappedOffices();
   const mappedServices = await dataMapper.getMappedServices();
+  const corporateClients = await dataMapper.getCorporateClients();
 
-  res.render('corporateClients', { mappedServices, mappedOffices });
+  res.render('corporateClients', { mappedServices, mappedOffices, corporateClients });
 });
 
 app.get('/contacts', async (req, res) => {
