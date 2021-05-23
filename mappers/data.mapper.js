@@ -1,6 +1,7 @@
 const servicesController = require('../controllers/services.controller');
 const officesController = require('../controllers/offices.controller');
 const promoController = require('../controllers/promos.controller');
+const carPartsController = require('../controllers/carParts.controller');
 const marked = require('marked');
 
 exports.getMappedServices = async () => {
@@ -39,4 +40,16 @@ exports.getMappedPromos = async () => {
   });
 
   return promos;
+};
+
+exports.getMappedCarParts = async () => {
+  const carParts = await carPartsController.getCarParts();
+  const { dataValues } = carParts;
+  const { title, subtitle, offices } = dataValues;
+
+  offices.map((it) => {
+    return it.dataValues;
+  });
+
+  return { title, subtitle, offices };
 };

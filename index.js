@@ -69,8 +69,9 @@ app.get('/service/:id', async (req, res, next) => {
 app.get('/car-parts', async (req, res) => {
   const mappedOffices = await dataMapper.getMappedOffices();
   const mappedServices = await dataMapper.getMappedServices();
+  const mappedCarParts = await dataMapper.getMappedCarParts();
 
-  res.render('carParts', { mappedServices, mappedOffices });
+  res.render('carParts', { mappedServices, mappedOffices, mappedCarParts });
 });
 
 app.get('/corporate', async (req, res) => {

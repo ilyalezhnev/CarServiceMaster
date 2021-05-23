@@ -14,48 +14,51 @@ body
     .width-container
       .content-card__layout
         .content-card__content
-          span Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia commodi illum, pariatur molestiae eveniet voluptatibus, voluptate consequatur aut, sequi nisi sapiente veritatis officia possimus nam velit molestias dolores sunt. Illo!
-          h1.car-parts__slogan 
-            span.head Мастер сервис 
-            span - сеть современных комплексов и бла бла бла
-        .content-card__title.content-card__title_left
-          img(src="static/img/half_car_gray.svg", alt="Иконка филиала запчастей")
-          span.block-title Запчасти
-            |
-            br
-            | на ул.Правды, 28
-        .content-card__content    
-          .branch-office__layout
-            img(src="static/img/service_image.png", alt="").branch-office__img
-            .branch-office__info
-              .sub-title 67-07-99 / Правды, 28
-              .divider 
-              p.branch-office__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!
-              .branch-office__info__messengers
-                span.title Заказать автозапчасть
-                .branch-office__info__messengers__wrapper
-                  img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick='showPopup()').social-icon
-                  img(src="static/img/viber_icon.svg", alt="Вайбер" onclick='showPopup()').social-icon
-                  img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick='showPopup()').social-icon
-        .content-card__title.content-card__title_right
-          img(src="static/img/half_car_yellow.svg", alt="Иконка филиала запчастей")
-          span.block-title Запчасти
-            |
-            br
-            | на ул.Правды, 28
-        .content-card__content    
-          .branch-office__layout
-            img(src="static/img/service_image.png", alt="").branch-office__img
-            .branch-office__info
-              .sub-title 67-07-99 / Правды, 28
-              .divider 
-              p.branch-office__info__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti saepe impedit voluptatum sapiente consequuntur at deserunt officiis quidem accusantium. Magni natus tenetur sit necessitatibus sapiente deleniti nisi accusamus! Ut, atque!
-              .branch-office__info__messengers
-                span.title Заказать автозапчасть
-                .branch-office__info__messengers__wrapper
-                  img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick='showPopup()').social-icon
-                  img(src="static/img/viber_icon.svg", alt="Вайбер" onclick='showPopup()').social-icon
-                  img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick='showPopup()').social-icon
+          span=mappedCarParts.subtitle
+          h1.car-parts__slogan=mappedCarParts.title
+        each office, index in mappedCarParts.offices 
+          if index%2 === 0
+            .content-card__title.content-card__title_left
+              img(src="static/img/half_car_gray.svg", alt="Иконка филиала запчастей")
+              span.block-title Запчасти
+                |
+                br
+                | на 
+                =office.address
+            .content-card__content    
+              .branch-office__layout
+                img(src=office.carPartOffice.image, alt="").branch-office__img
+                .branch-office__info
+                  .sub-title #{office.tel} / #{office.address}
+                  .divider 
+                  p.branch-office__info__text=office.carPartOffice.description
+                  .branch-office__info__messengers
+                    span.title Заказать автозапчасть
+                    .branch-office__info__messengers__wrapper
+                      img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick='showPopup()').social-icon
+                      img(src="static/img/viber_icon.svg", alt="Вайбер" onclick='showPopup()').social-icon
+                      img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick='showPopup()').social-icon
+          else
+            .content-card__title.content-card__title_right
+              img(src="static/img/half_car_yellow.svg", alt="Иконка филиала запчастей")
+              span.block-title Запчасти
+                |
+                br
+                | на 
+                =office.address
+            .content-card__content    
+              .branch-office__layout
+                img(src=office.carPartOffice.image, alt="").branch-office__img
+                .branch-office__info
+                  .sub-title #{office.tel} / #{office.address}
+                  .divider 
+                  p.branch-office__info__text=office.carPartOffice.description
+                  .branch-office__info__messengers
+                    span.title Заказать автозапчасть
+                    .branch-office__info__messengers__wrapper
+                      img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick='showPopup()').social-icon
+                      img(src="static/img/viber_icon.svg", alt="Вайбер" onclick='showPopup()').social-icon
+                      img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick='showPopup()').social-icon
     include ./modules/infoDividerSection
     include ./modules/contactsAndMapSection
   include ./modules/footer
