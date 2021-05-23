@@ -62,3 +62,28 @@ setActiveMenuItem = (menuPoints, url) => {
       break;
   }
 };
+
+function openMessenger(messenger, contact) {
+  let link = '';
+
+  switch (messenger) {
+    case 'whatsapp':
+      link = `https://wa.me/${contact}`;
+      break;
+    case 'viber':
+      link = `viber://chat?number=%2B${contact}`;
+      break;
+    case 'telegram':
+      link = `https://t.me/${contact}`;
+      break;
+  }
+
+  if (link) {
+    window.open(link);
+  }
+}
+
+function openMessengerFromPopup(officeData) {
+  const messenger = document.getElementById('messenger-argument').innerHTML;
+  openMessenger(messenger, officeData[messenger]);
+}

@@ -10,6 +10,10 @@
   z-index: 999;
 }
 
+#messenger-argument {
+  display: none;
+}
+
 #office-popup.show {
   display: block;
 }

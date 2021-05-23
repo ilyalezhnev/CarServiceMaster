@@ -19,19 +19,7 @@ exports.getMappedServices = async () => {
 
 exports.getMappedOffices = async () => {
   const offices = await officesController.getOffices();
-  return offices.map((it) => {
-    const { dataValues } = it;
-    const { tel, address, fullTel, fullAddress, workingHours, email } = dataValues;
-
-    return {
-      address,
-      fullAddress,
-      tel,
-      fullTel,
-      workingHours,
-      email,
-    };
-  });
+  return offices;
 };
 
 exports.getMappedPromos = async () => {

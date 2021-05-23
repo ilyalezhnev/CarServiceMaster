@@ -1,4 +1,5 @@
 div#office-popup
+  #messenger-argument
   .office-popup__block
     .office-popup__header Выберите филиал
     .office-popup__content
@@ -6,8 +7,8 @@ div#office-popup
         .office-popup__card
           img(src="static/img/medium_logo.svg", alt="Логотип Мастер-сервис")
           .contact__item
-            .address= office.fullAddress
-            .phone 
+            .address=office.fullAddress
+            .phone
               a(href=`tel:${office.fullTel}`)= office.fullTel
-            .schedule= office.workingHours
-            a.select-button Выбрать этот филиал
+            .schedule=office.workingHours
+            .select-button(onclick=`openMessengerFromPopup({whatsapp: ${office.whatsapp}, viber: ${office.viber}, telegram: ${office.telegram}})`) Выбрать этот филиал
