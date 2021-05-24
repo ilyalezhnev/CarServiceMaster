@@ -93,6 +93,10 @@ body,
 .imageGalaryUpload__deleteButton:hover {
   cursor: pointer;
 }
+.uploadsBlock {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 /* ANTD styles */
 

@@ -15,6 +15,9 @@ module.exports = (sequelize, Sequelize) => {
     image: {
       type: Sequelize.TEXT('tiny'),
     },
+    sliderImage: {
+      type: Sequelize.TEXT('tiny'),
+    },
   });
 
   return Promo;

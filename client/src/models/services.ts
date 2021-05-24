@@ -9,7 +9,7 @@ interface IState {
 }
 
 const initialState: IState = {
-  data: null
+  data: null,
 };
 
 export interface IServices {
@@ -38,6 +38,7 @@ export interface IServicesFromServer extends IServices {
 }
 export interface IServicesToServer extends IServices {
   servicesOffices: { id?: number; officeId: number; isAvailable: boolean }[];
+  newServicesOffices?: { id?: number; officeId: number; isAvailable: boolean }[];
 }
 
 export const services = createModel<IRootModel>()({
@@ -45,9 +46,9 @@ export const services = createModel<IRootModel>()({
   reducers: {
     setServices(state, data: IServicesFromServer[]): IState {
       return { ...state, data };
-    }
+    },
   },
-  effects: d => {
+  effects: (d) => {
     return {
       async getServices() {
         const { data } = await ServicesService.getServices();
@@ -59,11 +60,11 @@ export const services = createModel<IRootModel>()({
         const { servicesOffices, ...rest } = model;
         const { data } = await ServicesService.addServices(rest);
         await Promise.all(
-          servicesOffices.map(serviceOffice => {
+          servicesOffices.map((serviceOffice) => {
             return ServicesOfficesService.addServicesOffices({
               officeId: serviceOffice.officeId,
               serviceId: data.id,
-              isAvailable: serviceOffice.isAvailable
+              isAvailable: serviceOffice.isAvailable,
             });
           })
         ).then(() => {
@@ -73,29 +74,37 @@ export const services = createModel<IRootModel>()({
         });
       },
       async updateServices(model: IServicesToServer) {
-        const { servicesOffices, ...rest } = model;
+        const { servicesOffices, newServicesOffices, ...rest } = model;
         const { data } = await ServicesService.updateServices(rest);
         await Promise.all(
-          servicesOffices.map(serviceOffice => {
+          servicesOffices.map((serviceOffice) => {
             return ServicesOfficesService.updateServicesOffices({
               id: serviceOffice.id,
               officeId: serviceOffice.officeId,
               serviceId: data.id,
-              isAvailable: serviceOffice.isAvailable
+              isAvailable: serviceOffice.isAvailable,
             });
           })
-        ).then(() => {
-          if (data) {
-            d.services.getServices();
-          }
-        });
+        );
+        if (newServicesOffices) {
+          await Promise.all(
+            newServicesOffices.map((serviceOffice) => {
+              return ServicesOfficesService.addServicesOffices({
+                officeId: serviceOffice.officeId,
+                serviceId: data.id,
+                isAvailable: serviceOffice.isAvailable,
+              });
+            })
+          );
+        }
+        await d.services.getServices();
       },
       async deleteServices(id: number) {
         const { data } = await ServicesService.deleteServices(id);
         if (data) {
           d.services.getServices();
         }
-      }
+      },
     };
-  }
+  },
 });

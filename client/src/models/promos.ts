@@ -17,6 +17,7 @@ export interface IPromos {
   description: string;
   shortDescription: string;
   image: string;
+  sliderImage: string;
 }
 
 export const promos = createModel<IRootModel>()({

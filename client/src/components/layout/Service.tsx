@@ -6,28 +6,15 @@ import marked from 'marked';
 import SingleUpload from '../common/SingleUpload';
 import { IServicesForm, IServicesFromServer, IServicesToServer } from '../../models/services';
 import { IOffices } from '../../models/offices';
-import NoContent from '../common/NoContent';
 import MarkdownTooltip from '../common/MarkdownTooltip';
 import { tooltipText } from '../../constants/tooltipText';
-
-const iconContainer: React.CSSProperties = {
-  marginBottom: '20px',
-  position: 'relative'
-};
-const icon: React.CSSProperties = {
-  position: 'absolute',
-  top: '14px',
-  left: '14px',
-  zIndex: 1,
-  cursor: 'pointer'
-};
 
 const mapState = (state: IRootState) => ({});
 
 const mapDispatch = (dispatch: Dispatch) => ({
   addServices: dispatch.services.addServices,
   updateServices: dispatch.services.updateServices,
-  deleteServices: dispatch.services.deleteServices
+  deleteServices: dispatch.services.deleteServices,
 });
 
 type connectedProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
@@ -50,7 +37,7 @@ const Service: FC<IProps> = ({ addServices, updateServices, deleteServices, serv
         text: service.text,
         image: service.image,
         icon: service.icon,
-        officesIds: [...service.offices.map(item => item.serviceOffice.isAvailable && item.serviceOffice.officeId)]
+        officesIds: [...service.offices.map((item) => item.serviceOffice.isAvailable && item.serviceOffice.officeId)],
       });
       setDescriptionHTML(service.description || '');
     }
@@ -63,20 +50,28 @@ const Service: FC<IProps> = ({ addServices, updateServices, deleteServices, serv
     if (service) {
       const updateData: IServicesToServer = {
         ...values,
-        servicesOffices: service.offices.map(office => ({
+        servicesOffices: service.offices.map((office) => ({
           id: office.serviceOffice.id,
           officeId: office.serviceOffice.officeId,
-          isAvailable: officesIds.some(id => id === office.serviceOffice.officeId)
-        }))
+          isAvailable: officesIds.some((id) => id === office.serviceOffice.officeId),
+        })),
+        newServicesOffices: offices
+          .filter((item) => !service.offices.some((elem) => elem.id === item.id))
+          .map((office) => {
+            return {
+              officeId: office.id,
+              isAvailable: officesIds.some((id) => id === office.id),
+            };
+          }),
       };
       updateServices({ ...updateData, id: service.id });
     } else {
       const addData: IServicesToServer = {
         ...values,
-        servicesOffices: offices.map(office => ({
+        servicesOffices: offices.map((office) => ({
           officeId: office.id,
-          isAvailable: officesIds.some(id => id === office.id)
-        }))
+          isAvailable: officesIds.some((id) => id === office.id),
+        })),
       };
       addServices(addData);
     }
@@ -130,8 +125,7 @@ const Service: FC<IProps> = ({ addServices, updateServices, deleteServices, serv
         <Checkbox.Group>
           {offices && (
             <Row>
-              {offices && !offices.length && <NoContent text="Чтобы указать доступность услуг в офисах добавьте контакты" />}
-              {offices.map(office => (
+              {offices.map((office) => (
                 <Col key={office.id}>
                   {service ? (
                     <Checkbox value={office.id}>{office.address}</Checkbox>
@@ -144,26 +138,28 @@ const Service: FC<IProps> = ({ addServices, updateServices, deleteServices, serv
           )}
         </Checkbox.Group>
       </Form.Item>
-      {service && (
-        <>
-          <Form.Item label="Картинка" name="image">
-            <SingleUpload form={form} url={service.image} />
-          </Form.Item>
-          <Form.Item label="Иконка" name="icon">
-            <SingleUpload form={form} url={service.icon} formName="icon" />
-          </Form.Item>
-        </>
-      )}
-      {!service && (
-        <>
-          <Form.Item label="Картинка" name="image">
-            <SingleUpload form={form} />
-          </Form.Item>
-          <Form.Item label="Иконка" name="icon">
-            <SingleUpload form={form} formName="icon" />
-          </Form.Item>
-        </>
-      )}
+      <div className="uploadsBlock">
+        {service && (
+          <>
+            <Form.Item label="Картинка" name="image">
+              <SingleUpload form={form} url={service.image} />
+            </Form.Item>
+            <Form.Item label="Иконка" name="icon">
+              <SingleUpload form={form} url={service.icon} formName="icon" />
+            </Form.Item>
+          </>
+        )}
+        {!service && (
+          <>
+            <Form.Item label="Картинка" name="image">
+              <SingleUpload form={form} />
+            </Form.Item>
+            <Form.Item label="Иконка" name="icon">
+              <SingleUpload form={form} formName="icon" />
+            </Form.Item>
+          </>
+        )}
+      </div>
       <Form.Item>
         <Button type="primary" htmlType="submit">
           Сохранить

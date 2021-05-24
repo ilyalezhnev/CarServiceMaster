@@ -53,8 +53,13 @@ router.put('/:id', passport.authenticate('jwt', { session: false }), (req, res) 
       image: req.body.image,
       icon: req.body.icon,
     },
-    { where: { id: req.params.id } }
+    { where: { id: req.params.id }, returning: true, plain: true }
   )
+    .then(() => {
+      return Services.findOne({
+        where: { id: req.params.id },
+      }).then((service) => service);
+    })
     .then((service) => res.status(200).json(service))
     .catch((err) => res.status(400).json(err));
 });

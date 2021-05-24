@@ -26,6 +26,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     description: req.body.description,
     shortDescription: req.body.shortDescription,
     image: req.body.image,
+    sliderImage: req.body.sliderImage,
   })
     .then((promo) => res.status(201).json(promo))
     .catch((err) => res.status(400).json(err));
@@ -39,6 +40,7 @@ router.put('/:id', passport.authenticate('jwt', { session: false }), (req, res) 
       description: req.body.description,
       shortDescription: req.body.shortDescription,
       image: req.body.image,
+      sliderImage: req.body.sliderImage,
     },
     { where: { id: req.params.id } }
   )

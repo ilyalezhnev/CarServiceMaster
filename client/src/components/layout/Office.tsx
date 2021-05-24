@@ -49,8 +49,8 @@ const Office: FC<IProps> = ({ office, addOffices, updateOffices, deleteOffices }
 
   const onFinish = (values: IOfficesForm) => {
     const { location, ...rest } = values;
-    const locationLat = location.lat.toString();
-    const locationLon = location.lng.toString();
+    const locationLat = (location && location.lat.toString()) || '61.789281';
+    const locationLon = (location && location.lng.toString()) || '34.368563';
     if (office) {
       updateOffices({ ...rest, locationLat, locationLon, id: office.id });
     } else {

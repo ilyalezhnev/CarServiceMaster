@@ -2,7 +2,6 @@ import React, { FC, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch, IRootState } from '../../redux/store';
 import { Button, Form, Input } from 'antd';
-import { IReviews } from '../../models/reviews';
 import SingleUpload from '../common/SingleUpload';
 import { IPromos } from '../../models/promos';
 import marked from 'marked';
@@ -35,7 +34,8 @@ const Promo: FC<IProps> = ({ promo, addPromos, updatePromos, deletePromos }) => 
         title: promo.title,
         description: promo.description,
         shortDescription: promo.shortDescription,
-        image: '',
+        image: promo.image,
+        sliderImage: promo.sliderImage,
       });
       setTitleForMainHTML(promo.titleForMain || '');
     }
@@ -97,16 +97,28 @@ const Promo: FC<IProps> = ({ promo, addPromos, updatePromos, deletePromos }) => 
       >
         <Input.TextArea rows={4} />
       </Form.Item>
-      {promo && (
-        <Form.Item label="Картинка" name="image">
-          <SingleUpload form={form} url={promo.image} />
-        </Form.Item>
-      )}
-      {!promo && (
-        <Form.Item label="Картинка" name="image">
-          <SingleUpload form={form} />
-        </Form.Item>
-      )}
+      <div className="uploadsBlock">
+        {promo && (
+          <>
+            <Form.Item label="Картинка" name="image">
+              <SingleUpload form={form} url={promo.image} />
+            </Form.Item>
+            <Form.Item label="Картинка для слайдера" name="sliderImage">
+              <SingleUpload form={form} formName="sliderImage" url={promo.sliderImage} />
+            </Form.Item>
+          </>
+        )}
+        {!promo && (
+          <>
+            <Form.Item label="Картинка" name="image">
+              <SingleUpload form={form} />
+            </Form.Item>
+            <Form.Item label="Картинка для слайдера" name="sliderImage">
+              <SingleUpload form={form} formName="sliderImage" />
+            </Form.Item>
+          </>
+        )}
+      </div>
 
       <Form.Item>
         <Button type="primary" htmlType="submit">

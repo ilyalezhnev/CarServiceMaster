@@ -35,8 +35,13 @@ router.put('/:id', passport.authenticate('jwt', { session: false }), (req, res) 
       officeId: req.body.officeId,
       isAvailable: !!req.body.isAvailable,
     },
-    { where: { id: req.params.id } }
+    { where: { id: req.params.id }, returning: true, plain: true }
   )
+    .then(() => {
+      return ServiceOffice.findOne({
+        where: { id: req.params.id },
+      }).then((serviceOffice) => serviceOffice);
+    })
     .then((serviceOffice) => {
       return res.status(200).json(serviceOffice);
     })
