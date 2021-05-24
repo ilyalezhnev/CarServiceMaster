@@ -9,6 +9,10 @@ footer {
   justify-content: center;
 }
 
+.footer__layout .mobile-messengers {
+  display: none;
+}
+
 .footer__logo {
   max-width: 78px;
   margin-right: 12px;
@@ -21,5 +25,35 @@ footer {
 }
 
 /* Media queries */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
+  .footer__layout {
+    height: 88px;
+  }
+
+  .footer__logo {
+    max-width: 47px;
+    margin-right: 12px;
+  }
+
+  .footer__text {
+    margin-right: unset;
+  }
+
+  .footer__layout .messengers {
+    display: none;
+  }
+
+  .footer__layout .mobile-messengers {
+    display: flex;
+  }
+
+  .footer__layout .mobile-messengers img {
+    width: 40px;
+    height: 40px;
+    padding-left: 8px;
+  }
+
+  .footer__text {
+    font-size: 13px;
+  }
 }

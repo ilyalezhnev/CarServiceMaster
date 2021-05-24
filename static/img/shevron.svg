@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1.66mm" height="2.68mm" viewBox="0 0 4.7 7.6">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fc0;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <title>shevron</title>
+  <g id="Слой_2" data-name="Слой 2">
+    <g id="Слой_1-2" data-name="Слой 1">
+      <polygon class="cls-1" points="0 0.9 2.9 3.8 0 6.71 0.9 7.6 4.7 3.8 0.9 0 0 0.9"/>
+    </g>
+  </g>
+</svg>

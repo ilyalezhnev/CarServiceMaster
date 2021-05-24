@@ -10,7 +10,7 @@ const mapState = (state: IRootState) => ({});
 const mapDispatch = (dispatch: Dispatch) => ({
   addReviews: dispatch.reviews.addReviews,
   updateReviews: dispatch.reviews.updateReviews,
-  deleteReviews: dispatch.reviews.deleteReviews
+  deleteReviews: dispatch.reviews.deleteReviews,
 });
 
 type connectedProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
@@ -26,9 +26,9 @@ const Review: FC<IProps> = ({ review, addReviews, updateReviews, deleteReviews }
     form.setFieldsValue({
       fullName: review && review.fullName,
       text: review && review.text,
-      image: ''
+      image: '',
     });
-  }, [review]);
+  }, [review, form]);
 
   const onFinish = (values: IReviews) => {
     if (review) {

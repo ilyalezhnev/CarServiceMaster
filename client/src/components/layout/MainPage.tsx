@@ -9,13 +9,13 @@ import MarkdownTooltip from '../common/MarkdownTooltip';
 import { tooltipText } from '../../constants/tooltipText';
 
 const mapState = (state: IRootState) => ({
-  mainPage: state.mainPage.data
+  mainPage: state.mainPage.data,
 });
 
 const mapDispatch = (dispatch: Dispatch) => ({
   getMainPage: dispatch.mainPage.getMainPage,
   addMainPage: dispatch.mainPage.addMainPage,
-  updateMainPage: dispatch.mainPage.updateMainPage
+  updateMainPage: dispatch.mainPage.updateMainPage,
 });
 
 type connectedProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
@@ -30,18 +30,18 @@ const MainPage: FC<IProps> = ({ mainPage, getMainPage, addMainPage, updateMainPa
 
   useEffect(() => {
     getMainPage();
-  }, []);
+  }, [getMainPage]);
 
   useEffect(() => {
     if (mainPage) {
       form.setFieldsValue({
         title: mainPage.title,
         subtitle: mainPage.subtitle,
-        serviceDescription: mainPage.serviceDescription
+        serviceDescription: mainPage.serviceDescription,
       });
       setDescriptionHTML(mainPage.serviceDescription || '');
     }
-  }, [mainPage]);
+  }, [mainPage, form]);
 
   const onFinish = (values: IMainPage) => {
     if (mainPage) {

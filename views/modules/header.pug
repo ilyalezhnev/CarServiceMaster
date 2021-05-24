@@ -2,32 +2,18 @@ header
   .desktop-header
     .width-container.header__main-info
       .header__contact-block
-        .phone 67-08-67
-        .address Ветеринарный, 13а
+        .phone 
+          a(href=`tel:${mappedOffices[0].fullTel}`)= mappedOffices[0].tel
+        .address= mappedOffices[0].address
       a(href='/')
         img.header__contact-block(
           src='static/img/main_logo.svg' 
           alt="Логотип Мастер-сервис"
         )
       .header__contact-block
-        .phone 67-07-99
-        .address Правды, 28
-        
-  //- .mobile-header
-  //-   a(href='/')
-  //-     img(
-  //-       src='static/img/mainLogo.svg' 
-  //-       alt="Логотип Мастер-сервис"
-  //-     )
-  //-   div.contacts
-  //-     div
-  //-       .phone 
-  //-         a(href='tel:88142670867') 67-08-67
-  //-       .address Ветеринарный, 13а
-  //-     div
-  //-       .phone 
-  //-         a(href='tel:88142670799') 67-07-99
-  //-       .address Правды, 28
+        .phone 
+          a(href=`tel:${mappedOffices[1].fullTel}`)= mappedOffices[1].tel
+        .address= mappedOffices[1].address
   nav
     .width-container.desktop-menu
       ul.desktop-navbar__layout
@@ -37,36 +23,11 @@ header
           span Услуги
           .services
             ul
-              li 
-                a(href='/service') Диагностика электронных блоков
-              li 
-                a(href='/service') Ремонт двигателя
-              li 
-                a(href='/service') Мойка автомобиля
-              li 
-                a(href='/service') Химчистка салона
-              li 
-                a(href='/service') Полировка кузова
-              li 
-                a(href='/service') Заправка кондиционера
-              li 
-                a(href='/service') Развал-схождение
-              li 
-                a(href='/service') Диагностика и ремонт ходовой части
-              li 
-                a(href='/service') Техническое обслуживание автомобиля
-              li 
-                a(href='/service') Шиномонтаж
-              li 
-                a(href='/service') Установка фаркопа
-              li 
-                a(href='/service') Замена стекол
-              li 
-                a(href='/service') Замена масел
-              li 
-                a(href='/service') Замена ремня ГРМ
-              li 
-                a(href='/service') Ремонт тормозной системы
+              each service in mappedServices
+                li
+                  a(href=`/service/${service.id}`)
+                    img(src="static/img/shevron.svg", alt="Шеврон пункта меню")
+                    span=service.title
         li.desktop-navbar__item
           a(href='/car-parts') Запчасти
         li.desktop-navbar__item
@@ -76,8 +37,14 @@ header
       include ./messengers
     .width-container.mobile-menu
       .mobile-menu__layout
-        span Меню
-        img(src="static/img/hamburger.svg", alt="Кнопка вызова меню")#menu-toggler
+        div
+          img(src="static/img/hamburger.svg", alt="Кнопка вызова меню")#menu-toggler
+          span Меню
+        div.mobile-menu__socials
+         a(href='https://vk.com/ptz_auto' target="_blank")
+          img(src="static/img/vk_gray.svg", alt="ВКонтакте")
+         a(href='https://vk.com/ptz_auto' target="_blank")
+          img(src="static/img/instagram_gray.svg", alt="Инстаграм")
       ul.mobile-navbar
         li
           a(href='/') Главная
@@ -85,39 +52,27 @@ header
           span Услуги
           .services
             ul
-              li 
-                a(href='/service') Диагностика электронных блоков
-              li 
-                a(href='/service') Ремонт двигателя
-              li 
-                a(href='/service') Мойка автомобиля
-              li 
-                a(href='/service') Химчистка салона
-              li 
-                a(href='/service') Полировка кузова
-              li 
-                a(href='/service') Заправка кондиционера
-              li 
-                a(href='/service') Развал-схождение
-              li 
-                a(href='/service') Диагностика и ремонт ходовой части
-              li 
-                a(href='/service') Техническое обслуживание автомобиля
-              li 
-                a(href='/service') Шиномонтаж
-              li 
-                a(href='/service') Установка фаркопа
-              li 
-                a(href='/service') Замена стекол
-              li 
-                a(href='/service') Замена масел
-              li 
-                a(href='/service') Замена ремня ГРМ
-              li 
-                a(href='/service') Ремонт тормозной системы
+              each service in mappedServices
+                li 
+                  a(href=`/service/${service.id}`)= service.title
         li
           a(href='/car-parts') Запчасти
         li
           a(href='/corporate') Юр.лицам
         li
           a(href='/contacts') Контакты
+include ./officePopup
+script.
+  const modal = document.getElementById('office-popup');
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.classList.remove('show');
+    }
+  };
+
+  function showPopup(arg) {
+    if(arg) {
+      document.getElementById('messenger-argument').innerHTML = arg;
+    }
+    modal.classList.add('show');
+  }

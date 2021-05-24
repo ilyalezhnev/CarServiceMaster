@@ -23,7 +23,7 @@ const Services: FC<IProps> = ({ services, getServices, offices, getOffices }) =>
   useEffect(() => {
     getServices();
     getOffices();
-  }, []);
+  }, [getServices, getOffices]);
 
   const onTabChange = (activeKey: string) => {};
 

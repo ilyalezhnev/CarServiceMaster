@@ -41,7 +41,7 @@ const Service: FC<IProps> = ({ addServices, updateServices, deleteServices, serv
       });
       setDescriptionHTML(service.description || '');
     }
-  }, [service]);
+  }, [service, form]);
 
   const onFinish = ({ officesIds, ...values }: IServicesForm) => {
     if (!offices) {
@@ -127,11 +127,7 @@ const Service: FC<IProps> = ({ addServices, updateServices, deleteServices, serv
             <Row>
               {offices.map((office) => (
                 <Col key={office.id}>
-                  {service ? (
-                    <Checkbox value={office.id}>{office.address}</Checkbox>
-                  ) : (
-                    <Checkbox value={office.id}>{office.address}</Checkbox>
-                  )}
+                  <Checkbox value={office.id}>{office.address}</Checkbox>
                 </Col>
               ))}
             </Row>

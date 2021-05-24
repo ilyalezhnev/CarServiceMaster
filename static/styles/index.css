@@ -9,6 +9,9 @@
 @import 'static/styles/carousel.css';
 @import 'static/styles/contact-block.css';
 @import 'static/styles/infoDivider.css';
+@import 'static/styles/contactsAndMap.css';
+@import 'static/styles/contentCard.css';
+@import 'static/styles/officePopup.css';
 
 @font-face {
   font-family: 'Myriad-Regular';
@@ -31,8 +34,20 @@
 }
 
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   font-size: 18px;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 1199px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 14px;
+  }
 }

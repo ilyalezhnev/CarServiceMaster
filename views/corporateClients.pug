@@ -2,26 +2,28 @@ html(lang="ru")
 head
   title Автосервис Мастер
   meta(charset="utf-8")
-  meta(name='description', content='Станция технического обслуживания легковых автомобилей "Мастер"')
-  meta(name='keywords', content='СТО, автосервис, Мастер, ремонт автомобилей, шиномонтаж')
+  meta(name='description', content='Станция технического обслуживания легковых автомобилей "Мастер". Условия для корпоративных клиентов')
+  meta(name='keywords', content='СТО Мастер, автосервис, ремонт автомобилей, шиномонтаж, скидки, акции')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   style
     include ../static/styles/index.css
 body
   include ./modules/header
-  main.width-container
-    h1.main-title Юридическим лицам
-    p.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor in vitae amet ultrices. Pretium quam sapien, senectus lorem. Amet aliquet tortor nisl vitae. Eget a at nec nunc suspendisse fermentum. Nunc, a sed sed est eget urna. Ac et et massa commodo pretium, lobortis. Et tristique quam morbi eleifend gravida ut vestibulum. Ante dolor viverra laoreet justo, senectus sed morbi quisque. Amet, tortor at facilisi lobortis nulla. Nibh ullamcorper velit feugiat purus elit. Vitae, elementum interdum tempus, tempus, amet venenatis.
-    p.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor in vitae amet ultrices. Pretium quam sapien, senectus lorem. Amet aliquet tortor nisl vitae. Eget a at nec nunc suspendisse fermentum. Nunc, a sed sed est eget urna. Ac et et massa commodo pretium, lobortis. Et tristique quam morbi eleifend gravida ut vestibulum. Ante dolor viverra laoreet justo, senectus sed morbi quisque. Amet, tortor at facilisi lobortis nulla. Nibh ullamcorper velit feugiat purus elit. Vitae, elementum interdum tempus, tempus, amet venenatis.
-    .gallery
-      .image__wrapper
-        img(src="static/img/corporate1.png", alt="corporate photo")
-      .image__wrapper
-        img(src="static/img/corporate2.png", alt="corporate photo")
-      .image__wrapper
-        img(src="static/img/corporate3.png", alt="corporate photo")
-      .image__wrapper
-        img(src="static/img/corporate4.png", alt="corporate photo")
-  include ./modules/infoDivider
+  main
+    include ./modules/CTASection
+    .width-container
+      .content-card__layout
+        .content-card__title.content-card__title_left
+          img(src="static/img/legal_entity.svg", alt="Иконка услуги")
+          h1.block-title=corporateClients.title
+        .content-card__content
+          !=corporateClients.description
+          .gallery
+            each image in corporateClients.images
+              .image__wrapper
+                img(src=image.url, alt="Фото для галереи")
+          !=corporateClients.info
+    include ./modules/infoDividerSection
+    include ./modules/contactsAndMapSection
   include ./modules/footer
   script(src='static/scripts/common.js')

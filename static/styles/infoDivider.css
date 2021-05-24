@@ -9,16 +9,10 @@
 }
 
 .info-divider__title {
-  font-family: 'Myriad-Semibold';
-  font-size: 48px;
   color: #ffffff;
   padding-bottom: 8px;
   margin: 0 0 32px;
   width: 80%;
-}
-
-.info-divider__title::first-letter {
-  color: #ffcc00;
 }
 
 .info-divider__button {
@@ -37,9 +31,10 @@
 }
 
 .info-divider__wheels {
-  width: 526px;
-  height: 414px;
+  width: 459px;
+  height: 415px;
   position: absolute;
   bottom: -100px;
-  right: -68px;
+  right: 0px;
+  z-index: 1;
 }

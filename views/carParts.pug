@@ -2,18 +2,64 @@ html(lang="ru")
 head
   title Автосервис Мастер
   meta(charset="utf-8")
-  meta(name='description', content='Станция технического обслуживания легковых автомобилей "Мастер"')
-  meta(name='keywords', content='СТО, автосервис, Мастер, ремонт автомобилей, шиномонтаж')
+  meta(name='description', content='Станция технического обслуживания легковых автомобилей "Мастер". Наши отделы запчастей.')
+  meta(name='keywords', content='СТО Мастер, автосервис, ремонт автомобилей, шиномонтаж, скидки, акции, запчасти, мойка')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   style
     include ../static/styles/index.css
 body
   include ./modules/header
-  main.width-container.car-parts
-    h1.main-title Запчасти
-    p.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor in vitae amet ultrices. Pretium quam sapien, senectus lorem. Amet aliquet tortor nisl vitae. Eget a at nec nunc suspendisse fermentum. Nunc, a sed sed est eget urna. 
-      include ./modules/branchOfficeContacts
-      include ./modules/branchOfficeContacts
-  include ./modules/infoDivider
+  main.car-parts-page
+    include ./modules/CTASection
+    .width-container
+      .content-card__layout
+        .content-card__content
+          span=mappedCarParts.subtitle
+          h1.car-parts__slogan=mappedCarParts.title
+        each office, index in mappedCarParts.offices 
+          if index%2 === 0
+            .content-card__title.content-card__title_left
+              img(src="static/img/half_car_gray.svg", alt="Иконка филиала запчастей")
+              span.block-title Запчасти
+                |
+                br
+                | на 
+                =office.address
+            .content-card__content    
+              .branch-office__layout
+                img(src=office.carPartOffice.image, alt="").branch-office__img
+                .branch-office__info
+                  .sub-title #{office.tel} / #{office.address}
+                  .divider 
+                  p.branch-office__info__text=office.carPartOffice.description
+                  .branch-office__info__messengers
+                    span.title Заказать автозапчасть
+                    .branch-office__info__messengers__wrapper
+                      img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick='openMessenger("Whatsappp")').social-icon
+                      img(src="static/img/viber_icon.svg", alt="Вайбер" onclick='openMessenger("Viber")').social-icon
+                      img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick='openMessenger("Telegram")').social-icon
+          else
+            .content-card__title.content-card__title_right
+              img(src="static/img/half_car_yellow.svg", alt="Иконка филиала запчастей")
+              span.block-title Запчасти
+                |
+                br
+                | на 
+                =office.address
+            .content-card__content    
+              .branch-office__layout
+                img(src=office.carPartOffice.image, alt="").branch-office__img
+                .branch-office__info
+                  .sub-title #{office.tel} / #{office.address}
+                  .divider 
+                  p.branch-office__info__text=office.carPartOffice.description
+                  .branch-office__info__messengers
+                    span.title Заказать автозапчасть
+                    .branch-office__info__messengers__wrapper
+                  img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick=`openMessenger("whatsapp", ${office.whatsapp})`).social-icon
+                  img(src="static/img/viber_icon.svg", alt="Вайбер" onclick=`openMessenger("viber", ${office.viber})`).social-icon
+                  img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick=`openMessenger("telegram", ${office.telegram})`).social-icon
+    include ./modules/infoDividerSection
+    include ./modules/contactsAndMapSection
   include ./modules/footer
   script(src='static/scripts/common.js')

@@ -5,11 +5,11 @@ import { Col, Row, Tabs } from 'antd';
 import Review from './Review';
 
 const mapState = (state: IRootState) => ({
-  reviews: state.reviews.data
+  reviews: state.reviews.data,
 });
 
 const mapDispatch = (dispatch: Dispatch) => ({
-  getReviews: dispatch.reviews.getReviews
+  getReviews: dispatch.reviews.getReviews,
 });
 
 type connectedProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
@@ -19,7 +19,7 @@ type IProps = connectedProps & {};
 const Reviews: FC<IProps> = ({ reviews, getReviews }) => {
   useEffect(() => {
     getReviews();
-  }, []);
+  }, [getReviews]);
 
   const onTabChange = (activeKey: string) => {};
 
@@ -28,7 +28,7 @@ const Reviews: FC<IProps> = ({ reviews, getReviews }) => {
       <Col span={22}>
         <Tabs defaultActiveKey={reviews && reviews.length ? reviews[0].id.toString() : 'new'} onChange={onTabChange} type="card">
           {reviews &&
-            reviews.map(review => (
+            reviews.map((review) => (
               <Tabs.TabPane tab={review.fullName} key={review.id}>
                 <Review review={review} />
               </Tabs.TabPane>

@@ -1,127 +1,60 @@
-.service .width-container {
-  margin-bottom: 20px;
-}
-
-.service__description {
+.service-description__layout {
   display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+  justify-content: space-between;
 }
 
-.service__description img {
-  width: 100%;
+.service-description__img,
+.service-description__info {
+  width: 48%;
 }
 
-.service__description .text {
-  margin: 0;
+.service-description__info .currency {
+  color: #ffcc00;
 }
 
-.service__description .text.desktop {
-  flex: 1;
+.service-description__info__availability {
+  padding: 30px 0px;
 }
 
-.service__description .text.mobile {
-  display: none;
+.service-description__info__availability .title {
+  font-family: 'Myriad-Bold';
+  margin-right: 12px;
 }
 
-.service__availability .main-title,
-.service__description__icon {
-  min-width: 230px;
-  width: 230px;
-  margin-right: 40px;
-}
-
-.service__description__icon {
-  min-height: 230px;
-  height: 230px;
-  background-image: url('/static/img/serviceIconLayout.png');
-  background-size: contain;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.service__availability {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.service__availability__offices {
-  display: flex;
-}
-
-.service__availability__offices_item {
-  background-color: #feca0a;
-  padding: 6px;
-  margin-right: 30px;
-}
-
-.service__availability__offices_item:last-child {
-  margin-right: 0px;
-}
-
-.service__img {
-  width: 100%;
+.service-description__info__availability .address {
+  margin-right: 12px;
+  padding: 8px 24px 8px 12px;
+  width: fit-content;
+  background: linear-gradient(120deg, #ffcc00 89%, transparent 11%), no-repeat right top / cover;
 }
 
 /* Media queries */
-@media screen and (max-width: 1023px) {
-  .service__availability .main-title,
-  .service__description__icon {
-    min-width: 170px;
-    width: 170px;
-    margin-right: 24px;
+@media screen and (max-width: 1024px) {
+  .service-description__layout {
+    flex-direction: column;
   }
 
-  .service__description__icon {
-    min-height: 170px;
-    height: 170px;
+  .service-description__img,
+  .service-description__info {
+    width: 100%;
+  }
+
+  .service-description__img {
+    order: 2;
+  }
+
+  .service-description__info__availability {
+    padding: 10px 0px 20px;
   }
 }
 
 @media screen and (max-width: 575px) {
-  .service__description__icon {
-    min-width: 100px;
-    width: 100px;
-    min-height: 100px;
-    height: 100px;
-    margin-right: 14px;
-  }
-
-  .service__availability .main-title {
-    min-width: unset;
-    width: unset;
-  }
-
-  .service__description .text.desktop {
-    display: none;
-  }
-
-  .service__description .text.mobile {
-    display: block;
-  }
-
-  .service__availability {
+  .service-description__info__availability {
+    display: flex;
     flex-direction: column;
-    width: unset;
-    margin-top: 0;
-    align-items: flex-start;
-    justify-content: space-between;
   }
 
-  .service__availability__offices {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .service__availability__offices_item {
-    margin-right: 0px;
-  }
-
-  .service__img {
-    height: 150px;
-    object-fit: cover;
+  .service-description__info__availability > span {
+    margin-bottom: 12px;
   }
 }

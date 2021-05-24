@@ -45,7 +45,7 @@ const Office: FC<IProps> = ({ office, addOffices, updateOffices, deleteOffices }
       });
       setDefaultCoordinates([Number(office.locationLat), Number(office.locationLon)]);
     }
-  }, [office]);
+  }, [office, form]);
 
   const onFinish = (values: IOfficesForm) => {
     const { location, ...rest } = values;
@@ -77,7 +77,7 @@ const Office: FC<IProps> = ({ office, addOffices, updateOffices, deleteOffices }
         }
       },
     }),
-    []
+    [form]
   );
 
   return (

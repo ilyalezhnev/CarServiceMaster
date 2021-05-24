@@ -39,7 +39,7 @@ const Promo: FC<IProps> = ({ promo, addPromos, updatePromos, deletePromos }) => 
       });
       setTitleForMainHTML(promo.titleForMain || '');
     }
-  }, [promo]);
+  }, [promo, form]);
 
   const onFinish = (values: IPromos) => {
     if (promo) {

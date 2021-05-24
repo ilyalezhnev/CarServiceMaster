@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch, IRootState } from '../../redux/store';
 import { Button, Col, Form, Input, Row } from 'antd';
@@ -38,7 +38,7 @@ const CorporateClients: FC<IProps> = ({
 
   useEffect(() => {
     getCorporateClients();
-  }, []);
+  }, [getCorporateClients]);
 
   const [form] = Form.useForm();
 
@@ -48,7 +48,7 @@ const CorporateClients: FC<IProps> = ({
       description: corporateClients && corporateClients.description,
       info: corporateClients && corporateClients.info,
     });
-  }, [corporateClients]);
+  }, [corporateClients, form]);
 
   const onFinish = (values: ICorporateClients) => {
     if (corporateClients) {

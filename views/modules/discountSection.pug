@@ -1,70 +1,11 @@
-section.ant-carousel
+section.ant-carousel#discount
   .ant-carousel-hider
     ul.ant-carousel-list
-      li.ant-carousel-element
-        .discount_layout(style='background-image: url("static/img/discountGag.png")')
-          .width-container.discount__info-wrapper
-            .discount__slogan
-              .discount__slogan__content
-                h1 СТО Мастер
-                p 
-                  | Мультибрендовый
-                  br
-                  | автосервиc
-                  br
-                  | в Петрозаводске
-            .discount__info
-              a(href="/discount").link
-                h3.main-title Акция
-                p.text Скидка 20% на любую мойку
-      li.ant-carousel-element
-        .discount_layout(style='background-image: url("static/img/discountGag.png")')
-          .width-container.discount__info-wrapper
-            .discount__slogan
-              .discount__slogan__content
-                h1 СТО Мастер
-                p 
-                  | Мультибрендовый
-                  br
-                  | автосервиc
-                  br
-                  | в Петрозаводске
-            .discount__info
-              a(href="/discount").link
-                h3.main-title Акция
-                p.text Скидка 20% на любую мойку
-      li.ant-carousel-element
-        .discount_layout(style='background-image: url("static/img/discountGag.png")')
-          .width-container.discount__info-wrapper
-            .discount__slogan
-              .discount__slogan__content
-                h1 СТО Мастер
-                p 
-                  | Мультибрендовый
-                  br
-                  | автосервиc
-                  br
-                  | в Петрозаводске
-            .discount__info
-              a(href="/discount").link
-                h3.main-title Акция
-                p.text Скидка 20% на любую мойку
-      li.ant-carousel-element
-        .discount_layout(style='background-image: url("static/img/discountGag.png")')
-          .width-container.discount__info-wrapper
-            .discount__slogan
-              .discount__slogan__content
-                h1 СТО Мастер
-                p 
-                  | Мультибрендовый
-                  br
-                  | автосервиc
-                  br
-                  | в Петрозаводске
-            .discount__info
-              a(href="/discount").link
-                h3.main-title Акция
-                p.text Скидка 20% на любую мойку
+      each promo in mappedPromos
+        li.ant-carousel-element
+          a(href="/discount").link
+            img(src=promo.image, alt="Акция").ant-carousel-element__image
+            .ant-carousel-element__text!=promo.titleForMain
   .ant-carousel-arrow-left
   .ant-carousel-arrow-right
   .ant-carousel-dots
