@@ -26,7 +26,7 @@
   justify-content: flex-end;
   width: 70%;
   align-self: flex-end;
-  background: linear-gradient(240deg, #3a3a3b 89%, transparent 1%), no-repeat right top / cover;
+  background: linear-gradient(240deg, #3a3a3b 80%, transparent 11%), no-repeat right top / cover;
 }
 
 .content-card__title_left::before {
@@ -64,6 +64,8 @@
 }
 
 .content-card__content {
+  display: flex;
+  flex-direction: column;
   padding: 60px;
 }
 
@@ -97,5 +99,16 @@
 
   .content-card__title .block-title {
     width: 70%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .content-card__title_left,
+  .content-card__title_right {
+    width: 100%;
+  }
+
+  .content-card__title img {
+    margin-right: 8px;
   }
 }

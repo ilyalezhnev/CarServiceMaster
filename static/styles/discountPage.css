@@ -40,6 +40,7 @@
   .disount__img,
   .disount__info {
     width: 100%;
+    max-width: 475px;
   }
 
   .disount__img {

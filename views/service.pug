@@ -29,7 +29,7 @@ body
                 each office in serviceItem.offices
                   if office.serviceOffice.isAvailable
                     span.address=office.address
-          !=serviceItem.description
+          .service-description__description!=serviceItem.description
     include ./modules/infoDividerSection
     include ./modules/contactsAndMapSection
   include ./modules/footer

@@ -28,6 +28,7 @@
 
 .branch-office__info__messengers__wrapper img {
   margin-left: 12px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1024px) {

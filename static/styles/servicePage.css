@@ -23,20 +23,27 @@
 
 .service-description__info__availability .address {
   margin-right: 12px;
-  padding: 8px 24px 8px 12px;
+  padding: 8px 32px 8px 12px;
   width: fit-content;
-  background: linear-gradient(120deg, #ffcc00 89%, transparent 11%), no-repeat right top / cover;
+  background: linear-gradient(120deg, #ffcc00 80%, transparent 20%), no-repeat right top / cover;
 }
 
 /* Media queries */
 @media screen and (max-width: 1024px) {
   .service-description__layout {
     flex-direction: column;
+    align-items: center;
   }
 
   .service-description__img,
-  .service-description__info {
+  .service-description__info,
+  .service-description__description {
     width: 100%;
+    max-width: 475px;
+  }
+
+  .service-description__description {
+    align-self: center;
   }
 
   .service-description__img {
