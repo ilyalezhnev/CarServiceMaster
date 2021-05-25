@@ -114,7 +114,11 @@
 /* Feedback section */
 
 .feedback-section__layout {
-  padding: 90px 0 180px;
+  padding-top: 90px;
+  padding-bottom: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .feedback-section__title {
@@ -124,7 +128,6 @@
 }
 
 .feedback-section__item {
-  width: 100%;
   display: flex;
   padding: 30px;
   margin: 12px;
@@ -271,10 +274,6 @@
     display: none;
   }
 
-  .feedback-section__layout {
-    padding: 8px 0 40px;
-  }
-
   .feedback-section__title {
     padding-bottom: 30px;
   }
@@ -310,5 +309,24 @@
 
   .about-service__description > * {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .feedback-section__item {
+    padding: 20px 12px;
+  }
+
+  .feedback__avatar {
+    width: 62px;
+    height: 62px;
+  }
+
+  .client__name {
+    font-size: 14px;
+  }
+
+  .client__text {
+    font-size: 12px;
   }
 }

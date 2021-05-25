@@ -2,8 +2,8 @@ Ant.defaults = {
   // Default options for the carousel
   elemVisible: 2, // Кол-во отображаемых элементов в карусели
   loop: true, // Бесконечное зацикливание карусели
-  auto: false, // Автоматическая прокрутка
-  interval: 3000, // Интервал между прокруткой элементов (мс)
+  auto: true, // Автоматическая прокрутка
+  interval: 2500, // Интервал между прокруткой элементов (мс)
   speed: 700, // Скорость анимации (мс)
   touch: true, // Прокрутка  прикосновением
   arrows: true, // Прокрутка стрелками
@@ -255,7 +255,7 @@ Ant.initialize = function (that) {
   }
 };
 
-function Ant(crslId, elemVisible = 1) {
+function Ant(crslId, elemVisible = 1, dots = false) {
   let id = document.getElementById(crslId);
   if (id) {
     this.crslRoot = id;
@@ -272,6 +272,6 @@ function Ant(crslId, elemVisible = 1) {
   this.indicatorDots = this.crslRoot.querySelector('.ant-carousel-dots');
 
   // Initialization
-  this.options = { ...Ant.defaults, elemVisible };
+  this.options = { ...Ant.defaults, elemVisible, dots };
   Ant.initialize(this);
 }

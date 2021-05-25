@@ -1,3 +1,5 @@
+/* Discount carousel */
+
 .ant-carousel-element {
   width: 100vw;
   display: block;
@@ -97,9 +99,58 @@ span.ant-dot {
   cursor: pointer;
 }
 
+/* Feedback carousel */
+#feedback.ant-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#feedback .ant-carousel-hider {
+  width: 100%;
+  max-width: 1000px;
+}
+
+#feedback .ant-carousel-element {
+  width: 50%;
+  max-width: 500px;
+}
+
+#feedback div.ant-carousel-arrow-left {
+  left: 0;
+}
+
+#feedback div.ant-carousel-arrow-right {
+  right: 0;
+}
+
 /* Media queries */
+@media screen and (max-width: 1199px) {
+  #feedback .ant-carousel-hider {
+    max-width: 800px;
+  }
+
+  #feedback .ant-carousel-element {
+    max-width: 400px;
+  }
+}
 
 @media screen and (max-width: 1024px) {
+  #feedback .ant-carousel-hider {
+    max-width: 640px;
+  }
+
+  #feedback .ant-carousel-element {
+    max-width: 320px;
+  }
+
+  #feedback div.ant-carousel-arrow-left,
+  #feedback div.ant-carousel-arrow-right {
+    transform: scale(0.8);
+    top: 42%;
+  }
+
   .ant-carousel-element__text {
     top: 10%;
   }
@@ -111,7 +162,27 @@ span.ant-dot {
   }
 }
 
+@media screen and (max-width: 768px) {
+  #feedback .ant-carousel-element {
+    width: 100%;
+    max-width: 490px;
+  }
+
+  #feedback .ant-carousel-hider {
+    max-width: 490px;
+  }
+}
+
 @media screen and (max-width: 575px) {
+  #feedback .ant-carousel-hider {
+    max-width: 300px;
+  }
+
+  #feedback .ant-carousel-element {
+    width: 100%;
+    max-width: 300px;
+  }
+
   div.ant-carousel-arrow-left,
   div.ant-carousel-arrow-right {
     width: 20px;

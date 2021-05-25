@@ -21,6 +21,7 @@ require('./config/passport')(passport);
 
 const mainPageController = require('./controllers/mainPage.controller');
 const servicesController = require('./controllers/services.controller');
+const reviewsController = require('./controllers/reviews.controller');
 const dataMapper = require('./mappers/data.mapper');
 const marked = require('marked');
 
@@ -107,8 +108,9 @@ app.get('/', async (req, res) => {
   const mappedOffices = await dataMapper.getMappedOffices();
   const mappedServices = await dataMapper.getMappedServices();
   const mappedPromos = await dataMapper.getMappedPromos();
+  const reviews = await reviewsController.getReviews();
 
-  res.render('main', { mainPageContent, mappedServices, mappedOffices, mappedPromos });
+  res.render('main', { mainPageContent, mappedServices, mappedOffices, mappedPromos, reviews });
 });
 
 const port = process.env.PORT || 5000;

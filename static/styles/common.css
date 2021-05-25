@@ -99,14 +99,14 @@ a.link {
   }
 
   .divider {
-    margin: 20px 0;
+    margin: 12px 0;
     border: 1px solid #ffcc00;
   }
 }
 
 @media screen and (max-width: 575px) {
   .width-container {
-    padding: 0 10px;
+    padding: 0 12px;
   }
 
   .main-title {
