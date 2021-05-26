@@ -1,8 +1,8 @@
 section.width-container.contacts-and-map__layout
-  h3.block-title.first-letter_yellow Контакты
+  h2.block-title.first-letter_yellow Контакты
   .contacts-and-map__wrapper
     .contacts
-      img(src="static/img/medium_logo.svg", alt="Логотип Мастер-сервис")
+      img(src="static/img/medium_logo.svg", alt="Логотип Мастер-сервис").logo
       each office in mappedOffices
         .contact__item
           .address= office.fullAddress

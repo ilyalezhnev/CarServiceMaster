@@ -13,6 +13,14 @@
   padding-top: 0;
 }
 
+.contacts-page .contacts .contact__item .messengers {
+  padding-top: 8px;
+}
+
+.contacts-page .contacts .contact__item .messengers img:first-child {
+  margin-left: 0;
+}
+
 .contacts-and-map__layout .block-title {
   text-align: center;
   display: none;
@@ -35,7 +43,7 @@
   flex: 6;
 }
 
-.contacts img {
+.contacts .logo {
   width: 211px;
   height: 86px;
 }
@@ -63,14 +71,19 @@
   .contacts-page .contacts {
     flex-direction: column;
     align-items: center;
+    padding-bottom: 32px;
+  }
+
+  .contacts-page .contacts .contact__item {
+    padding-top: 24px;
   }
 
   .contacts-and-map__layout .block-title {
     display: block;
   }
 
-  .contacts img {
-    width: 131px;
+  .contacts .logo {
+    width: 196px;
   }
 
   .contacts-and-map__wrapper .map {
@@ -79,7 +92,7 @@
 
   .contacts-and-map__wrapper {
     min-height: unset;
-    padding: 0 0 20px;
+    padding: 0 0 32px;
   }
 
   .contact__item {

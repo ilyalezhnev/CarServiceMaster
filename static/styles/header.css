@@ -27,7 +27,7 @@ nav {
 }
 
 img.header__contact-block {
-  max-width: 265px;
+  width: 265px;
 }
 
 .header__contact-block .phone a {

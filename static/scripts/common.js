@@ -24,17 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 setActiveMenuItem = (menuPoints, url) => {
+  if (url.indexOf('service') + 1) {
+    menuPoints.forEach((el) => {
+      if (el.innerText === 'Услуги') {
+        el.classList.add('active');
+      }
+    });
+    return;
+  }
+
   switch (url) {
     case '/':
       menuPoints.forEach((el) => {
         if (el.innerText === 'Главная') {
-          el.classList.add('active');
-        }
-      });
-      break;
-    case '/service':
-      menuPoints.forEach((el) => {
-        if (el.innerText === 'Услуги') {
           el.classList.add('active');
         }
       });

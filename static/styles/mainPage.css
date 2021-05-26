@@ -39,7 +39,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 12px 0;
+  padding: 20px 0;
 }
 
 .CTA__content {
@@ -58,9 +58,8 @@
 }
 
 .CTA__img {
-  width: 100%;
-  max-width: 131px;
-  max-height: 131px;
+  width: 131px;
+  height: 131px;
 }
 
 /* Services section */
@@ -291,7 +290,7 @@
 
   .block-flag-header__title {
     font-size: 14px;
-    margin: 0;
+    margin: 0 0 0 15%;
     padding-left: 3%;
   }
 
@@ -313,6 +312,11 @@
 }
 
 @media screen and (max-width: 768px) {
+  .feedback-section__layout {
+    padding-top: 40px;
+    padding-bottom: 100px;
+  }
+
   .feedback-section__item {
     padding: 20px 12px;
   }

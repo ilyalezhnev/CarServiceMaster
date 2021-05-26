@@ -38,7 +38,6 @@ a.link {
 
 .social-icon {
   width: 40px;
-  max-width: 40px;
 }
 
 .block-title {
@@ -89,11 +88,6 @@ a.link {
     font-size: 16px;
   }
 
-  .social-icon {
-    width: 28px;
-    max-width: 28px;
-  }
-
   .block-title {
     font-size: 24px;
   }
@@ -120,10 +114,5 @@ a.link {
 
   .text {
     font-size: 14px;
-  }
-
-  .social-icon {
-    width: 28px;
-    max-width: 28px;
   }
 }
