@@ -5,10 +5,10 @@ section.width-container.contacts-and-map__layout
       img(src="static/img/medium_logo.svg", alt="Логотип Мастер-сервис").logo
       each office in mappedOffices
         .contact__item
-          .address= office.fullAddress
+          .address=office.fullAddress
           .phone 
-            a(href=`tel:${office.fullTel}`)= office.fullTel
-          .schedule= office.workingHours
+            a(href=`tel:${office.fullTel}`)=office.fullTel
+          .schedule=office.workingHours
           .locationLat=office.locationLat
           .locationLon=office.locationLon
     #mapid

@@ -206,7 +206,7 @@
   font-family: 'Myriad-Bold';
   font-size: 32px;
   color: #ffffff;
-  margin-left: 15%;
+  margin: 0 15%;
   z-index: 1;
 }
 
@@ -235,6 +235,10 @@
 
   .about-service__img {
     top: 25%;
+  }
+
+  .block-flag-header {
+    width: 75%;
   }
 }
 
@@ -331,6 +335,13 @@
   }
 
   .client__text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .aboutService__layout .block-flag-header__title {
+    padding-right: 12px;
     font-size: 12px;
   }
 }

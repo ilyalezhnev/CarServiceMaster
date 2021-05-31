@@ -108,7 +108,7 @@ app.get('/', async (req, res) => {
   const mappedOffices = await dataMapper.getMappedOffices();
   const mappedServices = await dataMapper.getMappedServices();
   const mappedPromos = await dataMapper.getMappedPromos();
-  const reviews = await reviewsController.getReviews();
+  const reviews = (await reviewsController.getReviews()) || [];
 
   res.render('main', { mainPageContent, mappedServices, mappedOffices, mappedPromos, reviews });
 });
