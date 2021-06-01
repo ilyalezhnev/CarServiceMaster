@@ -30,10 +30,10 @@ const Promo: FC<IProps> = ({ promo, addPromos, updatePromos, deletePromos }) => 
   useEffect(() => {
     if (promo) {
       form.setFieldsValue({
-        titleForMain: promo.titleForMain,
+        titleForMain: promo.titleForMain || '',
         title: promo.title,
         description: promo.description,
-        shortDescription: promo.shortDescription,
+        shortDescription: '',
         image: promo.image,
         sliderImage: promo.sliderImage,
       });
@@ -71,7 +71,7 @@ const Promo: FC<IProps> = ({ promo, addPromos, updatePromos, deletePromos }) => 
         label="Заголовок для главной"
         name="titleForMain"
         tooltip={<MarkdownTooltip text={tooltipText} />}
-        rules={[{ required: true, message: 'Введите заголовок для главной' }]}
+        rules={[{ message: 'Введите заголовок для главной' }]}
       >
         <Input.TextArea rows={2} onChange={onTitleForMainChange} />
       </Form.Item>
@@ -90,13 +90,7 @@ const Promo: FC<IProps> = ({ promo, addPromos, updatePromos, deletePromos }) => 
       <Form.Item label="Описание" name="description" rules={[{ required: true, message: 'Введите описание' }]}>
         <Input.TextArea rows={4} />
       </Form.Item>
-      <Form.Item
-        label="Короткое описание"
-        name="shortDescription"
-        rules={[{ required: true, message: 'Введите короткое описание' }]}
-      >
-        <Input.TextArea rows={4} />
-      </Form.Item>
+
       <div className="uploadsBlock">
         {promo && (
           <>
