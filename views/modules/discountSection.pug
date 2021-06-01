@@ -5,7 +5,8 @@ section.ant-carousel#discount
         li.ant-carousel-element
           a(href="/discount").link
             img(src=promo.sliderImage, alt="Акция").ant-carousel-element__image
-            .ant-carousel-element__text!=promo.titleForMain
+            if promo.titleForMain
+              .ant-carousel-element__text!=promo.titleForMain
   .ant-carousel-arrow-left
   .ant-carousel-arrow-right
   .ant-carousel-dots

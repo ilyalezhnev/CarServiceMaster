@@ -9,6 +9,6 @@ div#office-popup
           .contact__item
             .address=office.fullAddress
             .phone
-              a(href=`tel:${office.fullTel}`)= office.fullTel
+              a(href=`tel:${office.fullTel}`)=office.fullTel
             .schedule=office.workingHours
             a.select-button(onclick=`openMessengerFromPopup({whatsapp: ${office.whatsapp}, viber: ${office.viber}, telegram: ${office.telegram}})`) Выбрать этот филиал

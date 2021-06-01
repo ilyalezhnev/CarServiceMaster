@@ -3,14 +3,14 @@ const User = db.users;
 const bcrypt = require('bcryptjs');
 
 exports.adminSeeder = () => {
-  User.findOne({ where: { login: 'admin' } })
+  User.findOne({ where: { login: 'master_admin' } })
     .then((user) => {
       if (user) {
         console.log('Admin already exist');
       } else {
         const admin = {
-          login: 'admin',
-          password: '123456',
+          login: 'master_admin',
+          password: 'C1c4#szohz',
         };
 
         bcrypt.genSalt(10, (err, salt) => {

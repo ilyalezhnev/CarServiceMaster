@@ -39,7 +39,8 @@
   align-items: center;
 }
 
-.map {
+#mapid {
+  width: 100%;
   flex: 6;
 }
 
@@ -61,10 +62,15 @@
   font-size: 20px;
 }
 
+.locationLat,
+.locationLon {
+  display: none;
+}
+
 /* Media queries */
 
 @media screen and (max-width: 1024px) {
-  .contacts-page .map {
+  .contacts-page #mapid {
     padding: 12px 0 0;
   }
 
@@ -86,7 +92,7 @@
     width: 196px;
   }
 
-  .contacts-and-map__wrapper .map {
+  .contacts-and-map__wrapper #mapid {
     display: none;
   }
 
