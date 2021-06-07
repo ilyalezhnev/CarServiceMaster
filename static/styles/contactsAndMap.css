@@ -36,7 +36,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 #mapid {
@@ -47,6 +46,7 @@
 .contacts .logo {
   width: 211px;
   height: 86px;
+  align-self: center;
 }
 
 .contact__item {
@@ -99,6 +99,16 @@
   .contacts-and-map__wrapper {
     min-height: unset;
     padding: 0 0 32px;
+  }
+
+  .contacts-page .contacts-and-map__wrapper #mapid {
+    display: block;
+  }
+
+  .contacts-and-map__wrapper {
+    min-height: 320px;
+    padding: 0 0 32px;
+    order: 3;
   }
 
   .contact__item {
