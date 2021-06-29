@@ -16,8 +16,8 @@ body
     .width-container
       .content-card__layout
         .content-card__content
-          span=mappedCarParts.subtitle
           h1.car-parts__slogan=mappedCarParts.title
+          span.car-parts__slogan-text=mappedCarParts.subtitle
         each office, index in mappedCarParts.offices 
           if index%2 === 0
             .content-card__title.content-card__title_left
