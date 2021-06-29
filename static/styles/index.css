@@ -327,11 +327,11 @@ a.link {
   border: 1px solid #3b3b3a;
 }
 
-.leaflet-pane,
+/* .leaflet-pane,
 .leaflet-control,
 .leaflet-top {
   z-index: unset;
-}
+} */
 
 /* Media queries */
 @media screen and (max-width: 1199px) {
@@ -485,7 +485,7 @@ img.header__contact-block {
 }
 
 .desktop-navbar__item-dropdown .services li a {
-  display: inline-block;
+  display: block;
   padding: 14px;
 }
 

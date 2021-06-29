@@ -101,7 +101,7 @@ img.header__contact-block {
 }
 
 .desktop-navbar__item-dropdown .services li a {
-  display: inline-block;
+  display: block;
   padding: 14px;
 }
 

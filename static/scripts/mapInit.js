@@ -26,4 +26,4 @@ coords.forEach((item) => {
   }
 });
 
-mymap.fitBounds(bounds, { padding: [15, 15] });
+mymap.fitBounds(bounds, { padding: [50, 50] });
