@@ -828,7 +828,7 @@ footer {
   color: unset;
   text-decoration: none;
   padding: 12px;
-  margin: 6px;
+  margin: 12px;
   box-shadow: 0px 0px 12px #9c9d9e;
   border-radius: 4px;
   transition: background-color 0.3s ease;
@@ -986,6 +986,10 @@ footer {
 
   .CTA__layout {
     display: block;
+  }
+
+  .services-section__items-wrapper {
+    justify-content: center;
   }
 
   .services-section__layout {
@@ -1167,25 +1171,27 @@ footer {
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: stretch;
-  margin-bottom: 20px;
+  margin: 0 -20px 20px;
 }
 
 .image__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  padding: 20px;
+  width: 45%;
+  margin: 20px;
 }
 
 .image__wrapper img {
   width: 100%;
-  max-width: 450px;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 1024px) {
   .gallery {
+    justify-content: center;
     margin-bottom: 0;
   }
 }
