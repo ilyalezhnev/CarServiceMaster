@@ -18,15 +18,20 @@
 }
 
 .content-card__title_left {
-  width: 70%;
+  width: 75%;
   background: linear-gradient(120deg, #ffcc00 88%, transparent 12%), no-repeat right top / cover;
 }
 
 .content-card__title_right {
   justify-content: flex-end;
-  width: 70%;
+  width: 75%;
   align-self: flex-end;
   background: linear-gradient(240deg, #3a3a3b 88%, transparent 12%), no-repeat right top / cover;
+}
+
+.content-card__title_left .block-title,
+.content-card__title_right .block-title {
+  width: 80%;
 }
 
 .content-card__title_left::before {

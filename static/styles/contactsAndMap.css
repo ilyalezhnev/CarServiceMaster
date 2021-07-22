@@ -46,7 +46,7 @@
 .contacts .logo {
   width: 211px;
   height: 86px;
-  align-self: center;
+  /* align-self: center; */
 }
 
 .contact__item {
@@ -76,7 +76,7 @@
 
   .contacts-page .contacts {
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     padding-bottom: 32px;
   }
 

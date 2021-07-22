@@ -78,7 +78,7 @@
 .services-section__items-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0 -12px;
 }
 

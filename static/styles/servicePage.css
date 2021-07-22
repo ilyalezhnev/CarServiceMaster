@@ -1,7 +1,11 @@
 .service-description__layout {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
+}
+
+.service-description__img {
+  height: 100%;
 }
 
 .service-description__img,
@@ -26,13 +30,14 @@
   margin-right: 12px;
   padding: 8px 32px 8px 12px;
   width: fit-content;
-  background: linear-gradient(120deg, #ffcc00 80%, transparent 20%), no-repeat right top / cover;
+  background: linear-gradient(120deg, #ffcc00 85%, transparent 15%), no-repeat right top / cover;
 }
 
 /* Media queries */
 @media screen and (max-width: 1024px) {
   .service-description__layout {
     flex-direction: column;
+    align-items: center;
   }
 
   .service-description__img,
