@@ -166,6 +166,9 @@ span.ant-dot {
   #feedback .ant-carousel-element {
     width: 100%;
     max-width: 490px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   #feedback .ant-carousel-hider {

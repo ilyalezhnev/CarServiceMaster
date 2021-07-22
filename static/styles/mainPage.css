@@ -127,6 +127,7 @@
 }
 
 .feedback-section__item {
+  min-height: 200px;
   display: flex;
   padding: 30px;
   margin: 12px;
@@ -322,6 +323,7 @@
   }
 
   .feedback-section__item {
+    min-height: unset;
     padding: 20px 12px;
   }
 

@@ -225,6 +225,9 @@ span.ant-dot {
   #feedback .ant-carousel-element {
     width: 100%;
     max-width: 490px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   #feedback .ant-carousel-hider {
@@ -860,6 +863,7 @@ footer {
 }
 
 .feedback-section__item {
+  min-height: 200px;
   display: flex;
   padding: 30px;
   margin: 12px;
@@ -1056,6 +1060,7 @@ footer {
   }
 
   .feedback-section__item {
+    min-height: unset;
     padding: 20px 12px;
   }
 
