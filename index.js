@@ -40,7 +40,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use('/static', express.static(path.join(__dirname, 'static')));
-app.use('/service/static', express.static(path.join(__dirname, 'static')));
+// app.use('/service/static', express.static(path.join(__dirname, 'static')));
 app.use('/api/auth', auth);
 app.use('/api/admin/uploads', uploads);
 app.use('/api/admin/mainpage', mainPage);
@@ -58,8 +58,9 @@ app.use('/api/admin/reviews', reviews);
 app.set('views', './views');
 app.set('view engine', 'pug');
 
-app.get('/service/:id', async (req, res, next) => {
-  const serviceItem = await servicesController.getService(req.params.id);
+app.get('/service', async (req, res, next) => {
+  console.log(req);
+  const serviceItem = await servicesController.getService(req.query.id);
   serviceItem.description = marked(serviceItem.description);
   const mappedOffices = await dataMapper.getMappedOffices();
   const mappedServices = await dataMapper.getMappedServices();
