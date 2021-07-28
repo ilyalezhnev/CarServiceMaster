@@ -11,4 +11,5 @@ div#office-popup
             .phone
               a(href=`tel:${office.fullTel}`)=office.fullTel
             .schedule=office.workingHours
-            a.select-button(onclick=`openMessengerFromPopup({whatsapp: ${office.whatsapp}, viber: ${office.viber}, telegram: ${office.telegram}})`) Выбрать этот филиал
+            a.select-button(onclick=`openMessengerFromPopup({whatsapp: ${office.whatsapp}, viber: ${office.viber}, telegram: \'${office.telegram}'\})`) Выбрать этот филиал
+            h1=office.telegram
