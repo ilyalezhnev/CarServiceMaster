@@ -33,7 +33,9 @@ body
               .branch-office__layout
                 img(src=office.carPartOffice.image, alt="").branch-office__img
                 .branch-office__info
-                  .sub-title #{office.tel} / #{office.address}
+                  .sub-title
+                    a(href=`tel:${office.fullTel}`) #{office.tel}
+                    |  / #{office.address}
                   .divider 
                   p.branch-office__info__text=office.carPartOffice.description
                   .branch-office__info__messengers
@@ -54,7 +56,9 @@ body
               .branch-office__layout
                 img(src=office.carPartOffice.image, alt="").branch-office__img
                 .branch-office__info
-                  .sub-title #{office.tel} / #{office.address}
+                  .sub-title
+                    a(href=`tel:${office.fullTel}`) #{office.tel}
+                    |  / #{office.address}
                   .divider 
                   p.branch-office__info__text=office.carPartOffice.description
                   .branch-office__info__messengers
