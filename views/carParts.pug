@@ -41,7 +41,7 @@ body
                     .branch-office__info__messengers__wrapper
                       img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick=`openMessenger("whatsapp", ${office.whatsapp})`).social-icon
                       img(src="static/img/viber_icon.svg", alt="Вайбер" onclick=`openMessenger("viber", ${office.viber})`).social-icon
-                      img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick=`openMessenger("telegram", ${office.telegram})`).social-icon
+                      img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick=`openMessenger("telegram", \'${office.telegram}'\)`).social-icon
           else
             .content-card__title.content-card__title_right
               img(src="static/img/half_car_yellow.svg", alt="Иконка филиала запчастей")
@@ -62,7 +62,7 @@ body
                     .branch-office__info__messengers__wrapper
                       img(src="static/img/whatsapp_icon.svg", alt="Вацап" onclick=`openMessenger("whatsapp", ${office.whatsapp})`).social-icon
                       img(src="static/img/viber_icon.svg", alt="Вайбер" onclick=`openMessenger("viber", ${office.viber})`).social-icon
-                      img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick=`openMessenger("telegram", ${office.telegram})`).social-icon
+                      img(src="static/img/telegram_icon.svg", alt="Телеграм" onclick=`openMessenger("telegram", \'${office.telegram}'\)`).social-icon
     include ./modules/infoDividerSection
     include ./modules/contactsAndMapSection
   include ./modules/footer
