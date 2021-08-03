@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44.33" height="44.33" viewBox="0 0 44.33 44.33">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-1 {
+        fill: url(#Безымянный_градиент);
+      }
+
+      .cls-2 {
+        fill: #fefefe;
+      }
+    </style>
+    <radialGradient id="Безымянный_градиент" data-name="Безымянный градиент" cx="11194.47" cy="-8477.73" r="692.68" gradientTransform="matrix(0.06, 0, 0, -0.06, -681.91, -485.35)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fae100"/>
+      <stop offset="0.05" stop-color="#fadc04"/>
+      <stop offset="0.12" stop-color="#fbce0e"/>
+      <stop offset="0.18" stop-color="#fcb720"/>
+      <stop offset="0.25" stop-color="#fe9838"/>
+      <stop offset="0.31" stop-color="#ff7950"/>
+      <stop offset="0.49" stop-color="#ff1c74"/>
+      <stop offset="1" stop-color="#6c1cd1"/>
+    </radialGradient>
+  </defs>
+  <title>instagram</title>
+  <g id="Слой_2" data-name="Слой 2">
+    <g id="Слой_1-2" data-name="Слой 1">
+      <g id="Слой_1-3" data-name="Слой_1">
+        <g id="_1675983531312" data-name=" 1675983531312">
+          <polygon class="cls-1" points="0 44.33 44.33 44.33 44.33 0 0 0 0 44.33"/>
+          <path class="cls-2" d="M22.16,5.13C15.18,5.13,8.56,4.5,6,11c-1,2.69-.89,6.17-.89,11.16,0,4.38-.14,8.5.89,11.16,2.53,6.5,9.21,5.88,16.14,5.88,6.68,0,13.58.69,16.14-5.88,1.05-2.71.89-6.15.89-11.16,0-6.65.37-10.95-2.86-14.18S28.64,5.13,22.16,5.13Zm0,8.28a8.75,8.75,0,1,0,8.75,8.75,8.74,8.74,0,0,0-8.75-8.75Zm0,3.07c7.51,0,7.52,11.36,0,11.36S14.65,16.48,22.16,16.48ZM31.26,11a2,2,0,1,0,2,2.05A2.05,2.05,0,0,0,31.26,11ZM20.64,8.2C35.2,8.17,37.05,6.55,36,29c-.37,8-6.42,7.08-13.86,7.08-13.58,0-14-.39-14-14,0-13.73,1.08-13.95,12.44-14Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
