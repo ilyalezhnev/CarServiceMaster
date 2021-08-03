@@ -1411,14 +1411,11 @@ footer {
 }
 
 .contacts-page .contacts {
+  flex: 4;
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
-}
-
-.contacts-page .contacts .contact__item {
-  padding-top: 0;
+  justify-content: center;
+  padding-left: 50px;
 }
 
 .contacts-page .contacts .contact__item .messengers {
@@ -1449,12 +1446,12 @@ footer {
 #mapid {
   width: 100%;
   flex: 6;
+  min-height: 320px;
 }
 
 .contacts .logo {
   width: 211px;
   height: 86px;
-  /* align-self: center; */
 }
 
 .contact__item {
@@ -1482,10 +1479,13 @@ footer {
     padding: 12px 0 0;
   }
 
+  .contacts-page .contacts-and-map__wrapper {
+    flex-direction: column;
+  }
+
   .contacts-page .contacts {
     flex-direction: column;
-    /* align-items: center; */
-    padding-bottom: 32px;
+    padding: 32px 0;
   }
 
   .contacts-page .contacts .contact__item {

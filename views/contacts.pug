@@ -21,8 +21,6 @@ body
           img(src="static/img/note.svg", alt="Иконка услуги")
           h1.block-title Контактные данные
         .contacts-and-map__wrapper
-          #mapid
-        .content-card__content
           .contacts
             img(src="static/img/medium_logo.svg", alt="Логотип Мастер-сервис").logo
             each office in mappedOffices
@@ -40,9 +38,10 @@ body
                     img(src="static/img/instagram.svg", alt="Инстаграм").social-icon
                   img(src="static/img/whatsapp.svg", alt="Вацап" onclick=`openMessenger("whatsapp", ${office.whatsapp})`).social-icon
                   img(src="static/img/viber.svg", alt="Вайбер" onclick=`openMessenger("viber", ${office.viber})`).social-icon
-                  img(src="static/img/telegram.svg", alt="Телеграм" onclick=`openMessenger("telegram", ${office.telegram})`).social-icon
+                  img(src="static/img/telegram.svg", alt="Телеграм" onclick=`openMessenger("telegram", \'${office.telegram}'\)`).social-icon
                 .locationLat=office.locationLat
                 .locationLon=office.locationLon
+          #mapid
     include ./modules/infoDividerSection
   include ./modules/footer
   script(src='static/scripts/common.js')
