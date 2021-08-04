@@ -721,7 +721,7 @@ footer {
   .footer__layout .mobile-messengers img {
     width: 40px;
     height: 40px;
-    padding-left: 8px;
+    margin-left: 8px;
   }
 
   .footer__text {
@@ -1087,6 +1087,10 @@ footer {
     padding-right: 12px;
     font-size: 12px;
   }
+}
+
+.car-parts-page {
+  overflow-x: hidden;
 }
 
 .car-parts__slogan {
@@ -1612,7 +1616,7 @@ footer {
   .content-card__layout {
     box-shadow: none;
     margin-bottom: 12px;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .content-card__title img {
@@ -1622,7 +1626,7 @@ footer {
   }
 
   .content-card__title .block-title {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .content-card__title {
