@@ -510,7 +510,7 @@ img.header__contact-block {
 
 .mobile-menu__layout #menu-toggler {
   cursor: pointer;
-  margin-right: 12px;
+  padding: 12px;
 }
 
 .mobile-menu__socials img {
