@@ -25,7 +25,7 @@ header
             ul
               each service in mappedServices
                 li
-                  a(href=`/service?id=${service.id}`)
+                  a(href=`/service/${service.id}`)
                     img(src="static/img/shevron.svg", alt="Шеврон пункта меню")
                     span=service.title
         li.desktop-navbar__item
@@ -54,7 +54,7 @@ header
             ul
               each service in mappedServices
                 li 
-                  a(href=`/service?id=${service.id}`)=service.title
+                  a(href=`/service/${service.id}`)=service.title
         li
           a(href='/car-parts') Запчасти
         li
