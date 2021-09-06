@@ -60,8 +60,6 @@ app.set('views', './views');
 app.set('view engine', 'pug');
 
 app.get('/service/:id', async (req, res, next) => {
-  console.log('------------------------------------------11111111');
-  console.log(req.params);
   const serviceItem = await servicesController.getService(req.params.id);
   serviceItem.description = marked(serviceItem.description);
   const mappedOffices = await dataMapper.getMappedOffices();
