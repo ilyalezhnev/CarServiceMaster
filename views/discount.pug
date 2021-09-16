@@ -5,8 +5,8 @@ head
   meta(name='description', content='Станция технического обслуживания легковых автомобилей "Мастер". Акции в наших филиалах.')
   meta(name='keywords', content='СТО Мастер, автосервис, ремонт автомобилей, шиномонтаж, скидки, акции')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  link(rel="icon" href="static/img/favicon.ico" type="image/x-icon")
-  link(rel='manifest' href="static/img/manifest.json")
+  link(rel="icon" href="/static/img/favicon.ico" type="image/x-icon")
+  link(rel='manifest' href="/static/img/manifest.json")
   link(rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="")
   script(src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="")
   style
@@ -18,7 +18,7 @@ body
     .width-container
       .content-card__layout
         .content-card__title.content-card__title_left
-          img(src="static/img/percent.svg", alt="Иконка акций")
+          img(src="/static/img/percent.svg", alt="Иконка акций")
           h1.block-title  Акции
         each promo in mappedPromos
           .content-card__content    
@@ -31,10 +31,10 @@ body
                 .disount__info__messengers
                   span.title Задать вопрос через мессенджер
                   .branch-office__info__messengers__wrapper
-                    img(src="static/img/whatsapp.svg", alt="Вацап" onclick='showPopup("whatsapp")').social-icon
-                    img(src="static/img/viber.svg", alt="Вайбер" onclick='showPopup("viber")').social-icon
-                    img(src="static/img/telegram.svg", alt="Телеграм" onclick='showPopup("telegram")').social-icon
+                    img(src="/static/img/whatsapp.svg", alt="Вацап" onclick='showPopup("whatsapp")').social-icon
+                    img(src="/static/img/viber.svg", alt="Вайбер" onclick='showPopup("viber")').social-icon
+                    img(src="/static/img/telegram.svg", alt="Телеграм" onclick='showPopup("telegram")').social-icon
     include ./modules/infoDividerSection
     include ./modules/contactsAndMapSection
   include ./modules/footer
-  script(src='static/scripts/common.js')
+  script(src='/static/scripts/common.js')

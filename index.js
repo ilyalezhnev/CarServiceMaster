@@ -40,7 +40,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use('/static', express.static(path.join(__dirname, 'static')));
-app.use('/service', express.static(path.join(__dirname, '')));
 app.use('/favicon.ico', express.static('static/img/favicon.ico'));
 app.use('/api/auth', auth);
 app.use('/api/admin/uploads', uploads);

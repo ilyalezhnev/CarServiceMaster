@@ -5,8 +5,8 @@ head
   meta(name='description', content='Станция технического обслуживания легковых автомобилей "Мастер". Наши отделы запчастей.')
   meta(name='keywords', content='СТО Мастер, автосервис, ремонт автомобилей, шиномонтаж, скидки, акции, запчасти, мойка')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  link(rel="icon" href="static/img/favicon.ico" type="image/x-icon")
-  link(rel='manifest' href="static/img/manifest.json")
+  link(rel="icon" href="/static/img/favicon.ico" type="image/x-icon")
+  link(rel='manifest' href="/static/img/manifest.json")
   link(rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="")
   script(src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="")
   style
@@ -23,7 +23,7 @@ body
         each office, index in mappedCarParts.offices 
           if index%2 === 0
             .content-card__title.content-card__title_left
-              img(src="static/img/half_car_gray.svg", alt="Иконка филиала запчастей")
+              img(src="/static/img/half_car_gray.svg", alt="Иконка филиала запчастей")
               span.block-title Запчасти
                 |
                 br
@@ -41,12 +41,12 @@ body
                   .branch-office__info__messengers
                     span.title Заказать автозапчасть
                     .branch-office__info__messengers__wrapper
-                      img(src="static/img/whatsapp.svg", alt="Вацап" onclick=`openMessenger("whatsapp", ${office.whatsapp})`).social-icon
-                      img(src="static/img/viber.svg", alt="Вайбер" onclick=`openMessenger("viber", ${office.viber})`).social-icon
-                      img(src="static/img/telegram.svg", alt="Телеграм" onclick=`openMessenger("telegram", \'${office.telegram}'\)`).social-icon
+                      img(src="/static/img/whatsapp.svg", alt="Вацап" onclick=`openMessenger("whatsapp", ${office.whatsapp})`).social-icon
+                      img(src="/static/img/viber.svg", alt="Вайбер" onclick=`openMessenger("viber", ${office.viber})`).social-icon
+                      img(src="/static/img/telegram.svg", alt="Телеграм" onclick=`openMessenger("telegram", \'${office.telegram}'\)`).social-icon
           else
             .content-card__title.content-card__title_right
-              img(src="static/img/half_car_yellow.svg", alt="Иконка филиала запчастей")
+              img(src="/static/img/half_car_yellow.svg", alt="Иконка филиала запчастей")
               span.block-title Запчасти
                 |
                 br
@@ -64,10 +64,10 @@ body
                   .branch-office__info__messengers
                     span.title Заказать автозапчасть
                     .branch-office__info__messengers__wrapper
-                      img(src="static/img/whatsapp.svg", alt="Вацап" onclick=`openMessenger("whatsapp", ${office.whatsapp})`).social-icon
-                      img(src="static/img/viber.svg", alt="Вайбер" onclick=`openMessenger("viber", ${office.viber})`).social-icon
-                      img(src="static/img/telegram.svg", alt="Телеграм" onclick=`openMessenger("telegram", \'${office.telegram}'\)`).social-icon
+                      img(src="/static/img/whatsapp.svg", alt="Вацап" onclick=`openMessenger("whatsapp", ${office.whatsapp})`).social-icon
+                      img(src="/static/img/viber.svg", alt="Вайбер" onclick=`openMessenger("viber", ${office.viber})`).social-icon
+                      img(src="/static/img/telegram.svg", alt="Телеграм" onclick=`openMessenger("telegram", \'${office.telegram}'\)`).social-icon
     include ./modules/infoDividerSection
     include ./modules/contactsAndMapSection
   include ./modules/footer
-  script(src='static/scripts/common.js')
+  script(src='/static/scripts/common.js')

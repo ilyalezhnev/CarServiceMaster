@@ -2,7 +2,7 @@ section.width-container.contacts-and-map__layout
   h2.block-title.first-letter_yellow Контакты
   .contacts-and-map__wrapper
     .contacts
-      img(src="static/img/medium_logo.svg", alt="Логотип Мастер-сервис").logo
+      img(src="/static/img/medium_logo.svg", alt="Логотип Мастер-сервис").logo
       each office in mappedOffices
         .contact__item
           .address=office.fullAddress
@@ -12,6 +12,6 @@ section.width-container.contacts-and-map__layout
           .locationLat=office.locationLat
           .locationLon=office.locationLon
     #mapid
-script(src="static/scripts/mapInit.js")
+script(src="/static/scripts/mapInit.js")
 
   

@@ -6,7 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const coords = document.querySelectorAll('.contact__item');
 const bounds = [];
 const mapMarker = L.icon({
-  iconUrl: 'static/img/map_marker.svg',
+  iconUrl: '/static/img/map_marker.svg',
   iconSize: [41, 55],
   iconAnchor: [20, 54],
 });

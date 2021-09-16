@@ -7,7 +7,7 @@ header
         .address=mappedOffices[0].address
       a(href='/')
         img.header__contact-block(
-          src='static/img/main_logo.svg' 
+          src='/static/img/main_logo.svg' 
           alt="Логотип Мастер-сервис"
         )
       .header__contact-block
@@ -26,7 +26,7 @@ header
               each service in mappedServices
                 li
                   a(href=`/service/${service.id}`)
-                    img(src="static/img/shevron.svg", alt="Шеврон пункта меню")
+                    img(src="/static/img/shevron.svg", alt="Шеврон пункта меню")
                     span=service.title
         li.desktop-navbar__item
           a(href='/car-parts') Запчасти
@@ -38,13 +38,13 @@ header
     .width-container.mobile-menu
       .mobile-menu__layout
         div(style='display: flex; align-items: center')
-          img(src="static/img/hamburger.svg", alt="Кнопка вызова меню")#menu-toggler
+          img(src="/static/img/hamburger.svg", alt="Кнопка вызова меню")#menu-toggler
           span Меню
         div.mobile-menu__socials
          a(href='https://vk.com/ptz_auto' target="_blank")
-          img(src="static/img/vkontakte.svg", alt="ВКонтакте")
+          img(src="/static/img/vkontakte.svg", alt="ВКонтакте")
          a(href='https://www.instagram.com/ptzmaster/' target="_blank")
-          img(src="static/img/instagram.svg", alt="Инстаграм")
+          img(src="/static/img/instagram.svg", alt="Инстаграм")
       ul.mobile-navbar
         li
           a(href='/') Главная

@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'Myriad-Regular';
-  src: url('static/fonts/MyriadPro-Regular.otf');
+  src: url('/static/fonts/MyriadPro-Regular.otf');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Myriad-Semibold';
-  src: url('static/fonts/MyriadPro-Semibold.otf');
+  src: url('/static/fonts/MyriadPro-Semibold.otf');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Myriad-Bold';
-  src: url('static/fonts/MyriadPro-Bold.otf');
+  src: url('/static/fonts/MyriadPro-Bold.otf');
   font-display: swap;
 }
 

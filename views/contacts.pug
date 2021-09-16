@@ -5,8 +5,8 @@ head
   meta(name='description', content='Станция технического обслуживания легковых автомобилей "Мастер". Наши контакты.')
   meta(name='keywords', content='СТО Мастер, автосервис, ремонт автомобилей, шиномонтаж, скидки, акции')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  link(rel="icon" href="static/img/favicon.ico" type="image/x-icon")
-  link(rel='manifest' href="static/img/manifest.json")
+  link(rel="icon" href="/static/img/favicon.ico" type="image/x-icon")
+  link(rel='manifest' href="/static/img/manifest.json")
   link(rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="")
   script(src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="")
   style
@@ -18,11 +18,11 @@ body
     .width-container
       .content-card__layout
         .content-card__title.content-card__title_left
-          img(src="static/img/note.svg", alt="Иконка услуги")
+          img(src="/static/img/note.svg", alt="Иконка услуги")
           h1.block-title Контактные данные
         .contacts-and-map__wrapper
           .contacts
-            img(src="static/img/medium_logo.svg", alt="Логотип Мастер-сервис").logo
+            img(src="/static/img/medium_logo.svg", alt="Логотип Мастер-сервис").logo
             each office in mappedOffices
               .contact__item
                 .address=office.fullAddress
@@ -33,16 +33,16 @@ body
                 .schedule=office.workingHours
                 .messengers
                   a(href="https://vk.com/ptz_auto" target="_blank")
-                    img(src="static/img/vkontakte.svg", alt="ВКонтакте").social-icon
+                    img(src="/static/img/vkontakte.svg", alt="ВКонтакте").social-icon
                   a(href="https://www.instagram.com/ptzmaster/" target="_blank") 
-                    img(src="static/img/instagram.svg", alt="Инстаграм").social-icon
-                  img(src="static/img/whatsapp.svg", alt="Вацап" onclick=`openMessenger("whatsapp", ${office.whatsapp})`).social-icon
-                  img(src="static/img/viber.svg", alt="Вайбер" onclick=`openMessenger("viber", ${office.viber})`).social-icon
-                  img(src="static/img/telegram.svg", alt="Телеграм" onclick=`openMessenger("telegram", \'${office.telegram}'\)`).social-icon
+                    img(src="/static/img/instagram.svg", alt="Инстаграм").social-icon
+                  img(src="/static/img/whatsapp.svg", alt="Вацап" onclick=`openMessenger("whatsapp", ${office.whatsapp})`).social-icon
+                  img(src="/static/img/viber.svg", alt="Вайбер" onclick=`openMessenger("viber", ${office.viber})`).social-icon
+                  img(src="/static/img/telegram.svg", alt="Телеграм" onclick=`openMessenger("telegram", \'${office.telegram}'\)`).social-icon
                 .locationLat=office.locationLat
                 .locationLon=office.locationLon
           #mapid
     include ./modules/infoDividerSection
   include ./modules/footer
-  script(src='static/scripts/common.js')
-  script(src="static/scripts/mapInit.js")
+  script(src='/static/scripts/common.js')
+  script(src="/static/scripts/mapInit.js")
